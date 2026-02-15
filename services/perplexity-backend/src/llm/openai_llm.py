@@ -43,31 +43,40 @@ RETRY_BASE_DELAY = 0.5  # seconds, doubles each attempt
 
 
 class OpenAILLM(BaseLLM):
-    """OpenAI Chat Completions implementation of BaseLLM.
+    """OpenAI-compatible Chat Completions implementation of BaseLLM.
 
-    Each instance targets a specific model (e.g. gpt-4.1-mini, gpt-4.1-nano).
-    The caller provides system_prompt + user_message per request.
+    Works with any OpenAI-compatible API (OpenAI, Groq, Together, OpenRouter, etc.)
+    Each instance targets a specific model. The caller provides system_prompt + user_message per request.
     """
 
     def __init__(
         self,
         model: str,
         api_key: str | None = None,
+        base_url: str | None = None,
         timeout: float = 30.0,
     ):
         self.model = model
         self.api_key = api_key or os.getenv("OPENAI_API_KEY")
+        self.base_url = base_url or os.getenv("OPENAI_BASE_URL")
         self.timeout = timeout
+
+        # Detect if we're using native OpenAI (supports json_schema) or a compatible provider
+        self._is_openai_native = not self.base_url or "api.openai.com" in (self.base_url or "")
 
         if not self.api_key:
             raise ValueError(
                 "OPENAI_API_KEY environment variable or api_key parameter is required"
             )
 
-        self.client = AsyncOpenAI(
-            api_key=self.api_key,
-            timeout=self.timeout,
-        )
+        client_kwargs = {
+            "api_key": self.api_key,
+            "timeout": self.timeout,
+        }
+        if self.base_url:
+            client_kwargs["base_url"] = self.base_url
+
+        self.client = AsyncOpenAI(**client_kwargs)
 
     # ── Helper: build kwargs dict, filtering out None values ─────────────
 
@@ -242,13 +251,16 @@ class OpenAILLM(BaseLLM):
         response_format: dict,
         **kwargs,
     ) -> dict:
-        """Structured completion using OpenAI's JSON Schema mode.
+        """Structured completion with JSON output.
+
+        For native OpenAI: uses json_schema mode for strict schema enforcement.
+        For compatible providers (Groq, etc.): uses json_object mode with
+        schema instructions appended to the system prompt.
 
         Args:
             system_prompt:   System message content.
             user_message:    User message content.
-            response_format: JSON schema dict passed as
-                             ``{"type": "json_schema", "json_schema": …}``.
+            response_format: JSON schema dict (name, strict, schema keys).
             **kwargs:        Optional overrides (temperature, max_tokens).
 
         Returns:
@@ -267,6 +279,22 @@ class OpenAILLM(BaseLLM):
             max_tokens=kwargs.get("max_tokens"),
         )
 
+        # Build response_format and system prompt based on provider
+        if self._is_openai_native:
+            rf = {"type": "json_schema", "json_schema": response_format}
+            effective_system_prompt = system_prompt
+        else:
+            # Groq and other providers: json_object mode + schema in prompt
+            rf = {"type": "json_object"}
+            schema_def = response_format.get("schema", response_format)
+            schema_hint = json.dumps(schema_def, indent=2)
+            effective_system_prompt = (
+                f"{system_prompt}\n\n"
+                f"You MUST respond with valid JSON matching this exact schema:\n"
+                f"```json\n{schema_hint}\n```\n"
+                f"Return ONLY the JSON object, no other text."
+            )
+
         last_error: Exception | None = None
 
         for attempt in range(1, MAX_RETRIES + 1):
@@ -274,13 +302,10 @@ class OpenAILLM(BaseLLM):
                 response = await self.client.chat.completions.create(
                     model=self.model,
                     messages=[
-                        {"role": "system", "content": system_prompt},
+                        {"role": "system", "content": effective_system_prompt},
                         {"role": "user", "content": user_message},
                     ],
-                    response_format={
-                        "type": "json_schema",
-                        "json_schema": response_format,
-                    },
+                    response_format=rf,
                     **optional,
                 )
 
@@ -339,15 +364,16 @@ class OpenAILLM(BaseLLM):
 
 
 class OpenAIAgents:
-    """Manager for specialized OpenAI LLM instances.
+    """Manager for specialized LLM instances using any OpenAI-compatible API.
 
     Creates one OpenAILLM per agent role, using the model mapping from
     ``agent_config.AGENT_MODEL_MAP``.  No network calls in __init__ —
     the LLM instances are lightweight wrappers around the AsyncOpenAI client.
     """
 
-    def __init__(self, api_key: str | None = None):
+    def __init__(self, api_key: str | None = None, base_url: str | None = None):
         self.api_key = api_key or os.getenv("OPENAI_API_KEY")
+        self.base_url = base_url or os.getenv("OPENAI_BASE_URL")
 
         if not self.api_key:
             raise ValueError(
@@ -359,25 +385,31 @@ class OpenAIAgents:
         self._answer_generation = OpenAILLM(
             model=AGENT_MODEL_MAP["answer_generation"],
             api_key=self.api_key,
+            base_url=self.base_url,
         )
         self._query_planning = OpenAILLM(
             model=AGENT_MODEL_MAP["query_planning"],
             api_key=self.api_key,
+            base_url=self.base_url,
         )
         self._query_rephrase = OpenAILLM(
             model=AGENT_MODEL_MAP["query_rephrase"],
             api_key=self.api_key,
+            base_url=self.base_url,
         )
         self._search_query = OpenAILLM(
             model=AGENT_MODEL_MAP["search_query"],
             api_key=self.api_key,
+            base_url=self.base_url,
         )
         self._related_questions = OpenAILLM(
             model=AGENT_MODEL_MAP["related_questions"],
             api_key=self.api_key,
+            base_url=self.base_url,
         )
 
-        print(f"✅ OpenAIAgents initialized (models: {set(AGENT_MODEL_MAP.values())})")
+        provider = self.base_url or "OpenAI"
+        print(f"LLM initialized — provider: {provider}, models: {set(AGENT_MODEL_MAP.values())}")
 
     # ── Getter methods ───────────────────────────────────────────────────
 

@@ -1,14 +1,19 @@
-"""OpenAI model configuration for the Perplexity OSS application."""
+"""LLM model configuration for the Perplexity OSS application.
+
+Supports any OpenAI-compatible API (OpenAI, Groq, Together, OpenRouter, etc.)
+via the OPENAI_BASE_URL environment variable.
+"""
 
 import os
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-# ── OpenAI Model Configuration ──────────────────────────────────────────
+# ── LLM Provider Configuration ──────────────────────────────────────────
 
-OPENAI_MODEL_REASONING = os.getenv("OPENAI_MODEL_REASONING", "gpt-4.1-mini")
-OPENAI_MODEL_FAST = os.getenv("OPENAI_MODEL_FAST", "gpt-4.1-nano")
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.x.ai/v1")
+OPENAI_MODEL_REASONING = os.getenv("OPENAI_MODEL_REASONING", "grok-4-latest")
+OPENAI_MODEL_FAST = os.getenv("OPENAI_MODEL_FAST", "grok-4-latest")
 
 AGENT_MODEL_MAP = {
     "answer_generation": OPENAI_MODEL_REASONING,
