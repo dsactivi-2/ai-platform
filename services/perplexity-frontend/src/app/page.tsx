@@ -34,37 +34,8 @@ const LoginPrompt = () => {
 };
 
 export default function Home() {
-  const { isAuthenticated, isLoading, userId } = useAuth();
-  const [hasCredentials, setHasCredentials] = useState(false);
-
-  // Check if we have both user_id and api_key
-  useEffect(() => {
-    const apiKey = localStorage.getItem(USER_KEY);
-    setHasCredentials(Boolean(userId && apiKey));
-  }, [userId]);
-
-  // Show loading while auth is initializing or credentials are not ready
-  if (isLoading || (isAuthenticated && !hasCredentials)) {
-    return (
-      <div className="flex items-center justify-center min-h-full p-4 md:p-6 lg:p-8">
-        <div className="text-center space-y-4">
-          <div className="w-12 h-12 bg-primary/20 rounded-full mx-auto flex items-center justify-center animate-pulse">
-            <div className="w-6 h-6 bg-primary rounded-full animate-ping"></div>
-          </div>
-          <p className="text-sm text-muted-foreground font-medium">
-            {isLoading ? "Loading..." : "Preparing your session..."}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!isAuthenticated) {
-    return <LoginPrompt />;
-  }
-
+  // Auth bypassed - Gateway Basic Auth handles access control
   return (
-    // <div className="flex grow min-h-full mx-auto w-full max-w-4xl md:max-w-6xl p-4 md:p-6 lg:p-8 items-center justify-center">
     <div className="flex grow h-full mx-auto w-full max-w-(--breakpoint-md) duration-200 px-4 md:px-8">
       <Suspense fallback={
         <div className="flex items-center justify-center w-full">

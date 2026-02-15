@@ -68,13 +68,14 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
+  // Auth bypassed - Gateway Basic Auth handles access control
   const [isInitializing, setIsInitializing] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [userId, setUserId] = useState<string | null>(null);
-  const [token, setToken] = useState<string | null>(null);
-  const [user, setUser] = useState<UserType | null>(null);
-  const isInitializedRef = useRef(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [userId, setUserId] = useState<string | null>("gateway-user");
+  const [token, setToken] = useState<string | null>("gateway-auth");
+  const [user, setUser] = useState<UserType | null>({ email: "admin@platform.ai", user_id: "gateway-user", organization_ids: ["default"], current_org_id: "default" });
+  const isInitializedRef = useRef(true);
 
   // A helper to re-check authentication when called.
   const checkAuth = async () => {
