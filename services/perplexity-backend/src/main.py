@@ -1,8 +1,8 @@
 """
-Perplexity OSS - FastAPI application powered by Lyzr AI.
+Perplexity OSS - FastAPI application powered by OpenAI.
 
 This application provides AI-powered search and chat functionality using specialized
-Lyzr agents for different tasks including query processing, search, and response generation.
+OpenAI LLM agents for query processing, search, and response generation.
 """
 
 import asyncio
@@ -46,7 +46,7 @@ def create_app() -> FastAPI:
     """Create and configure the FastAPI application."""
     app = FastAPI(
         title="Perplexity OSS",
-        description="AI-powered search engine powered by Lyzr AI",
+        description="AI-powered search engine powered by OpenAI",
         version="1.0.0",
     )
 
@@ -71,26 +71,21 @@ app.include_router(compat_router)
 
 @app.on_event("startup")
 async def startup_event():
-    """Initialize agents on application startup."""
+    """Validate configuration on application startup."""
+    import logging
+    logger = logging.getLogger(__name__)
+
     print("\n" + "=" * 70)
-    print("🚀 Perplexity OSS - Initializing...")
+    print("Perplexity OSS - Starting...")
     print("=" * 70 + "\n")
 
-    try:
-        from config.agent_manager import ensure_agents_exist_async
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        logger.warning("OPENAI_API_KEY is not set - LLM features will not work.")
+    else:
+        print("OpenAI API key configured.")
 
-        # Ensure all agents exist (will auto-create if needed)
-        agent_ids = await ensure_agents_exist_async()
-
-        print("\n✅ All agents initialized successfully!")
-        print(f"   Agent IDs: {list(agent_ids.keys())}")
-
-    except Exception as e:
-        print(f"\n⚠️  Warning: Could not initialize agents: {e}")
-        print("   The application will still start, but may fail on requests.")
-        print("   Please check your LYZR_API_KEY and try again.\n")
-        import traceback
-        traceback.print_exc()
+    print("Startup complete.\n")
 
 
 @app.get("/health")
@@ -106,8 +101,8 @@ async def chat(
     user: AuthenticatedUser = Depends(get_authenticated_user)
 ) -> EventSourceResponse:
     """
-    Main chat endpoint that processes user queries using Lyzr agents.
-    
+    Main chat endpoint that processes user queries using OpenAI.
+
     Supports both simple chat and advanced pro search modes.
     Returns a stream of responses including search results and AI-generated answers.
     Requires authentication.

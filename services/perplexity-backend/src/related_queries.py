@@ -1,27 +1,27 @@
-from llm.base import BaseLLM
-from prompts import RELATED_QUESTION_PROMPT
+"""Related queries generation using OpenAI LLM."""
+
+from llm.openai_llm import OpenAILLM
+from prompts import build_related_questions_system_prompt, RELATED_QUESTIONS_SCHEMA
 from schemas import RelatedQueries, SearchResult
 
 
 async def generate_related_queries(
-    query: str, search_results: list[SearchResult], llm: BaseLLM, session_id: str = None
+    query: str, search_results: list[SearchResult], llm: OpenAILLM
 ) -> list[str]:
-    # Format context from search results
-    context = "\n\n".join([f"{str(result)}" for result in search_results])
+    """Generate related follow-up questions using structured completion."""
+    context = "\n\n".join([str(result) for result in search_results])
     context = context[:4000]
 
-    # Pass context via system_prompt_variables instead of formatting into prompt
-    system_prompt_vars = {
-        "user_query": query,
-        "search_context": context
-    }
-
-    # Note: Not passing session_id - related questions should be fresh for each query,
-    # not influenced by conversation history
-    related = llm.structured_complete(
-        RelatedQueries,
-        RELATED_QUESTION_PROMPT,
-        system_prompt_variables=system_prompt_vars
+    system_prompt = build_related_questions_system_prompt(
+        user_query=query,
+        search_context=context,
     )
 
-    return [query.lower().replace("?", "") for query in related.related_questions]
+    result = await llm.structured_complete(
+        system_prompt=system_prompt,
+        user_message="Generate 3 follow-up questions based on the question and context above.",
+        response_format=RELATED_QUESTIONS_SCHEMA,
+    )
+
+    related = RelatedQueries(**result)
+    return [q.lower().replace("?", "") for q in related.related_questions]

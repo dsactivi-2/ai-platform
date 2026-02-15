@@ -1,4 +1,4 @@
-"""Base LLM interface for the Lyzr Agent-powered application."""
+"""Base LLM interface for the Perplexity OSS application."""
 
 from abc import ABC, abstractmethod
 from typing import TypeVar, AsyncIterator

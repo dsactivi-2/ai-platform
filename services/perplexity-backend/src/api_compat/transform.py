@@ -68,8 +68,7 @@ def openai_to_internal(
     if request.search_domain_filter:
         query = apply_domain_filter(query, request.search_domain_filter)
 
-    # History is now managed by Lyzr via session_id - no need to convert messages
-    # The agent will maintain conversation context automatically
+    # History is managed via session_id - no need to convert messages
 
     return ChatRequest(
         thread_id=thread_id,  # Deprecated but kept for backwards compat

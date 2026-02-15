@@ -104,7 +104,7 @@ async def handle_streaming(
             internal_stream = stream_fn(
                 request=internal_request,
                 session=None,
-                user=None  # Will use LYZR_API_KEY from environment
+                user=None  # Will use OPENAI_API_KEY from environment
             )
 
             # Transform to OpenAI format and yield
@@ -160,7 +160,7 @@ async def handle_non_streaming(
         async for event_data in stream_fn(
             request=internal_request,
             session=None,
-            user=None  # Will use LYZR_API_KEY from environment
+            user=None  # Will use OPENAI_API_KEY from environment
         ):
             # event_data is ChatResponseEvent
             event_dict = jsonable_encoder(event_data)

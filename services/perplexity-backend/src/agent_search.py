@@ -1,4 +1,4 @@
-"""Advanced search functionality using Lyzr Agents for multi-step query planning and execution."""
+"""Advanced search functionality using OpenAI for multi-step query planning and execution."""
 
 import asyncio
 from typing import AsyncIterator, List, Optional
@@ -8,8 +8,14 @@ from pydantic import BaseModel, Field
 
 from auth import AuthenticatedUser
 from chat import rephrase_query_with_context, extract_search_terms, apply_date_range_filter
-from llm.lyzr_agent import LyzrSpecializedAgents
-from prompts import CHAT_PROMPT, QUERY_PLAN_PROMPT, SEARCH_QUERY_PROMPT
+from llm.openai_llm import OpenAIAgents
+from prompts import (
+    build_answer_generation_system_prompt,
+    build_query_planning_system_prompt,
+    build_search_query_system_prompt,
+    QUERY_PLANNING_SCHEMA,
+    SEARCH_QUERY_SCHEMA,
+)
 from related_queries import generate_related_queries
 from schemas import (
     AgentFinishStream,
@@ -119,34 +125,28 @@ def format_context_with_steps(
 
 async def stream_pro_search_objects(
     request: ChatRequest,
-    specialized_agents: LyzrSpecializedAgents,
+    openai_agents: OpenAIAgents,
     query: str,
     session=None,
-    user_id: str = None,
 ) -> AsyncIterator[ChatResponseEvent]:
-    # Generate or use provided session_id
     import uuid
     session_id = request.session_id or str(uuid.uuid4())
-    
-    # Use specialized query planning agent
-    query_planning_agent = specialized_agents.get_query_planning_agent()
-    print(f"Using query planning agent for query breakdown")
 
-    # Format prompt with current datetime (system_prompt_variables don't work in messages)
+    # ── Query Planning ───────────────────────────────────────────────
+    query_planning_llm = openai_agents.get_query_planning_llm()
+    print("Using OpenAI query planning for query breakdown")
+
     from datetime import datetime
     now = datetime.now()
     current_datetime = now.strftime("%A, %B %d, %Y %I:%M %p")
-    
-    formatted_query_plan_prompt = (QUERY_PLAN_PROMPT
-                                   .replace("{{ user_query }}", query)
-                                   .replace("{{ current_datetime }}", current_datetime))
-    
-    query_plan = query_planning_agent.structured_complete(
-        response_model=QueryPlan,
-        prompt=formatted_query_plan_prompt,
-        session_id=session_id,
-        user_id=user_id
+
+    planning_system_prompt = build_query_planning_system_prompt(current_datetime)
+    plan_result = await query_planning_llm.structured_complete(
+        system_prompt=planning_system_prompt,
+        user_message=f"Query: {query}\n\nReturn the query plan:",
+        response_format=QUERY_PLANNING_SCHEMA,
     )
+    query_plan = QueryPlan(**plan_result)
     print(query_plan)
 
     yield ChatResponseEvent(
@@ -167,23 +167,24 @@ async def stream_pro_search_objects(
         relevant_context = [step_context[id] for id in dependencies]
 
         if not is_last_step:
-            # Use specialized search query agent
-            search_query_agent = specialized_agents.get_search_query_agent()
-            print(f"Using search query agent for step {step_id}")
+            # ── Search Query Generation ──────────────────────────────
+            search_query_llm = openai_agents.get_search_query_llm()
+            print(f"Using OpenAI search query agent for step {step_id}")
 
-            # Format prompt with actual values (system_prompt_variables don't work in messages)
-            formatted_search_query_prompt = (SEARCH_QUERY_PROMPT
-                                            .replace("{{ user_query }}", query)
-                                            .replace("{{ current_step }}", step.step)
-                                            .replace("{{ prev_steps_context }}", format_step_context(relevant_context))
-                                            .replace("{{ current_datetime }}", current_datetime))
-            
-            query_step_execution = search_query_agent.structured_complete(
-                response_model=QueryStepExecution,
-                prompt=formatted_search_query_prompt,
-                session_id=session_id,
-                user_id=user_id
+            search_query_system_prompt = build_search_query_system_prompt(current_datetime)
+            search_user_message = (
+                f"User's original query: {query}\n\n"
+                f"Context from previous steps:\n{format_step_context(relevant_context)}\n\n"
+                f"Current step to execute: {step.step}\n\n"
+                f"Generate search queries for this step."
             )
+
+            step_result = await search_query_llm.structured_complete(
+                system_prompt=search_query_system_prompt,
+                user_message=search_user_message,
+                response_format=SEARCH_QUERY_SCHEMA,
+            )
+            query_step_execution = QueryStepExecution(**step_result)
             search_queries = query_step_execution.search_queries
             if not search_queries:
                 raise HTTPException(
@@ -230,6 +231,7 @@ async def stream_pro_search_objects(
                 )
             )
         else:
+            # ── Final Synthesis Step ─────────────────────────────────
             yield ChatResponseEvent(
                 event=StreamEvent.AGENT_FINISH,
                 data=AgentFinishStream(),
@@ -240,7 +242,7 @@ async def stream_pro_search_objects(
                 data=BeginStream(query=query),
             )
 
-            # Get 12 results total, but distribute them evenly across dependencies
+            # Get 12 results total, distributed evenly across dependencies
             relevant_result_map: dict[int, list[SearchResult]] = {
                 id: search_result_map[id] for id in dependencies
             }
@@ -265,13 +267,11 @@ async def stream_pro_search_objects(
             )
             images = [image for id in dependencies for image in image_map[id][:2]]
 
-            related_queries_task = None
             related_queries_task = asyncio.create_task(
                 generate_related_queries(
                     query,
                     search_results,
-                    specialized_agents.get_related_questions_agent(),
-                    session_id  # Pass session_id for context continuity
+                    openai_agents.get_related_questions_llm(),
                 )
             )
 
@@ -283,14 +283,9 @@ async def stream_pro_search_objects(
                 ),
             )
 
-            # Use specialized answer generation agent for final synthesis with system_prompt_variables
-            answer_agent = specialized_agents.get_answer_generation_agent()
-            print(f"Using answer generation agent for final synthesis")
-
-            # Build system_prompt_variables for the agent
-            from datetime import datetime
-            now = datetime.now()
-            current_datetime = now.strftime("%A, %B %d, %Y %I:%M %p")
+            # ── Stream Answer ────────────────────────────────────────
+            answer_llm = openai_agents.get_answer_generation_llm()
+            print("Using OpenAI answer generation for final synthesis")
 
             # Add date range context to user query if date filters are active
             query_with_context = query
@@ -302,40 +297,24 @@ async def stream_pro_search_objects(
                 else:
                     query_with_context = f"{query} (searching for results up to {request.end_date})"
 
-            final_system_prompt_vars = {
-                "search_context": format_context_with_steps(search_result_map, step_context),
-                "user_query": query_with_context,  # Include date range context
-                "current_datetime": current_datetime
-            }
-
-            # session_id already generated at the start of this function
+            system_prompt = build_answer_generation_system_prompt(
+                search_context=format_context_with_steps(search_result_map, step_context),
+                user_query=query_with_context,
+                current_datetime=current_datetime,
+            )
 
             full_response = ""
-            # Don't send the query as the message - the agent instructions already include it
-            # Send a simple instruction to trigger the answer generation
-            response_gen = await answer_agent.astream(
-                prompt="Please provide a comprehensive answer to the user's question based on the search context provided above.",
-                system_prompt_variables=final_system_prompt_vars,
-                session_id=session_id,
-                user_id=user_id
-            )
-            async for completion in response_gen:
-                full_response += completion.delta or ""
+            async for token in answer_llm.astream(
+                system_prompt=system_prompt,
+                user_message="Please provide a comprehensive answer to the user's question based on the search context provided above.",
+            ):
+                full_response += token
                 yield ChatResponseEvent(
                     event=StreamEvent.TEXT_CHUNK,
-                    data=TextChunkStream(text=completion.delta or ""),
+                    data=TextChunkStream(text=token),
                 )
 
-            related_queries = await (
-                related_queries_task
-                if related_queries_task
-                else generate_related_queries(
-                    query,
-                    search_results,
-                    specialized_agents.get_related_questions_agent(),
-                    session_id
-                )
-            )
+            related_queries = await related_queries_task
 
             yield ChatResponseEvent(
                 event=StreamEvent.RELATED_QUERIES,
@@ -363,8 +342,8 @@ async def stream_pro_search_objects(
             yield ChatResponseEvent(
                 event=StreamEvent.STREAM_END,
                 data=StreamEndStream(
-                    thread_id=thread_id,  # Deprecated but kept for backwards compat
-                    session_id=session_id  # Return session_id so frontend can persist it
+                    thread_id=thread_id,
+                    session_id=session_id
                 ),
             )
             return
@@ -377,24 +356,15 @@ async def stream_pro_search_qa(
         if not PRO_MODE_ENABLED:
             raise HTTPException(
                 status_code=400,
-                detail="Pro mode is not enabled, self-host to enable it at https://github.com/LyzrCore/perplexity_oss",
+                detail="Pro mode is not enabled. Set PRO_MODE_ENABLED=true to enable.",
             )
 
-        # Initialize specialized agents with user credentials
-        # Use LYZR_API_KEY from env with user.api_key fallback
-        import os
-        api_key = os.getenv("LYZR_API_KEY") or (user.api_key if user else None)
-        user_id = user.user_id if user else None
-        specialized_agents = LyzrSpecializedAgents(
-            api_key=api_key,
-            api_base=None  # Use default
-        )
+        openai_agents = OpenAIAgents()
 
         # Rephrase query with conversation context if this is a follow-up
-        # Use dedicated query rephrase agent which has MEMORY enabled
         query = request.query
-        if request.session_id:  # Only rephrase if we have an existing session (follow-up)
-            query = rephrase_query_with_context(request.query, request.session_id, specialized_agents, user_id)
+        if request.session_id:
+            query = await rephrase_query_with_context(request.query, openai_agents)
 
         print(f"[Pro Search] Original query: {request.query}")
         if query != request.query:
@@ -403,13 +373,13 @@ async def stream_pro_search_qa(
         # Try pro search, fallback to regular search if it fails
         try:
             async for event in stream_pro_search_objects(
-                request, specialized_agents, query, session, user_id
+                request, openai_agents, query, session
             ):
                 yield event
                 await asyncio.sleep(0)
         except Exception as pro_error:
             # Pro search failed - log and fallback to regular search
-            print(f"⚠️ Pro search failed: {pro_error}")
+            print(f"Pro search failed: {pro_error}")
             print("   Falling back to regular search mode...")
 
             # Import and use regular search
@@ -423,7 +393,6 @@ async def stream_pro_search_qa(
                 await asyncio.sleep(0)
 
     except Exception as e:
-        # Ensure we have a meaningful error message
         detail = str(e).strip() if str(e).strip() else f"Pro search processing error: {type(e).__name__}"
         print(f"Error in stream_pro_search_qa: {detail}")
         raise HTTPException(status_code=500, detail=detail)

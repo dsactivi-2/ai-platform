@@ -1,4 +1,4 @@
-"""Chat functionality using Lyzr Agents for AI-powered search and response."""
+"""Chat functionality using OpenAI for AI-powered search and response."""
 
 import asyncio
 from typing import AsyncIterator, List, Optional
@@ -6,8 +6,12 @@ from typing import AsyncIterator, List, Optional
 from fastapi import HTTPException
 
 from auth import AuthenticatedUser
-from llm.lyzr_agent import LyzrSpecializedAgents
-from prompts import CHAT_PROMPT, SEARCH_TERM_EXTRACTION_PROMPT
+from llm.openai_llm import OpenAIAgents
+from prompts import (
+    build_answer_generation_system_prompt,
+    build_query_rephrase_system_prompt,
+    build_search_term_extraction_system_prompt,
+)
 from related_queries import generate_related_queries
 from schemas import (
     BeginStream,
@@ -52,53 +56,44 @@ def apply_date_range_filter(query: str, start_date: str = None, end_date: str = 
     return modified_query
 
 
-def extract_search_terms(query: str, specialized_agents: LyzrSpecializedAgents, session_id: str = None, user_id: str = None) -> str:
+async def extract_search_terms(query: str, openai_agents: OpenAIAgents) -> str:
     """
-    Extract the core search terms from a query using an agent.
-    The agent understands what information to search for while ignoring output format instructions.
+    Extract the core search terms from a query using the fast LLM.
+    The LLM understands what information to search for while ignoring output format instructions.
     """
     try:
         from datetime import datetime
-        agent = specialized_agents.get_query_rephrase_agent()  # Reuse this agent for extraction
-        # Format the prompt with the actual query (system_prompt_variables only work in agent instructions, not messages)
+        llm = openai_agents.get_query_rephrase_llm()
         now = datetime.now()
         current_datetime = now.strftime("%A, %B %d, %Y %I:%M %p")
-        formatted_prompt = (SEARCH_TERM_EXTRACTION_PROMPT
-                           .replace("{{ user_query }}", query)
-                           .replace("{{ current_datetime }}", current_datetime))
-        print(f"Using agent to extract search terms from query")
-        search_terms = agent.complete(
-            formatted_prompt,
-            session_id=session_id,
-            user_id=user_id
-        ).text.strip().replace('"', '')
+        system_prompt = build_search_term_extraction_system_prompt(current_datetime)
+        print("Using OpenAI to extract search terms from query")
+        search_terms = (await llm.complete(system_prompt, query)).strip().replace('"', '')
         return search_terms if search_terms else query
     except Exception as e:
         print(f"Error in search term extraction, using original query: {e}")
         return query
 
 
-def rephrase_query_with_context(
-    question: str, session_id: str, specialized_agents: LyzrSpecializedAgents, user_id: str = None
-) -> str:
+async def rephrase_query_with_context(question: str, openai_agents: OpenAIAgents) -> str:
     """
-    Rephrase user query using the query rephrase agent with conversation context.
-
-    The query rephrase agent has MEMORY enabled, so it can access conversation history
-    to understand contextual references like "it", "that", "their", etc.
+    Rephrase user query to be standalone using the fast LLM.
+    Replaces contextual references like "it", "that", "their" with concrete entities.
     """
     try:
-        # Use dedicated query rephrase agent (has MEMORY enabled for context)
-        agent = specialized_agents.get_query_rephrase_agent()
-        print(f"Using query rephrase agent with conversation context")
+        llm = openai_agents.get_query_rephrase_llm()
+        system_prompt = build_query_rephrase_system_prompt()
+        print("Using OpenAI to rephrase query")
 
-        # The query rephrase agent has conversation memory and knows how to handle contextual queries
-        # Just pass the query directly - the agent's instructions handle the rest
-        rephrased = agent.complete(question, session_id=session_id, user_id=user_id).text.strip()
+        rephrased = (await llm.complete(system_prompt, question)).strip()
 
         # Clean up common prefixes
         rephrased = rephrased.replace('"', '').replace("'", '')
-        for prefix in ['Rephrased query:', 'Rephrased Query:', 'Rephrased question:', 'Rephrased Question:', 'The rephrased question is:', 'Here is the rephrased question:']:
+        for prefix in [
+            'Rephrased query:', 'Rephrased Query:',
+            'Rephrased question:', 'Rephrased Question:',
+            'The rephrased question is:', 'Here is the rephrased question:',
+        ]:
             if rephrased.startswith(prefix):
                 rephrased = rephrased[len(prefix):].strip()
 
@@ -107,7 +102,6 @@ def rephrase_query_with_context(
         return rephrased if rephrased else question
     except Exception as e:
         print(f"Error in query rephrasing: {e}")
-        # Don't fail completely - just use original query
         return question
 
 
@@ -121,18 +115,10 @@ def format_context(search_results: List[SearchResult]) -> str:
 async def stream_qa_objects(
     request: ChatRequest, session: Optional[any] = None, user: Optional[AuthenticatedUser] = None
 ) -> AsyncIterator[ChatResponseEvent]:
-    """Stream chat responses using Lyzr agents for search and answer generation."""
+    """Stream chat responses using OpenAI for search and answer generation."""
     try:
-        # Initialize specialized agents with user credentials
-        # Use LYZR_API_KEY from env with user.api_key fallback
-        import os
         import uuid
-        api_key = os.getenv("LYZR_API_KEY") or (user.api_key if user else None)
-        user_id = user.user_id if user else None
-        specialized_agents = LyzrSpecializedAgents(
-            api_key=api_key,
-            api_base=None  # Use default
-        )
+        openai_agents = OpenAIAgents()
 
         yield ChatResponseEvent(
             event=StreamEvent.BEGIN_STREAM,
@@ -142,14 +128,13 @@ async def stream_qa_objects(
         # Generate or use provided session_id
         session_id = request.session_id or str(uuid.uuid4())
 
-        # First, rephrase the query with conversation context if this is a follow-up
-        # Use dedicated query rephrase agent which has MEMORY enabled
+        # Rephrase the query with conversation context if this is a follow-up
         query = request.query
-        if request.session_id:  # Only rephrase if we have an existing session (follow-up)
-            query = rephrase_query_with_context(request.query, session_id, specialized_agents, user_id)
+        if request.session_id:
+            query = await rephrase_query_with_context(request.query, openai_agents)
 
-        # Extract search terms from the contextualized query using an agent
-        search_query = extract_search_terms(query, specialized_agents, session_id, user_id)
+        # Extract search terms from the contextualized query
+        search_query = await extract_search_terms(query, openai_agents)
 
         # Apply custom date range filters if provided
         search_query = apply_date_range_filter(
@@ -163,7 +148,7 @@ async def stream_qa_objects(
         print(f"Search terms extracted: {search_query}")
 
         search_response = await perform_search(
-            search_query,  # Use extracted search terms for SearXNG
+            search_query,
             time_range=request.time_range,
             num_results=request.max_results
         )
@@ -171,14 +156,11 @@ async def stream_qa_objects(
         search_results = search_response.results
         images = search_response.images
 
-        # Only create the task first if the model is not local
-        related_queries_task = None
         related_queries_task = asyncio.create_task(
             generate_related_queries(
                 query,
                 search_results,
-                specialized_agents.get_related_questions_agent(),
-                session_id  # Pass session_id for context continuity
+                openai_agents.get_related_questions_llm(),
             )
         )
 
@@ -190,11 +172,8 @@ async def stream_qa_objects(
             ),
         )
 
-        # Use specialized answer generation agent with system_prompt_variables
-        answer_agent = specialized_agents.get_answer_generation_agent()
-        print(f"Using answer generation agent for main response")
-
-        # Build system_prompt_variables for the agent
+        # Build system prompt for answer generation
+        answer_llm = openai_agents.get_answer_generation_llm()
         from datetime import datetime
         now = datetime.now()
         current_datetime = now.strftime("%A, %B %d, %Y %I:%M %p")
@@ -209,36 +188,24 @@ async def stream_qa_objects(
             else:
                 query_with_context = f"{query} (searching for results up to {request.end_date})"
 
-        system_prompt_vars = {
-            "search_context": format_context(search_results),
-            "user_query": query_with_context,  # Include date range context
-            "current_datetime": current_datetime
-        }
+        system_prompt = build_answer_generation_system_prompt(
+            search_context=format_context(search_results),
+            user_query=query_with_context,
+            current_datetime=current_datetime,
+        )
 
         full_response = ""
-        # Don't send the query as the message - the agent instructions already include it
-        # Send a simple instruction to trigger the answer generation
-        response_gen = await answer_agent.astream(
-            prompt="Please provide a comprehensive answer to the user's question based on the search context provided above.",
-            system_prompt_variables=system_prompt_vars,
-            session_id=session_id,
-            user_id=user_id
-        )
-        print("Response gen", response_gen)
-        async for completion in response_gen:
-            full_response += completion.delta or ""
+        async for token in answer_llm.astream(
+            system_prompt=system_prompt,
+            user_message="Please provide a comprehensive answer to the user's question based on the search context provided above.",
+        ):
+            full_response += token
             yield ChatResponseEvent(
                 event=StreamEvent.TEXT_CHUNK,
-                data=TextChunkStream(text=completion.delta or ""),
+                data=TextChunkStream(text=token),
             )
 
-        related_queries = await (
-            related_queries_task
-            if related_queries_task
-            else generate_related_queries(
-                query, search_results, specialized_agents.get_related_questions_agent(), session_id
-            )
-        )
+        related_queries = await related_queries_task
 
         yield ChatResponseEvent(
             event=StreamEvent.RELATED_QUERIES,
@@ -256,13 +223,12 @@ async def stream_qa_objects(
         yield ChatResponseEvent(
             event=StreamEvent.STREAM_END,
             data=StreamEndStream(
-                thread_id=thread_id,  # Deprecated but kept for backwards compat
-                session_id=session_id  # Return session_id so frontend can persist it
+                thread_id=thread_id,
+                session_id=session_id
             ),
         )
 
     except Exception as e:
-        # Ensure we have a meaningful error message
         detail = str(e).strip() if str(e).strip() else f"Chat processing error: {type(e).__name__}"
         print(f"Error in stream_qa_objects: {detail}")
         raise HTTPException(status_code=500, detail=detail)

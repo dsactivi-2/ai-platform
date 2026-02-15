@@ -5,3 +5,4 @@ python-dotenv==1.0.0
 httpx==0.25.2
 sse-starlette==1.8.2
 aiohttp==3.8.6
+openai>=1.0.0

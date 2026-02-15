@@ -117,7 +117,7 @@ async def get_authenticated_user(
     (gateway Basic Auth handles access control in that case).
     """
     # Use provided headers or fall back to gateway defaults
-    effective_api_key = x_api_key or os.getenv("LYZR_API_KEY", "gateway-default")
+    effective_api_key = x_api_key or "gateway-default"
     effective_user_id = x_user_id or "gateway-user"
 
     try:

@@ -1,9 +1,9 @@
 [project]
 name = "perplexity-oss"
 version = "0.1.0"
-description = "AI-powered search engine powered by Lyzr AI"
+description = "AI-powered search engine powered by OpenAI"
 authors = [
-    {name = "Perplexity OSS", email = "hello@lyzr.ai"}
+    {name = "Perplexity OSS", email = "info@perplexity-oss.dev"}
 ]
 requires-python = ">=3.11"
 dependencies = [

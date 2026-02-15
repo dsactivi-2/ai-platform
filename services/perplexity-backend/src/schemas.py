@@ -31,7 +31,7 @@ class ChatRequest(BaseModel):
         description="Session ID for maintaining conversation history. If not provided, a new session will be created."
     )
     query: str
-    # history parameter removed - Lyzr manages conversation history via session_id
+    # history parameter removed - conversation history managed via session_id
     pro_search: bool = False
     time_range: str | None = None  # SearXNG time filter: "day", "week", "month", "year"
     start_date: str | None = Field(
