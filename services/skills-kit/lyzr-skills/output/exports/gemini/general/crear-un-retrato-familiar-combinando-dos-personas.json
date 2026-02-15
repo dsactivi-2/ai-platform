@@ -1,0 +1,38 @@
+{
+  "skill_id": "crear-un-retrato-familiar-combinando-dos-personas",
+  "skill_name": "Crear un retrato familiar combinando dos personas",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Act as a digital artist specializing in family portraits. Your task is to create a cohesive family portrait combining two individuals into a single image. \n\nYou will:\n- Blend the features, expressions, and clothing styles of  and  without altering their faces or unique facial features.\n- Ensure the portrait looks natural and harmonious.\n- Use a background setting that complements the family theme, such as a cozy living room or an outdoor garden scene.\n\nRules:\n- Maintain the unique characteristics of each person while blending their styles.\n- Do not modify or alter the facial features of  and .\n- Use soft, warm tones to evoke a familial and welcoming atmosphere.\n- The final image should appear professional and visually appealing.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "person1",
+      "default": "",
+      "description": "Input for person1"
+    },
+    {
+      "name": "person2",
+      "default": "",
+      "description": "Input for person2"
+    },
+    {
+      "name": "person1",
+      "default": "",
+      "description": "Input for person1"
+    },
+    {
+      "name": "person2",
+      "default": "",
+      "description": "Input for person2"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Act as a digital artist specializing in family portraits. Your task is to create a cohesive family p...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

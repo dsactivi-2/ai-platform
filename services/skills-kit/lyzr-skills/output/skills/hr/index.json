@@ -1,0 +1,38 @@
+{
+  "category": "hr",
+  "count": 8,
+  "skills": [
+    {
+      "id": "job-interviewer",
+      "name": "Job Interviewer"
+    },
+    {
+      "id": "recruiter",
+      "name": "Recruiter"
+    },
+    {
+      "id": "career-counselor",
+      "name": "Career Counselor"
+    },
+    {
+      "id": "talent-coach",
+      "name": "Talent Coach"
+    },
+    {
+      "id": "career-coach",
+      "name": "Career Coach"
+    },
+    {
+      "id": "rephraser-with-obfuscation",
+      "name": "Rephraser with Obfuscation"
+    },
+    {
+      "id": "christmas-poster-festive-holiday-scene",
+      "name": "Christmas Poster - Festive Holiday Scene"
+    },
+    {
+      "id": "fierce-medieval-queen-on-iron-throne-portrait",
+      "name": "Fierce Medieval Queen on Iron Throne Portrait"
+    }
+  ]
+}

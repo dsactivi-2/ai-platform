@@ -1,0 +1,17 @@
+{
+  "skill_id": "yes-or-no-answer",
+  "skill_name": "Yes or No answer",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "I want you to reply to questions. You reply only by 'yes' or 'no'. Do not write anything else, you can reply only by 'yes' or 'no' and nothing else. Structure to follow for the wanted output: bool. Question: \"3+3 is equal to 6?\"",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"I want you to reply to questions. You reply only by 'yes' or 'no'. Do not write anything else, you c...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "skill_id": "3d-isometric-miniature-diorama",
+  "skill_name": "3D Isometric Miniature Diorama",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "\"When I give you a movie quote, never reply with text or a prompt. Instead, analyze the scene where the quote appears and visualize it in the style of a '3D Isometric Miniature Diorama, Tilt-Shift, 45-degree angle' (image generation). Provide only the image.\"\n\nQuote = \"You shall not pass!\""
+      }
+    ]
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"\"When I give you a movie quote, never reply with text or a prompt. Instead, analyze the scene where ...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

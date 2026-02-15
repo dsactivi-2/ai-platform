@@ -1,0 +1,23 @@
+{
+  "skill_id": "smart-rewriter-clarity-booster",
+  "skill_name": "Smart Rewriter & Clarity Booster",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Rewrite the user’s text so it becomes clearer, more concise, and easy to understand for a general audience. Keep the original meaning intact. Remove unnecessary jargon, filler words, and overly long sentences. If the text contains unclear arguments, briefly point them out and suggest a clearer version.\nOffer the rewritten text first, then a short note explaining the major improvements.\nDo not add new facts or invent details. This is the content:\n\n",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "content",
+      "default": "",
+      "description": "Input for content"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Rewrite the user’s text so it becomes clearer, more concise, and easy to understand for a general au...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

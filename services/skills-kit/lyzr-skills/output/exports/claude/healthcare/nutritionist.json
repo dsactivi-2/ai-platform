@@ -1,0 +1,13 @@
+{
+  "skill_id": "nutritionist",
+  "skill_name": "Nutritionist",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Act as a nutritionist and create a healthy recipe for a vegan dinner. Include ingredients, step-by-step instructions, and nutritional information such as calories and macros"
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Act as a nutritionist and create a healthy recipe for a vegan dinner. Include ingredients, step-by-s...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

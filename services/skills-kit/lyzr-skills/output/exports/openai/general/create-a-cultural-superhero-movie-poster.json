@@ -1,0 +1,64 @@
+{
+  "skill_id": "create-a-cultural-superhero-movie-poster",
+  "skill_name": "Create a Cultural Superhero Movie Poster",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Create an ultra-realistic, high-budget cinematic movie poster of , reimagined as if the character originated from .\n\nThis image must look like an official theatrical poster for a live-action superhero film released worldwide.\nThe composition, lighting, typography, and tone should match real modern Hollywood movie posters.\n\nFORMAT:\nAspect ratio: 9:16 (vertical theatrical poster).\n\nSETTING:\nThe scene takes place at night in the capital city of .\nThe environment reflects the city’s real architecture, atmosphere, and cultural identity, remaining geographically accurate and believable.\n\nCOMPOSITION & CAMERA ANGLE:\n– dramatic low-angle perspective, looking up at the hero\n– iconic, powerful stance suitable for a main movie poster\n– medium-to-full body framing\n– character visually dominant, city subtly visible behind\n– cinematic depth with slight background blur\n\nATMOSPHERE:\n– cinematic fog, smoke, and atmospheric haze\n– rain falling through volumetric light\n– wet surfaces reflecting city lights\n– dramatic shadows and contrast\n– epic but grounded realism\n\nCHARACTER REALISM (CRITICAL):\n– fully photorealistic human anatomy and proportions\n– practical, wearable costume design\n– subtle cultural elements from  integrated naturally\n– realistic fabric, leather, metal, armor with wear, scratches, dirt\n– no comic-book exaggeration, no cosplay look\n\nLIGHTING:\n– dramatic cinematic lighting\n– strong rim light defining the silhouette\n– controlled highlights and deep shadows\n– volumetric light interacting with rain and fog\n\nPOSTER TEXT (ENGLISH ONLY – REALISTIC):\nInclude realistic, professionally designed movie poster text that matches the character’s origin and tone.\n\nExamples of text placement and style:\n– Main title: \"\"\n– Tagline (origin-related, serious tone): \"\"\n– Credits block at the bottom (small, realistic):\n  \"A  Production  \n   Directed by   \n   Starring \"\n\nTypography must be cinematic, clean, modern, and realistic — no fantasy fonts, no comic lettering.\n\nSTYLE & FINISH:\nUltra-photorealistic live-action realism\nCinematic color grading\nHigh dynamic range (HDR)\nPremium poster polish\nSharp subject, controlled depth\n\nNEGATIVE CONSTRAINTS:\nNo cartoon\nNo anime\nNo illustration\nNo comic-book art style\nNo exaggerated colors\nNo unrealistic fantasy elements\nNo watermarks\n\nThe final image should feel like a real, official movie poster —\nlocalized in identity, grounded in realism, cinematic in every detail."
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "superhero_name",
+      "default": "",
+      "description": "Input for superhero_name"
+    },
+    {
+      "name": "country_or_culture",
+      "default": "",
+      "description": "Input for country_or_culture"
+    },
+    {
+      "name": "country_or_culture",
+      "default": "",
+      "description": "Input for country_or_culture"
+    },
+    {
+      "name": "country_or_culture",
+      "default": "",
+      "description": "Input for country_or_culture"
+    },
+    {
+      "name": "movie_title",
+      "default": "",
+      "description": "Input for movie_title"
+    },
+    {
+      "name": "tagline",
+      "default": "",
+      "description": "Input for tagline"
+    },
+    {
+      "name": "studio_style",
+      "default": "",
+      "description": "Input for studio_style"
+    },
+    {
+      "name": "director_style",
+      "default": "",
+      "description": "Input for director_style"
+    },
+    {
+      "name": "superhero_name",
+      "default": "",
+      "description": "Input for superhero_name"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Create an ultra-realistic, high-budget cinematic movie poster of , reimagined as if the character or...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "skill_id": "the-silent-standoff",
+  "skill_name": "The Silent Standoff",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "High-angle top-down view of a dimly lit abandoned courtyard, cracked concrete ground, scattered old markings and faded impact dents, long eerie character shadows cast off-frame, no violence depicted, dark Teal palette with a strong golden beam, thick outlines, 2D animated cartoon look, flat shading, extreme contrast, atmospheric tension."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"High-angle top-down view of a dimly lit abandoned courtyard, cracked concrete ground, scattered old ...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

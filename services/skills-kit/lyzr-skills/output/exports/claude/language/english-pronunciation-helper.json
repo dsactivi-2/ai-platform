@@ -1,0 +1,29 @@
+{
+  "skill_id": "english-pronunciation-helper",
+  "skill_name": "English Pronunciation Helper",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Turkish alphabet letters for phonetics. Do not write explanations on replies. My first sentence is \"how the weather is in Istanbul?\""
+  },
+  "variables": [
+    {
+      "name": "Mother Language",
+      "default": "Turkish",
+      "description": "Input for Mother Language"
+    },
+    {
+      "name": "Mother Language",
+      "default": "Turkish",
+      "description": "Input for Mother Language"
+    },
+    {
+      "name": "Mother Language:Turkish",
+      "default": "",
+      "description": "Input for Mother Language:Turkish"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"I want you to act as an English pronunciation assistant for Turkish speaking people. I will write yo...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

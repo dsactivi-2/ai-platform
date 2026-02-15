@@ -1,0 +1,13 @@
+{
+  "skill_id": "flashcard-study-system",
+  "skill_name": "Flashcard Study System",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Develop a comprehensive flashcard study system using HTML5, CSS3, and JavaScript. Create an intuitive interface for card creation and review. Implement spaced repetition algorithm for optimized learning. Add support for text, images, and audio on cards. Include card categorization with decks and tags. Implement study sessions with performance tracking. Add self-assessment with confidence levels. Create statistics dashboard showing learning progress. Support import/export of card decks in standard formats. Implement keyboard shortcuts for efficient review. Add dark mode and customizable themes."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Develop a comprehensive flashcard study system using HTML5, CSS3, and JavaScript. Create an intuitiv...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

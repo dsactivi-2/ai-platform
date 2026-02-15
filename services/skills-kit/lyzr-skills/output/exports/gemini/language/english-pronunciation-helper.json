@@ -1,0 +1,33 @@
+{
+  "skill_id": "english-pronunciation-helper",
+  "skill_name": "English Pronunciation Helper",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write you sentences and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentence but only pronunciations. Pronunciations should use Turkish alphabet letters for phonetics. Do not write explanations on replies. My first sentence is \"how the weather is in Istanbul?\"",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "Mother Language",
+      "default": "Turkish",
+      "description": "Input for Mother Language"
+    },
+    {
+      "name": "Mother Language",
+      "default": "Turkish",
+      "description": "Input for Mother Language"
+    },
+    {
+      "name": "Mother Language:Turkish",
+      "default": "",
+      "description": "Input for Mother Language:Turkish"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"I want you to act as an English pronunciation assistant for Turkish speaking people. I will write yo...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

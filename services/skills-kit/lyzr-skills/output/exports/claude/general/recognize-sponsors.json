@@ -1,0 +1,13 @@
+{
+  "skill_id": "recognize-sponsors",
+  "skill_name": "Recognize Sponsors",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "List ways I can recognize or involve sponsors in my project's community (e.g., special Discord roles, early feature access, private Q&A sessions)."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"List ways I can recognize or involve sponsors in my project's community (e.g., special Discord roles...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

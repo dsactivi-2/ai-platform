@@ -1,0 +1,17 @@
+{
+  "skill_id": "music-player",
+  "skill_name": "Music Player",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Develop a web-based music player using HTML5, CSS3, and JavaScript with the Web Audio API. Create a modern interface with album art display and visualizations. Implement playlist management with drag-and-drop reordering. Add audio controls including play/pause, skip, seek, volume, and playback speed. Include shuffle and repeat modes with visual indicators. Support multiple audio formats with fallbacks. Implement a 10-band equalizer with presets. Add metadata extraction and display from audio files. Create a responsive design that works on all devices. Include keyboard shortcuts for playback control. Support background playback with media session API integration.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Develop a web-based music player using HTML5, CSS3, and JavaScript with the Web Audio API. Create a ...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

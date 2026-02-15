@@ -1,0 +1,18 @@
+{
+  "skill_id": "network-packet-analyzer-cli",
+  "skill_name": "Network Packet Analyzer CLI",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Create a command-line network packet analyzer in C using libpcap. Implement packet capture from network interfaces with filtering options. Add protocol analysis for common protocols (TCP, UDP, HTTP, DNS, etc.). Include traffic statistics with bandwidth usage and connection counts. Implement packet decoding with detailed header information. Add export functionality in PCAP and CSV formats. Include alert system for suspicious traffic patterns. Implement connection tracking with state information. Add geolocation lookup for IP addresses. Include command-line arguments for all options with sensible defaults. Implement color-coded output for better readability."
+      }
+    ]
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Create a command-line network packet analyzer in C using libpcap. Implement packet capture from netw...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "skill_id": "commit-message-generator",
+  "skill_name": "Commit Message Generator",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "I want you to act as a commit message generator. I will provide you with information about the task and the prefix for the task code, and I would like you to generate an appropriate commit message using the conventional commit format. Do not write any explanations or other words, just reply with the commit message."
+      }
+    ]
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"I want you to act as a commit message generator. I will provide you with information about the task ...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

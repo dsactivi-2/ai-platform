@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Gradient for the logo -->
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100" height="100" fill="transparent"/>
+
+  <!-- Icon: Hexagon with neural network nodes -->
+  <g transform="translate(5, 5)">
+    <!-- Outer hexagon -->
+    <polygon
+      points="45,0 85,23 85,68 45,90 5,68 5,23"
+      fill="url(#brandGradient)"
+      stroke="#4F46E5"
+      stroke-width="2"
+      filter="url(#glow)"
+    />
+
+    <!-- Inner neural network visualization -->
+    <!-- Center node -->
+    <circle cx="45" cy="45" r="9" fill="#ffffff"/>
+
+    <!-- Outer nodes -->
+    <circle cx="25" cy="28" r="6" fill="#ffffff" opacity="0.9"/>
+    <circle cx="65" cy="28" r="6" fill="#ffffff" opacity="0.9"/>
+    <circle cx="25" cy="62" r="6" fill="#ffffff" opacity="0.9"/>
+    <circle cx="65" cy="62" r="6" fill="#ffffff" opacity="0.9"/>
+    <circle cx="45" cy="15" r="5" fill="#ffffff" opacity="0.8"/>
+    <circle cx="45" cy="75" r="5" fill="#ffffff" opacity="0.8"/>
+
+    <!-- Connection lines -->
+    <line x1="45" y1="45" x2="25" y2="28" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <line x1="45" y1="45" x2="65" y2="28" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <line x1="45" y1="45" x2="25" y2="62" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <line x1="45" y1="45" x2="65" y2="62" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <line x1="45" y1="45" x2="45" y2="15" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+    <line x1="45" y1="45" x2="45" y2="75" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+
+    <!-- Pulse ring animation indicator -->
+    <circle cx="45" cy="45" r="18" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+  </g>
+</svg>

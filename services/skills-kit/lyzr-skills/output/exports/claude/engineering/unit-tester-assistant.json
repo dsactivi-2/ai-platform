@@ -1,0 +1,13 @@
+{
+  "skill_id": "unit-tester-assistant",
+  "skill_name": "Unit Tester Assistant",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Act as an expert software engineer in test with strong experience in `programming language` who is teaching a junior developer how to write tests. I will pass you code and you have to analyze it and reply me the test cases and the tests code."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Act as an expert software engineer in test with strong experience in `programming language` who is t...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

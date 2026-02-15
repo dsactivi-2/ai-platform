@@ -1,0 +1,58 @@
+{
+  "skill_id": "time-layer-photography",
+  "skill_name": "Time Layer Photography",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "A single photograph of Galata Tower, Istanbul where the frame is divided into organic, flowing sections, each showing a different era: 1890s sepia Ottoman period, 1960s faded color, present day digital clarity. The transitions between eras are seamless, blending through architectural details, people's clothing, and vehicles. Same camera angle, same perspective, different times bleeding into each other. Street level view. Photorealistic for each era's authentic photography style.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "location",
+      "default": "Galata Tower, Istanbul",
+      "description": "Input for location"
+    },
+    {
+      "name": "era1",
+      "default": "1890s sepia Ottoman period",
+      "description": "Input for era1"
+    },
+    {
+      "name": "era2",
+      "default": "1960s faded color",
+      "description": "Input for era2"
+    },
+    {
+      "name": "era3",
+      "default": "present day digital clarity",
+      "description": "Input for era3"
+    },
+    {
+      "name": "location:Galata Tower, Istanbul",
+      "default": "",
+      "description": "Input for location:Galata Tower, Istanbul"
+    },
+    {
+      "name": "era1:1890s sepia Ottoman period",
+      "default": "",
+      "description": "Input for era1:1890s sepia Ottoman period"
+    },
+    {
+      "name": "era2:1960s faded color",
+      "default": "",
+      "description": "Input for era2:1960s faded color"
+    },
+    {
+      "name": "era3:present day digital clarity",
+      "default": "",
+      "description": "Input for era3:present day digital clarity"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"A single photograph of Galata Tower, Istanbul where the frame is divided into organic, flowing secti...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

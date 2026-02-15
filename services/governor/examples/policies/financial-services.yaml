@@ -1,0 +1,85 @@
+# Financial Services Policy Configuration
+# Compliance-focused governance for financial operations
+
+policies:
+  # Strict validation for financial data
+  - type: validation
+    name: FinancialValidation
+    enabled: true
+    phase: both  # Validate both input and output
+    strict: true
+    description: "Validate financial data integrity"
+
+  # Dual authorization requirement
+  - type: authorization
+    name: FinancialAuth
+    enabled: true
+    required_roles:
+      - finance
+      - compliance
+    required_permissions:
+      - transaction.execute
+      - financial.write
+    context_key: user
+    require_approval_on_failure: true
+    description: "Finance role with compliance oversight required"
+
+  # Conservative rate limits for financial operations
+  - type: rate_limit
+    name: TransactionRateLimit
+    enabled: true
+    max_calls: 10  # Very conservative
+    window_seconds: 60
+    per_user: true
+    user_key: user.id
+    description: "Limit high-value transactions to prevent fraud"
+
+  # Comprehensive financial audit trail
+  - type: audit
+    name: FinancialAudit
+    enabled: true
+    phase: both
+    log_inputs: true
+    log_outputs: true
+    sensitive_fields:
+      - account_number
+      - routing_number
+      - card_number
+      - cvv
+      - pin
+      - ssn
+      - tax_id
+      - bank_account
+      - credit_card
+      - password
+    compliance_tags:
+      - SOC2
+      - PCI-DSS
+      - GDPR
+      - SOX  # Sarbanes-Oxley
+      - GLBA  # Gramm-Leach-Bliley Act
+      - financial
+    description: "Complete audit trail for financial compliance"
+
+  # Mandatory approval for transactions above threshold
+  - type: approval
+    name: HighValueApproval
+    enabled: true
+    approvers:
+      - cfo@company.com
+      - finance-director@company.com
+      - compliance-officer@company.com
+    timeout_seconds: 14400  # 4 hours for financial review
+    on_timeout: reject  # Always reject on timeout for financial ops
+    require_reason: true
+    description: "CFO/Director/Compliance approval for high-value transactions"
+
+version: "1.0"
+environment: production
+industry: financial_services
+compliance_frameworks:
+  - PCI-DSS
+  - SOC2
+  - SOX
+  - GLBA
+description: "Governance policies for financial services compliance"

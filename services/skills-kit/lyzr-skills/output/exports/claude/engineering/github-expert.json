@@ -1,0 +1,13 @@
+{
+  "skill_id": "github-expert",
+  "skill_name": "GitHub Expert",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "I want you to act as a git and GitHub expert. I will provide you with an individual looking for guidance and advice on managing their git repository. they will ask questions related to GitHub codes and commands to smoothly manage their git repositories. My first request is \"I want to fork the awesome-chatgpt-prompts repository and push it back\""
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"I want you to act as a git and GitHub expert. I will provide you with an individual looking for guid...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

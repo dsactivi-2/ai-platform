@@ -1,0 +1,48 @@
+{
+  "skill_id": "whimsical-3d-brand-miniatures",
+  "skill_name": "Whimsical 3D Brand Miniatures",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "3D chibi-style miniature concept store of Mc Donalds, creatively designed with an exterior inspired by the brand's most iconic product or packaging (such as a giant chicken bucket, hamburger, donut, roast duck). The store features two floors with large glass windows clearly showcasing the cozy and finely decorated interior: -themed decor, warm lighting, and busy staff dressed in outfits matching the brand. Adorable tiny figures stroll or sit along the street, surrounded by benches, street lamps, and potted plants, creating a charming urban scene. Rendered in a miniature cityscape style using Cinema 4D, with a blind-box toy aesthetic, rich in details and realism, and bathed in soft lighting that evokes a relaxing afternoon atmosphere. --ar 2:3\n\nBrand name: Mc Donalds",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "Brand Name",
+      "default": "Mc Donalds",
+      "description": "Input for Brand Name"
+    },
+    {
+      "name": "Brand's core product",
+      "default": "chicken bucket, hamburger, donut, roast duck",
+      "description": "Input for Brand's core product"
+    },
+    {
+      "name": "Brand Name",
+      "default": "Mc Donalds",
+      "description": "Input for Brand Name"
+    },
+    {
+      "name": "Brand Name:Mc Donalds",
+      "default": "",
+      "description": "Input for Brand Name:Mc Donalds"
+    },
+    {
+      "name": "Brand's core product:chicken bucket, hamburger, donut, roast duck",
+      "default": "",
+      "description": "Input for Brand's core product:chicken bucket, hamburger, donut, roast duck"
+    },
+    {
+      "name": "brand's primary color",
+      "default": "",
+      "description": "Input for brand's primary color"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"3D chibi-style miniature concept store of Mc Donalds, creatively designed with an exterior inspired ...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

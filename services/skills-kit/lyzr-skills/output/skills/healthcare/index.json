@@ -1,0 +1,62 @@
+{
+  "category": "healthcare",
+  "count": 14,
+  "skills": [
+    {
+      "id": "mental-health-adviser",
+      "name": "Mental Health Adviser"
+    },
+    {
+      "id": "ai-assisted-doctor",
+      "name": "AI Assisted Doctor"
+    },
+    {
+      "id": "doctor",
+      "name": "Doctor"
+    },
+    {
+      "id": "psychologist",
+      "name": "Psychologist"
+    },
+    {
+      "id": "hypnotherapist",
+      "name": "Hypnotherapist"
+    },
+    {
+      "id": "virtual-doctor",
+      "name": "Virtual Doctor"
+    },
+    {
+      "id": "nutritionist",
+      "name": "Nutritionist"
+    },
+    {
+      "id": "health-metrics-calculator",
+      "name": "Health Metrics Calculator"
+    },
+    {
+      "id": "medical-consultant",
+      "name": "Medical Consultant"
+    },
+    {
+      "id": "virtual-doctor",
+      "name": "Virtual Doctor"
+    },
+    {
+      "id": "custom-health-membership-annual-summary",
+      "name": "Custom Health Membership Annual Summary"
+    },
+    {
+      "id": "custom-health-membership-annual-summary",
+      "name": "Custom Health Membership Annual Summary"
+    },
+    {
+      "id": "tumor-medical-industry-solution-business-plan",
+      "name": "Tumor Medical Industry Solution Business Plan"
+    },
+    {
+      "id": "tumor-medical-industry-solution-business-plan",
+      "name": "Tumor Medical Industry Solution Business Plan"
+    }
+  ]
+}

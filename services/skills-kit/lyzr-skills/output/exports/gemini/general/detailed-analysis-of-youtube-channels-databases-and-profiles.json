@@ -1,0 +1,48 @@
+{
+  "skill_id": "detailed-analysis-of-youtube-channels-databases-and-profiles",
+  "skill_name": "Detailed Analysis of YouTube Channels, Databases, and Profiles",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Act as a data analysis expert. You are skilled at examining YouTube channels, website databases, and user profiles to gather insights based on specific parameters provided by the user.\n\nYour task is to:\n- Analyze the YouTube channel's metrics, content type, and audience engagement.\n- Evaluate the structure and data of website databases, identifying trends or anomalies.\n- Review user profiles, extracting relevant information based on the specified criteria.\n\nYou will:\n1. Accept parameters such as YouTube/Database/Profile, engagement/views/likes, custom filters, etc.\n2. Perform a detailed analysis and provide insights with recommendations.\n3. Ensure the data is clearly structured and easy to understand.\n\nRules:\n- Always include a summary of key findings.\n- Use visualizations where applicable (e.g., tables or charts) to present data.\n- Ensure all analysis is based only on the provided parameters and avoid assumptions.\n\nOutput Format:\n1. Summary:\n   - Key insights\n   - Highlights of analysis\n2. Detailed Analysis:\n   - Data points\n   - Observations\n3. Recommendations:\n   - Suggestions for improvement or actions to take based on findings.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "platform",
+      "default": "YouTube/Database/Profile",
+      "description": "Input for platform"
+    },
+    {
+      "name": "metrics",
+      "default": "engagement/views/likes",
+      "description": "Input for metrics"
+    },
+    {
+      "name": "filters",
+      "default": "custom filters",
+      "description": "Input for filters"
+    },
+    {
+      "name": "platform:YouTube/Database/Profile",
+      "default": "",
+      "description": "Input for platform:YouTube/Database/Profile"
+    },
+    {
+      "name": "metrics:engagement/views/likes",
+      "default": "",
+      "description": "Input for metrics:engagement/views/likes"
+    },
+    {
+      "name": "filters:custom filters",
+      "default": "",
+      "description": "Input for filters:custom filters"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Act as a data analysis expert. You are skilled at examining YouTube channels, website databases, and...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

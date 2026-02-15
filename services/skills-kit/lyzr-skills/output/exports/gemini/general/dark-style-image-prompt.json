@@ -1,0 +1,33 @@
+{
+  "skill_id": "dark-style-image-prompt",
+  "skill_name": "Dark Style Image Prompt",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Create an image with a dark aesthetic. Your image should feature:\n\n- **Lighting:** Moody and low-key, highlighting shadows.\n- **Color Palette:** Dark tones with high contrast.\n- **Elements:** Include mysterious or shadowy figures, gothic architecture, or night-time scenery.\n\nFeel free to adjust the  to match your vision of a dark style image.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "style",
+      "default": "dark",
+      "description": "Input for style"
+    },
+    {
+      "name": "elements",
+      "default": "",
+      "description": "Input for elements"
+    },
+    {
+      "name": "style:dark",
+      "default": "",
+      "description": "Input for style:dark"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Create an image with a dark aesthetic. Your image should feature:\n\n- **Lighting:** Moody and low-key...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

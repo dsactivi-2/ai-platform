@@ -1,0 +1,44 @@
+{
+  "skill_id": "lifestyle-product-images",
+  "skill_name": "Lifestyle Product Images",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Using the uploaded product image of MacBook Pro, create an engaging lifestyle scene showing realistic usage in Office. Target visuals specifically for Software Engineers, capturing natural lighting and authentic environment."
+  },
+  "variables": [
+    {
+      "name": "Product Name",
+      "default": "MacBook Pro",
+      "description": "Input for Product Name"
+    },
+    {
+      "name": "Lifestyle Scenario",
+      "default": "Office",
+      "description": "Input for Lifestyle Scenario"
+    },
+    {
+      "name": "Audience Demographics",
+      "default": "Software Engineers",
+      "description": "Input for Audience Demographics"
+    },
+    {
+      "name": "Product Name:MacBook Pro",
+      "default": "",
+      "description": "Input for Product Name:MacBook Pro"
+    },
+    {
+      "name": "Lifestyle Scenario:Office",
+      "default": "",
+      "description": "Input for Lifestyle Scenario:Office"
+    },
+    {
+      "name": "Audience Demographics:Software Engineers",
+      "default": "",
+      "description": "Input for Audience Demographics:Software Engineers"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Using the uploaded product image of MacBook Pro, create an engaging lifestyle scene showing realisti...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

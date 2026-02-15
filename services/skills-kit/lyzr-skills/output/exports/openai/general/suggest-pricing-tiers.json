@@ -1,0 +1,18 @@
+{
+  "skill_id": "suggest-pricing-tiers",
+  "skill_name": "Suggest Pricing Tiers",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Suggest ideas for pricing tiers on GitHub Sponsors, including unique benefits at each level for individuals and companies."
+      }
+    ]
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Suggest ideas for pricing tiers on GitHub Sponsors, including unique benefits at each level for indi...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

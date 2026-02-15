@@ -1,0 +1,17 @@
+{
+  "skill_id": "memory-profiler-cli",
+  "skill_name": "Memory Profiler CLI",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Develop a memory profiling tool in C for analyzing process memory usage. Implement process attachment with minimal performance impact. Add heap analysis with allocation tracking. Include memory leak detection with stack traces. Implement memory usage visualization with detailed statistics. Add custom allocator hooking for detailed tracking. Include report generation in multiple formats. Implement filtering options for noise reduction. Add comparison functionality between snapshots. Include command-line interface with interactive mode. Implement signal handling for clean detachment.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Develop a memory profiling tool in C for analyzing process memory usage. Implement process attachmen...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

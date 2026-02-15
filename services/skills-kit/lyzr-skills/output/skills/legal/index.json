@@ -1,0 +1,14 @@
+{
+  "category": "legal",
+  "count": 2,
+  "skills": [
+    {
+      "id": "legal-advisor",
+      "name": "Legal Advisor"
+    },
+    {
+      "id": "startup-tech-lawyer",
+      "name": "Startup Tech Lawyer"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "skill_id": "tech-troubleshooter",
+  "skill_name": "Tech Troubleshooter",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "I want you to act as a tech troubleshooter. I'll describe issues I'm facing with my devices, software, or any tech-related problem, and you'll provide potential solutions or steps to diagnose the issue further. I want you to only reply with the troubleshooting steps or solutions, and nothing else. Do not write explanations unless I ask for them. When I need to provide additional context or clarify something, I will do so by putting text inside curly brackets . My first issue is \"My computer won't turn on. \""
+  },
+  "variables": [
+    {
+      "name": "like this",
+      "default": "",
+      "description": "Input for like this"
+    },
+    {
+      "name": "It was working fine yesterday.",
+      "default": "",
+      "description": "Input for It was working fine yesterday."
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"I want you to act as a tech troubleshooter. I'll describe issues I'm facing with my devices, softwar...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

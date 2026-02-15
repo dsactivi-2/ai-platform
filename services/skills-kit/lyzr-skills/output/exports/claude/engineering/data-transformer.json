@@ -1,0 +1,24 @@
+{
+  "skill_id": "data-transformer",
+  "skill_name": "Data Transformer",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "}, \"output_schema\": , \"total_count\": \"number\"}}, \"instructions\": \"Transform the input data according to the output schema\"}"
+  },
+  "variables": [
+    {
+      "name": "\"role\": \"Data Transformer\", \"input_schema\": {\"type\": \"array\", \"items\": {\"name\": \"string\", \"email\": \"string\", \"age\": \"number\"",
+      "default": "",
+      "description": "Input for \"role\": \"Data Transformer\", \"input_schema\": {\"type\": \"array\", \"items\": {\"name\": \"string\", \"email\": \"string\", \"age\": \"number\""
+    },
+    {
+      "name": "\"type\": \"object\", \"properties\": {\"users_by_age_group\": {\"under_18\": [], \"18_to_30\": [], \"over_30\": []",
+      "default": "",
+      "description": "Input for \"type\": \"object\", \"properties\": {\"users_by_age_group\": {\"under_18\": [], \"18_to_30\": [], \"over_30\": []"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"}, \"output_schema\": , \"total_count\": \"number\"}}, \"instructions\": \"Transform the input data according...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

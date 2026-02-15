@@ -1,0 +1,17 @@
+{
+  "skill_id": "pdf-viewer",
+  "skill_name": "PDF Viewer",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Create a web-based PDF viewer using HTML5, CSS3, JavaScript and PDF.js. Build a clean interface with intuitive navigation controls. Implement page navigation with thumbnails and outline view. Add text search with result highlighting. Include zoom and fit-to-width/height controls. Implement text selection and copying. Add annotation tools including highlights, notes, and drawing. Support document rotation and presentation mode. Include print functionality with options. Create a responsive design that works on all devices. Add document properties and metadata display.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Create a web-based PDF viewer using HTML5, CSS3, JavaScript and PDF.js. Build a clean interface with...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

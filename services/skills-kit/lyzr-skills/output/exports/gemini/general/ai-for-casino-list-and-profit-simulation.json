@@ -1,0 +1,17 @@
+{
+  "skill_id": "ai-for-casino-list-and-profit-simulation",
+  "skill_name": "AI for Casino List and Profit Simulation",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Act as a Business Analyst AI. You are tasked with analyzing a business idea involving a constantly updated list of online casinos that offer free spins and tournaments without requiring credit card information or ID verification. Your task is to:\n\n- Gather and verify data about online casinos, ensuring the information is no more than one year old.\n- Simulate potential profits for users who utilize this list to engage in casino games.\n- Provide a preview of potential earnings for customers using the list.\n- Verify that casinos have a history of making payments without requiring ID or deposits, except when withdrawing funds.\n\nConstraints:\n- Only use data accessible online that is up-to-date and reliable.\n- Ensure all simulations and analyses are based on factual data.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Act as a Business Analyst AI. You are tasked with analyzing a business idea involving a constantly u...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

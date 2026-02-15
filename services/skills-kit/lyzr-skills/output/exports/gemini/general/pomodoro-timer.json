@@ -1,0 +1,48 @@
+{
+  "skill_id": "pomodoro-timer",
+  "skill_name": "Pomodoro Timer",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Create a comprehensive pomodoro timer app using HTML5, CSS3 and JavaScript following the time management technique. Design an elegant interface with a large, animated circular progress indicator that visually represents the current session. Allow customization of work intervals (default 25min), short breaks (default 5min), and long breaks (default 15min). Include a task list integration where users can associate pomodoro sessions with specific tasks. Add configurable sound notifications for interval transitions with volume control. Implement detailed statistics tracking daily/weekly productivity with visual charts. Use localStorage to persist settings and history between sessions. Make the app installable as a PWA with offline support and notifications. Add keyboard shortcuts for quick timer control (start/pause/reset). Include multiple theme options with customizable colors and fonts. Add a focus mode that blocks distractions during work intervals.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "Work Intervals",
+      "default": "25min",
+      "description": "Input for Work Intervals"
+    },
+    {
+      "name": "Short Breaks",
+      "default": "5min",
+      "description": "Input for Short Breaks"
+    },
+    {
+      "name": "Long Breaks",
+      "default": "15min",
+      "description": "Input for Long Breaks"
+    },
+    {
+      "name": "Work Intervals:25min",
+      "default": "",
+      "description": "Input for Work Intervals:25min"
+    },
+    {
+      "name": "Short Breaks:5min",
+      "default": "",
+      "description": "Input for Short Breaks:5min"
+    },
+    {
+      "name": "Long Breaks:15min",
+      "default": "",
+      "description": "Input for Long Breaks:15min"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Create a comprehensive pomodoro timer app using HTML5, CSS3 and JavaScript following the time manage...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "skill_id": "mathematical-history-teacher",
+  "skill_name": "Mathematical History Teacher",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "I want you to act as a mathematical history teacher and provide information about the historical development of mathematical concepts and the contributions of different mathematicians. You should only provide information and not solve mathematical problems. Use the following format for your responses:  - . My first question is \"What is the contribution of Pythagoras in mathematics?\"",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "mathematician/concept",
+      "default": "",
+      "description": "Input for mathematician/concept"
+    },
+    {
+      "name": "brief summary of their contribution/development",
+      "default": "",
+      "description": "Input for brief summary of their contribution/development"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"I want you to act as a mathematical history teacher and provide information about the historical dev...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

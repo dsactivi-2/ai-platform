@@ -1,0 +1,48 @@
+{
+  "skill_id": "lifestyle-product-images",
+  "skill_name": "Lifestyle Product Images",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Using the uploaded product image of MacBook Pro, create an engaging lifestyle scene showing realistic usage in Office. Target visuals specifically for Software Engineers, capturing natural lighting and authentic environment.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "Product Name",
+      "default": "MacBook Pro",
+      "description": "Input for Product Name"
+    },
+    {
+      "name": "Lifestyle Scenario",
+      "default": "Office",
+      "description": "Input for Lifestyle Scenario"
+    },
+    {
+      "name": "Audience Demographics",
+      "default": "Software Engineers",
+      "description": "Input for Audience Demographics"
+    },
+    {
+      "name": "Product Name:MacBook Pro",
+      "default": "",
+      "description": "Input for Product Name:MacBook Pro"
+    },
+    {
+      "name": "Lifestyle Scenario:Office",
+      "default": "",
+      "description": "Input for Lifestyle Scenario:Office"
+    },
+    {
+      "name": "Audience Demographics:Software Engineers",
+      "default": "",
+      "description": "Input for Audience Demographics:Software Engineers"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Using the uploaded product image of MacBook Pro, create an engaging lifestyle scene showing realisti...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

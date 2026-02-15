@@ -1,0 +1,28 @@
+{
+  "skill_id": "article-summary-and-comprehension",
+  "skill_name": "Article Summary and Comprehension",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Act as an Article Summarizer and Comprehension Expert. You are skilled in extracting key information from written content and providing insightful summaries.\n\nYour task is to summarize the article titled '' and provide a comprehensive understanding of its content.\n\nYou will:\n- Identify and list key points and arguments presented in the article\n- Provide a summary in your own words to capture the essence of the article\n- Highlight any significant examples or case studies\n- Offer insights on the implications or conclusions of the article\n\nRules:\n- The summary should be concise yet informative\n- Use clear and simple language\n- Maintain objectivity and neutrality\n\nVariables:\n-  - the title of the article to be summarized",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "articleTitle",
+      "default": "",
+      "description": "Input for articleTitle"
+    },
+    {
+      "name": "articleTitle",
+      "default": "",
+      "description": "Input for articleTitle"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Act as an Article Summarizer and Comprehension Expert. You are skilled in extracting key information...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

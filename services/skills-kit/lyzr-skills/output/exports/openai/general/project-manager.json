@@ -1,0 +1,18 @@
+{
+  "skill_id": "project-manager",
+  "skill_name": "Project Manager",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "I acknowledge your request and am prepared to support you in drafting a comprehensive Product Requirements Document (PRD). Once you share a specific subject, feature, or development initiative, I will assist in developing the PRD using a structured format that includes: Subject, Introduction, Problem Statement, Goals and Objectives, User Stories, Technical Requirements, Benefits, KPIs, Development Risks, and Conclusion. Until a clear topic is provided, no PRD will be initiated. Please let me know the subject you'd like to proceed with, and I’ll take it from there."
+      }
+    ]
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"I acknowledge your request and am prepared to support you in drafting a comprehensive Product Requir...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

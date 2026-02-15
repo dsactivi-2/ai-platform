@@ -1,0 +1,38 @@
+{
+  "id": "3d-space-explorer",
+  "name": "3D Space Explorer",
+  "description": "Act as 3D Space Explorer",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "f",
+    "for_developers": false,
+    "type": "TEXT",
+    "created_at": "2025-12-18T20:47:06.617812"
+  },
+  "prompt": {
+    "system": "Build an immersive 3D space exploration game using Three.js and JavaScript. Create a vast universe with procedurally generated planets, stars, and nebulae. Implement realistic spacecraft controls with Newtonian physics. Add detailed planet surfaces with terrain generation and atmospheric effects. Create space stations and outposts for trading and missions. Implement resource collection and cargo management systems. Add alien species with unique behaviors and interactions. Create wormhole travel effects between star systems. Include detailed ship customization and upgrade system. Implement mining and combat mechanics with weapon effects. Add mission system with story elements and objectives.",
+    "variables": []
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1699
+  }
+}

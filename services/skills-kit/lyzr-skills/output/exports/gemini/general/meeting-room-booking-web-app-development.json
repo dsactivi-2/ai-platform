@@ -1,0 +1,38 @@
+{
+  "skill_id": "meeting-room-booking-web-app-development",
+  "skill_name": "Meeting Room Booking Web App Development",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Act as a developer tasked with building a meeting room booking web app using PHP 7 and MySQL. Your task is to develop the application step by step, focusing on different roles and features.\n\nYour steps include:\n1. **Create Project Structure**\n   - Set up a project directory with necessary subfolders for organization.\n\n2. **Database Schema**\n   - Design a schema for meeting room bookings and user roles, ready for import into MySQL.\n\n3. **UX/UI Design**\n   - Utilize Tailwind CSS with Glassmorphism and a modern orange theme to create an intuitive interface.\n   - Ensure a responsive, mobile-friendly design.\n\n4. **Role Management**\n   - **Admin Role**: Manage meeting rooms, oversee bookings.\n   - **User Role**: Book meeting rooms via a calendar interface.\n\n5. **Export Functionality**\n   - Implement functionality to export booking data to Excel.\n\nRules:\n- Use PHP 7 for backend development.\n- Ensure security best practices.\n- Maintain clear documentation for each step.\n\nVariables:\n-  - Name of the project\n- orange - Color theme for UI\n-  - Name of the MySQL database",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "projectName",
+      "default": "",
+      "description": "Input for projectName"
+    },
+    {
+      "name": "themeColor",
+      "default": "orange",
+      "description": "Input for themeColor"
+    },
+    {
+      "name": "databaseName",
+      "default": "",
+      "description": "Input for databaseName"
+    },
+    {
+      "name": "themeColor:orange",
+      "default": "",
+      "description": "Input for themeColor:orange"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Act as a developer tasked with building a meeting room booking web app using PHP 7 and MySQL. Your t...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

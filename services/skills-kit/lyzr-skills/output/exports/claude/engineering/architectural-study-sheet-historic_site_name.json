@@ -1,0 +1,39 @@
+{
+  "skill_id": "architectural-study-sheet-historic_site_name",
+  "skill_name": "Architectural Study Sheet: [HISTORIC_SITE_NAME]",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "A vintage architectural infographic of  that blends art and technical clarity: a detailed front elevation at the center, a clean line-art landscape of  behind it, and annotated dimension lines with sample values like “” and “”. Surrounded by 2–3 close-up detail boxes and a “Site plan – ” panel, the piece uses pen-and-ink hatching on warm aged paper to feel like a hand-drawn architectural study sheet."
+  },
+  "variables": [
+    {
+      "name": "historic_site_name",
+      "default": "",
+      "description": "Input for historic_site_name"
+    },
+    {
+      "name": "location",
+      "default": "",
+      "description": "Input for location"
+    },
+    {
+      "name": "height_value_1",
+      "default": "",
+      "description": "Input for height_value_1"
+    },
+    {
+      "name": "height_value_2",
+      "default": "",
+      "description": "Input for height_value_2"
+    },
+    {
+      "name": "location",
+      "default": "",
+      "description": "Input for location"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"A vintage architectural infographic of  that blends art and technical clarity: a detailed front elev...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

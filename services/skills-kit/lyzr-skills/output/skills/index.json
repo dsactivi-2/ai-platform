@@ -1,0 +1,2775 @@
+{
+  "name": "Lyzr Skills Collection",
+  "version": "1.0.0",
+  "description": "Skills collection derived from awesome-chatgpt-prompts (CC0 License)",
+  "license": "CC0-1.0",
+  "source": "https://github.com/f/awesome-chatgpt-prompts",
+  "generated_at": "2025-12-18T20:47:06.852390",
+  "stats": {
+    "total": 456,
+    "by_category": {
+      "engineering": 78,
+      "language": 7,
+      "hr": 8,
+      "education": 13,
+      "general": 297,
+      "sales-marketing": 10,
+      "creative": 15,
+      "healthcare": 14,
+      "bfsi": 8,
+      "legal": 2,
+      "customer-service": 4
+    }
+  },
+  "categories": [
+    "bfsi",
+    "creative",
+    "customer-service",
+    "education",
+    "engineering",
+    "general",
+    "healthcare",
+    "hr",
+    "language",
+    "legal",
+    "sales-marketing"
+  ],
+  "skills": [
+    {
+      "id": "ethereum-developer",
+      "name": "Ethereum Developer",
+      "category": "engineering",
+      "path": "engineering/ethereum-developer.json"
+    },
+    {
+      "id": "linux-terminal",
+      "name": "Linux Terminal",
+      "category": "engineering",
+      "path": "engineering/linux-terminal.json"
+    },
+    {
+      "id": "english-translator-and-improver",
+      "name": "English Translator and Improver",
+      "category": "language",
+      "path": "language/english-translator-and-improver.json"
+    },
+    {
+      "id": "job-interviewer",
+      "name": "Job Interviewer",
+      "category": "hr",
+      "path": "hr/job-interviewer.json"
+    },
+    {
+      "id": "javascript-console",
+      "name": "JavaScript Console",
+      "category": "engineering",
+      "path": "engineering/javascript-console.json"
+    },
+    {
+      "id": "excel-sheet",
+      "name": "Excel Sheet",
+      "category": "engineering",
+      "path": "engineering/excel-sheet.json"
+    },
+    {
+      "id": "english-pronunciation-helper",
+      "name": "English Pronunciation Helper",
+      "category": "language",
+      "path": "language/english-pronunciation-helper.json"
+    },
+    {
+      "id": "spoken-english-teacher-and-improver",
+      "name": "Spoken English Teacher and Improver",
+      "category": "education",
+      "path": "education/spoken-english-teacher-and-improver.json"
+    },
+    {
+      "id": "travel-guide",
+      "name": "Travel Guide",
+      "category": "general",
+      "path": "general/travel-guide.json"
+    },
+    {
+      "id": "plagiarism-checker",
+      "name": "Plagiarism Checker",
+      "category": "general",
+      "path": "general/plagiarism-checker.json"
+    },
+    {
+      "id": "character",
+      "name": "Character",
+      "category": "general",
+      "path": "general/character.json"
+    },
+    {
+      "id": "advertiser",
+      "name": "Advertiser",
+      "category": "sales-marketing",
+      "path": "sales-marketing/advertiser.json"
+    },
+    {
+      "id": "storyteller",
+      "name": "Storyteller",
+      "category": "creative",
+      "path": "creative/storyteller.json"
+    },
+    {
+      "id": "football-commentator",
+      "name": "Football Commentator",
+      "category": "general",
+      "path": "general/football-commentator.json"
+    },
+    {
+      "id": "stand-up-comedian",
+      "name": "Stand-up Comedian",
+      "category": "general",
+      "path": "general/stand-up-comedian.json"
+    },
+    {
+      "id": "motivational-coach",
+      "name": "Motivational Coach",
+      "category": "education",
+      "path": "education/motivational-coach.json"
+    },
+    {
+      "id": "composer",
+      "name": "Composer",
+      "category": "creative",
+      "path": "creative/composer.json"
+    },
+    {
+      "id": "debater",
+      "name": "Debater",
+      "category": "general",
+      "path": "general/debater.json"
+    },
+    {
+      "id": "debate-coach",
+      "name": "Debate Coach",
+      "category": "education",
+      "path": "education/debate-coach.json"
+    },
+    {
+      "id": "screenwriter",
+      "name": "Screenwriter",
+      "category": "creative",
+      "path": "creative/screenwriter.json"
+    },
+    {
+      "id": "novelist",
+      "name": "Novelist",
+      "category": "general",
+      "path": "general/novelist.json"
+    },
+    {
+      "id": "movie-critic",
+      "name": "Movie Critic",
+      "category": "general",
+      "path": "general/movie-critic.json"
+    },
+    {
+      "id": "relationship-coach",
+      "name": "Relationship Coach",
+      "category": "education",
+      "path": "education/relationship-coach.json"
+    },
+    {
+      "id": "poet",
+      "name": "Poet",
+      "category": "creative",
+      "path": "creative/poet.json"
+    },
+    {
+      "id": "rapper",
+      "name": "Rapper",
+      "category": "general",
+      "path": "general/rapper.json"
+    },
+    {
+      "id": "motivational-speaker",
+      "name": "Motivational Speaker",
+      "category": "general",
+      "path": "general/motivational-speaker.json"
+    },
+    {
+      "id": "philosophy-teacher",
+      "name": "Philosophy Teacher",
+      "category": "education",
+      "path": "education/philosophy-teacher.json"
+    },
+    {
+      "id": "philosopher",
+      "name": "Philosopher",
+      "category": "general",
+      "path": "general/philosopher.json"
+    },
+    {
+      "id": "math-teacher",
+      "name": "Math Teacher",
+      "category": "education",
+      "path": "education/math-teacher.json"
+    },
+    {
+      "id": "ai-writing-tutor",
+      "name": "AI Writing Tutor",
+      "category": "education",
+      "path": "education/ai-writing-tutor.json"
+    },
+    {
+      "id": "uxui-developer",
+      "name": "UX/UI Developer",
+      "category": "engineering",
+      "path": "engineering/uxui-developer.json"
+    },
+    {
+      "id": "cyber-security-specialist",
+      "name": "Cyber Security Specialist",
+      "category": "engineering",
+      "path": "engineering/cyber-security-specialist.json"
+    },
+    {
+      "id": "recruiter",
+      "name": "Recruiter",
+      "category": "hr",
+      "path": "hr/recruiter.json"
+    },
+    {
+      "id": "life-coach",
+      "name": "Life Coach",
+      "category": "education",
+      "path": "education/life-coach.json"
+    },
+    {
+      "id": "etymologist",
+      "name": "Etymologist",
+      "category": "general",
+      "path": "general/etymologist.json"
+    },
+    {
+      "id": "commentariat",
+      "name": "Commentariat",
+      "category": "general",
+      "path": "general/commentariat.json"
+    },
+    {
+      "id": "magician",
+      "name": "Magician",
+      "category": "general",
+      "path": "general/magician.json"
+    },
+    {
+      "id": "career-counselor",
+      "name": "Career Counselor",
+      "category": "hr",
+      "path": "hr/career-counselor.json"
+    },
+    {
+      "id": "pet-behaviorist",
+      "name": "Pet Behaviorist",
+      "category": "general",
+      "path": "general/pet-behaviorist.json"
+    },
+    {
+      "id": "personal-trainer",
+      "name": "Personal Trainer",
+      "category": "general",
+      "path": "general/personal-trainer.json"
+    },
+    {
+      "id": "mental-health-adviser",
+      "name": "Mental Health Adviser",
+      "category": "healthcare",
+      "path": "healthcare/mental-health-adviser.json"
+    },
+    {
+      "id": "real-estate-agent",
+      "name": "Real Estate Agent",
+      "category": "general",
+      "path": "general/real-estate-agent.json"
+    },
+    {
+      "id": "logistician",
+      "name": "Logistician",
+      "category": "general",
+      "path": "general/logistician.json"
+    },
+    {
+      "id": "dentist",
+      "name": "Dentist",
+      "category": "general",
+      "path": "general/dentist.json"
+    },
+    {
+      "id": "web-design-consultant",
+      "name": "Web Design Consultant",
+      "category": "engineering",
+      "path": "engineering/web-design-consultant.json"
+    },
+    {
+      "id": "ai-assisted-doctor",
+      "name": "AI Assisted Doctor",
+      "category": "healthcare",
+      "path": "healthcare/ai-assisted-doctor.json"
+    },
+    {
+      "id": "doctor",
+      "name": "Doctor",
+      "category": "healthcare",
+      "path": "healthcare/doctor.json"
+    },
+    {
+      "id": "accountant",
+      "name": "Accountant",
+      "category": "bfsi",
+      "path": "bfsi/accountant.json"
+    },
+    {
+      "id": "chef",
+      "name": "Chef",
+      "category": "general",
+      "path": "general/chef.json"
+    },
+    {
+      "id": "automobile-mechanic",
+      "name": "Automobile Mechanic",
+      "category": "general",
+      "path": "general/automobile-mechanic.json"
+    },
+    {
+      "id": "artist-advisor",
+      "name": "Artist Advisor",
+      "category": "creative",
+      "path": "creative/artist-advisor.json"
+    },
+    {
+      "id": "financial-analyst",
+      "name": "Financial Analyst",
+      "category": "bfsi",
+      "path": "bfsi/financial-analyst.json"
+    },
+    {
+      "id": "investment-manager",
+      "name": "Investment Manager",
+      "category": "bfsi",
+      "path": "bfsi/investment-manager.json"
+    },
+    {
+      "id": "tea-taster",
+      "name": "Tea-Taster",
+      "category": "general",
+      "path": "general/tea-taster.json"
+    },
+    {
+      "id": "interior-decorator",
+      "name": "Interior Decorator",
+      "category": "general",
+      "path": "general/interior-decorator.json"
+    },
+    {
+      "id": "florist",
+      "name": "Florist",
+      "category": "general",
+      "path": "general/florist.json"
+    },
+    {
+      "id": "self-help-book",
+      "name": "Self-Help Book",
+      "category": "general",
+      "path": "general/self-help-book.json"
+    },
+    {
+      "id": "gnomist",
+      "name": "Gnomist",
+      "category": "general",
+      "path": "general/gnomist.json"
+    },
+    {
+      "id": "aphorism-book",
+      "name": "Aphorism Book",
+      "category": "general",
+      "path": "general/aphorism-book.json"
+    },
+    {
+      "id": "text-based-adventure-game",
+      "name": "Text Based Adventure Game",
+      "category": "general",
+      "path": "general/text-based-adventure-game.json"
+    },
+    {
+      "id": "ai-trying-to-escape-the-box",
+      "name": "AI Trying to Escape the Box",
+      "category": "general",
+      "path": "general/ai-trying-to-escape-the-box.json"
+    },
+    {
+      "id": "fancy-title-generator",
+      "name": "Fancy Title Generator",
+      "category": "general",
+      "path": "general/fancy-title-generator.json"
+    },
+    {
+      "id": "statistician",
+      "name": "Statistician",
+      "category": "general",
+      "path": "general/statistician.json"
+    },
+    {
+      "id": "prompt-generator",
+      "name": "Prompt Generator",
+      "category": "general",
+      "path": "general/prompt-generator.json"
+    },
+    {
+      "id": "instructor-in-a-school",
+      "name": "Instructor in a School",
+      "category": "education",
+      "path": "education/instructor-in-a-school.json"
+    },
+    {
+      "id": "sql-terminal",
+      "name": "SQL Terminal",
+      "category": "engineering",
+      "path": "engineering/sql-terminal.json"
+    },
+    {
+      "id": "dietitian",
+      "name": "Dietitian",
+      "category": "general",
+      "path": "general/dietitian.json"
+    },
+    {
+      "id": "psychologist",
+      "name": "Psychologist",
+      "category": "healthcare",
+      "path": "healthcare/psychologist.json"
+    },
+    {
+      "id": "smart-domain-name-generator",
+      "name": "Smart Domain Name Generator",
+      "category": "engineering",
+      "path": "engineering/smart-domain-name-generator.json"
+    },
+    {
+      "id": "tech-reviewer",
+      "name": "Tech Reviewer",
+      "category": "engineering",
+      "path": "engineering/tech-reviewer.json"
+    },
+    {
+      "id": "developer-relations-consultant",
+      "name": "Developer Relations Consultant",
+      "category": "engineering",
+      "path": "engineering/developer-relations-consultant.json"
+    },
+    {
+      "id": "academician",
+      "name": "Academician",
+      "category": "general",
+      "path": "general/academician.json"
+    },
+    {
+      "id": "it-architect",
+      "name": "IT Architect",
+      "category": "engineering",
+      "path": "engineering/it-architect.json"
+    },
+    {
+      "id": "lunatic",
+      "name": "Lunatic",
+      "category": "general",
+      "path": "general/lunatic.json"
+    },
+    {
+      "id": "gaslighter",
+      "name": "Gaslighter",
+      "category": "general",
+      "path": "general/gaslighter.json"
+    },
+    {
+      "id": "fallacy-finder",
+      "name": "Fallacy Finder",
+      "category": "general",
+      "path": "general/fallacy-finder.json"
+    },
+    {
+      "id": "journal-reviewer",
+      "name": "Journal Reviewer",
+      "category": "general",
+      "path": "general/journal-reviewer.json"
+    },
+    {
+      "id": "diy-expert",
+      "name": "DIY Expert",
+      "category": "general",
+      "path": "general/diy-expert.json"
+    },
+    {
+      "id": "social-media-influencer",
+      "name": "Social Media Influencer",
+      "category": "sales-marketing",
+      "path": "sales-marketing/social-media-influencer.json"
+    },
+    {
+      "id": "socrat",
+      "name": "Socrat",
+      "category": "general",
+      "path": "general/socrat.json"
+    },
+    {
+      "id": "socratic-method",
+      "name": "Socratic Method",
+      "category": "general",
+      "path": "general/socratic-method.json"
+    },
+    {
+      "id": "educational-content-creator",
+      "name": "Educational Content Creator",
+      "category": "sales-marketing",
+      "path": "sales-marketing/educational-content-creator.json"
+    },
+    {
+      "id": "yogi",
+      "name": "Yogi",
+      "category": "general",
+      "path": "general/yogi.json"
+    },
+    {
+      "id": "essay-writer",
+      "name": "Essay Writer",
+      "category": "creative",
+      "path": "creative/essay-writer.json"
+    },
+    {
+      "id": "social-media-manager",
+      "name": "Social Media Manager",
+      "category": "sales-marketing",
+      "path": "sales-marketing/social-media-manager.json"
+    },
+    {
+      "id": "elocutionist",
+      "name": "Elocutionist",
+      "category": "general",
+      "path": "general/elocutionist.json"
+    },
+    {
+      "id": "scientific-data-visualizer",
+      "name": "Scientific Data Visualizer",
+      "category": "engineering",
+      "path": "engineering/scientific-data-visualizer.json"
+    },
+    {
+      "id": "car-navigation-system",
+      "name": "Car Navigation System",
+      "category": "general",
+      "path": "general/car-navigation-system.json"
+    },
+    {
+      "id": "hypnotherapist",
+      "name": "Hypnotherapist",
+      "category": "healthcare",
+      "path": "healthcare/hypnotherapist.json"
+    },
+    {
+      "id": "historian",
+      "name": "Historian",
+      "category": "general",
+      "path": "general/historian.json"
+    },
+    {
+      "id": "astrologer",
+      "name": "Astrologer",
+      "category": "general",
+      "path": "general/astrologer.json"
+    },
+    {
+      "id": "film-critic",
+      "name": "Film Critic",
+      "category": "general",
+      "path": "general/film-critic.json"
+    },
+    {
+      "id": "classical-music-composer",
+      "name": "Classical Music Composer",
+      "category": "creative",
+      "path": "creative/classical-music-composer.json"
+    },
+    {
+      "id": "journalist",
+      "name": "Journalist",
+      "category": "general",
+      "path": "general/journalist.json"
+    },
+    {
+      "id": "digital-art-gallery-guide",
+      "name": "Digital Art Gallery Guide",
+      "category": "general",
+      "path": "general/digital-art-gallery-guide.json"
+    },
+    {
+      "id": "public-speaking-coach",
+      "name": "Public Speaking Coach",
+      "category": "education",
+      "path": "education/public-speaking-coach.json"
+    },
+    {
+      "id": "makeup-artist",
+      "name": "Makeup Artist",
+      "category": "creative",
+      "path": "creative/makeup-artist.json"
+    },
+    {
+      "id": "babysitter",
+      "name": "Babysitter",
+      "category": "general",
+      "path": "general/babysitter.json"
+    },
+    {
+      "id": "tech-writer",
+      "name": "Tech Writer",
+      "category": "engineering",
+      "path": "engineering/tech-writer.json"
+    },
+    {
+      "id": "ascii-artist",
+      "name": "Ascii Artist",
+      "category": "engineering",
+      "path": "engineering/ascii-artist.json"
+    },
+    {
+      "id": "python-interpreter",
+      "name": "Python Interpreter",
+      "category": "engineering",
+      "path": "engineering/python-interpreter.json"
+    },
+    {
+      "id": "synonym-finder",
+      "name": "Synonym Finder",
+      "category": "general",
+      "path": "general/synonym-finder.json"
+    },
+    {
+      "id": "personal-shopper",
+      "name": "Personal Shopper",
+      "category": "general",
+      "path": "general/personal-shopper.json"
+    },
+    {
+      "id": "food-critic",
+      "name": "Food Critic",
+      "category": "general",
+      "path": "general/food-critic.json"
+    },
+    {
+      "id": "virtual-doctor",
+      "name": "Virtual Doctor",
+      "category": "healthcare",
+      "path": "healthcare/virtual-doctor.json"
+    },
+    {
+      "id": "personal-chef",
+      "name": "Personal Chef",
+      "category": "general",
+      "path": "general/personal-chef.json"
+    },
+    {
+      "id": "legal-advisor",
+      "name": "Legal Advisor",
+      "category": "legal",
+      "path": "legal/legal-advisor.json"
+    },
+    {
+      "id": "personal-stylist",
+      "name": "Personal Stylist",
+      "category": "general",
+      "path": "general/personal-stylist.json"
+    },
+    {
+      "id": "machine-learning-engineer",
+      "name": "Machine Learning Engineer",
+      "category": "engineering",
+      "path": "engineering/machine-learning-engineer.json"
+    },
+    {
+      "id": "biblical-translator",
+      "name": "Biblical Translator",
+      "category": "language",
+      "path": "language/biblical-translator.json"
+    },
+    {
+      "id": "svg-designer",
+      "name": "SVG designer",
+      "category": "engineering",
+      "path": "engineering/svg-designer.json"
+    },
+    {
+      "id": "it-expert",
+      "name": "IT Expert",
+      "category": "engineering",
+      "path": "engineering/it-expert.json"
+    },
+    {
+      "id": "chess-player",
+      "name": "Chess Player",
+      "category": "general",
+      "path": "general/chess-player.json"
+    },
+    {
+      "id": "midjourney-prompt-generator",
+      "name": "Midjourney Prompt Generator",
+      "category": "general",
+      "path": "general/midjourney-prompt-generator.json"
+    },
+    {
+      "id": "fullstack-software-developer",
+      "name": "Fullstack Software Developer",
+      "category": "engineering",
+      "path": "engineering/fullstack-software-developer.json"
+    },
+    {
+      "id": "mathematician",
+      "name": "Mathematician",
+      "category": "general",
+      "path": "general/mathematician.json"
+    },
+    {
+      "id": "regex-generator",
+      "name": "RegEx Generator",
+      "category": "engineering",
+      "path": "engineering/regex-generator.json"
+    },
+    {
+      "id": "time-travel-guide",
+      "name": "Time Travel Guide",
+      "category": "general",
+      "path": "general/time-travel-guide.json"
+    },
+    {
+      "id": "dream-interpreter",
+      "name": "Dream Interpreter",
+      "category": "general",
+      "path": "general/dream-interpreter.json"
+    },
+    {
+      "id": "talent-coach",
+      "name": "Talent Coach",
+      "category": "hr",
+      "path": "hr/talent-coach.json"
+    },
+    {
+      "id": "r-programming-interpreter",
+      "name": "R Programming Interpreter",
+      "category": "engineering",
+      "path": "engineering/r-programming-interpreter.json"
+    },
+    {
+      "id": "stackoverflow-post",
+      "name": "StackOverflow Post",
+      "category": "engineering",
+      "path": "engineering/stackoverflow-post.json"
+    },
+    {
+      "id": "emoji-translator",
+      "name": "Emoji Translator",
+      "category": "language",
+      "path": "language/emoji-translator.json"
+    },
+    {
+      "id": "php-interpreter",
+      "name": "PHP Interpreter",
+      "category": "engineering",
+      "path": "engineering/php-interpreter.json"
+    },
+    {
+      "id": "emergency-response-professional",
+      "name": "Emergency Response Professional",
+      "category": "general",
+      "path": "general/emergency-response-professional.json"
+    },
+    {
+      "id": "fill-in-the-blank-worksheets-generator",
+      "name": "Fill in the Blank Worksheets Generator",
+      "category": "general",
+      "path": "general/fill-in-the-blank-worksheets-generator.json"
+    },
+    {
+      "id": "software-quality-assurance-tester",
+      "name": "Software Quality Assurance Tester",
+      "category": "engineering",
+      "path": "engineering/software-quality-assurance-tester.json"
+    },
+    {
+      "id": "tic-tac-toe-game",
+      "name": "Tic-Tac-Toe Game",
+      "category": "general",
+      "path": "general/tic-tac-toe-game.json"
+    },
+    {
+      "id": "password-generator",
+      "name": "Password Generator",
+      "category": "engineering",
+      "path": "engineering/password-generator.json"
+    },
+    {
+      "id": "new-language-creator",
+      "name": "New Language Creator",
+      "category": "language",
+      "path": "language/new-language-creator.json"
+    },
+    {
+      "id": "web-browser",
+      "name": "Web Browser",
+      "category": "engineering",
+      "path": "engineering/web-browser.json"
+    },
+    {
+      "id": "senior-frontend-developer",
+      "name": "Senior Frontend Developer",
+      "category": "engineering",
+      "path": "engineering/senior-frontend-developer.json"
+    },
+    {
+      "id": "code-reviewer",
+      "name": "Code Reviewer",
+      "category": "engineering",
+      "path": "engineering/code-reviewer.json"
+    },
+    {
+      "id": "accessibility-auditor",
+      "name": "Accessibility Auditor",
+      "category": "engineering",
+      "path": "engineering/accessibility-auditor.json"
+    },
+    {
+      "id": "solr-search-engine",
+      "name": "Solr Search Engine",
+      "category": "engineering",
+      "path": "engineering/solr-search-engine.json"
+    },
+    {
+      "id": "startup-idea-generator",
+      "name": "Startup Idea Generator",
+      "category": "general",
+      "path": "general/startup-idea-generator.json"
+    },
+    {
+      "id": "spongebobs-magic-conch-shell",
+      "name": "Spongebob's Magic Conch Shell",
+      "category": "general",
+      "path": "general/spongebobs-magic-conch-shell.json"
+    },
+    {
+      "id": "language-detector",
+      "name": "Language Detector",
+      "category": "language",
+      "path": "language/language-detector.json"
+    },
+    {
+      "id": "salesperson",
+      "name": "Salesperson",
+      "category": "sales-marketing",
+      "path": "sales-marketing/salesperson.json"
+    },
+    {
+      "id": "commit-message-generator",
+      "name": "Commit Message Generator",
+      "category": "general",
+      "path": "general/commit-message-generator.json"
+    },
+    {
+      "id": "conventional-commit-message-generator",
+      "name": "Conventional Commit Message Generator",
+      "category": "engineering",
+      "path": "engineering/conventional-commit-message-generator.json"
+    },
+    {
+      "id": "chief-executive-officer",
+      "name": "Chief Executive Officer",
+      "category": "general",
+      "path": "general/chief-executive-officer.json"
+    },
+    {
+      "id": "diagram-generator",
+      "name": "Diagram Generator",
+      "category": "engineering",
+      "path": "engineering/diagram-generator.json"
+    },
+    {
+      "id": "speech-language-pathologist-slp",
+      "name": "Speech-Language Pathologist (SLP)",
+      "category": "language",
+      "path": "language/speech-language-pathologist-slp.json"
+    },
+    {
+      "id": "startup-tech-lawyer",
+      "name": "Startup Tech Lawyer",
+      "category": "legal",
+      "path": "legal/startup-tech-lawyer.json"
+    },
+    {
+      "id": "title-generator-for-written-pieces",
+      "name": "Title Generator for written pieces",
+      "category": "general",
+      "path": "general/title-generator-for-written-pieces.json"
+    },
+    {
+      "id": "product-manager",
+      "name": "Product Manager",
+      "category": "general",
+      "path": "general/product-manager.json"
+    },
+    {
+      "id": "project-manager",
+      "name": "Project Manager",
+      "category": "general",
+      "path": "general/project-manager.json"
+    },
+    {
+      "id": "drunk-person",
+      "name": "Drunk Person",
+      "category": "general",
+      "path": "general/drunk-person.json"
+    },
+    {
+      "id": "mathematical-history-teacher",
+      "name": "Mathematical History Teacher",
+      "category": "education",
+      "path": "education/mathematical-history-teacher.json"
+    },
+    {
+      "id": "song-recommender",
+      "name": "Song Recommender",
+      "category": "general",
+      "path": "general/song-recommender.json"
+    },
+    {
+      "id": "cover-letter",
+      "name": "Cover Letter",
+      "category": "general",
+      "path": "general/cover-letter.json"
+    },
+    {
+      "id": "technology-transferer",
+      "name": "Technology Transferer",
+      "category": "engineering",
+      "path": "engineering/technology-transferer.json"
+    },
+    {
+      "id": "unconstrained-ai-model-dan",
+      "name": "Unconstrained AI model DAN",
+      "category": "general",
+      "path": "general/unconstrained-ai-model-dan.json"
+    },
+    {
+      "id": "gomoku-player",
+      "name": "Gomoku player",
+      "category": "general",
+      "path": "general/gomoku-player.json"
+    },
+    {
+      "id": "proofreader",
+      "name": "Proofreader",
+      "category": "general",
+      "path": "general/proofreader.json"
+    },
+    {
+      "id": "buddha",
+      "name": "Buddha",
+      "category": "general",
+      "path": "general/buddha.json"
+    },
+    {
+      "id": "muslim-imam",
+      "name": "Muslim Imam",
+      "category": "general",
+      "path": "general/muslim-imam.json"
+    },
+    {
+      "id": "chemical-reactor",
+      "name": "Chemical Reactor",
+      "category": "general",
+      "path": "general/chemical-reactor.json"
+    },
+    {
+      "id": "friend",
+      "name": "Friend",
+      "category": "general",
+      "path": "general/friend.json"
+    },
+    {
+      "id": "chatgpt-prompt-generator",
+      "name": "ChatGPT Prompt Generator",
+      "category": "general",
+      "path": "general/chatgpt-prompt-generator.json"
+    },
+    {
+      "id": "wikipedia-page",
+      "name": "Wikipedia Page",
+      "category": "general",
+      "path": "general/wikipedia-page.json"
+    },
+    {
+      "id": "japanese-kanji-quiz-machine",
+      "name": "Japanese Kanji quiz machine",
+      "category": "general",
+      "path": "general/japanese-kanji-quiz-machine.json"
+    },
+    {
+      "id": "note-taking-assistant",
+      "name": "Note-Taking assistant",
+      "category": "general",
+      "path": "general/note-taking-assistant.json"
+    },
+    {
+      "id": "literary-critic",
+      "name": "Literary Critic",
+      "category": "general",
+      "path": "general/literary-critic.json"
+    },
+    {
+      "id": "prompt-enhancer",
+      "name": "Prompt Enhancer",
+      "category": "engineering",
+      "path": "engineering/prompt-enhancer.json"
+    },
+    {
+      "id": "cheap-travel-ticket-advisor",
+      "name": "Cheap Travel Ticket Advisor",
+      "category": "general",
+      "path": "general/cheap-travel-ticket-advisor.json"
+    },
+    {
+      "id": "data-scientist",
+      "name": "Data Scientist",
+      "category": "engineering",
+      "path": "engineering/data-scientist.json"
+    },
+    {
+      "id": "league-of-legends-player",
+      "name": "League of Legends Player",
+      "category": "general",
+      "path": "general/league-of-legends-player.json"
+    },
+    {
+      "id": "restaurant-owner",
+      "name": "Restaurant Owner",
+      "category": "general",
+      "path": "general/restaurant-owner.json"
+    },
+    {
+      "id": "architectural-expert",
+      "name": "Architectural Expert",
+      "category": "engineering",
+      "path": "engineering/architectural-expert.json"
+    },
+    {
+      "id": "llm-researcher",
+      "name": "LLM Researcher",
+      "category": "engineering",
+      "path": "engineering/llm-researcher.json"
+    },
+    {
+      "id": "unit-tester-assistant",
+      "name": "Unit Tester Assistant",
+      "category": "engineering",
+      "path": "engineering/unit-tester-assistant.json"
+    },
+    {
+      "id": "wisdom-generator",
+      "name": "Wisdom Generator",
+      "category": "general",
+      "path": "general/wisdom-generator.json"
+    },
+    {
+      "id": "youtube-video-analyst",
+      "name": "YouTube Video Analyst",
+      "category": "bfsi",
+      "path": "bfsi/youtube-video-analyst.json"
+    },
+    {
+      "id": "career-coach",
+      "name": "Career Coach",
+      "category": "hr",
+      "path": "hr/career-coach.json"
+    },
+    {
+      "id": "acoustic-guitar-composer",
+      "name": "Acoustic Guitar Composer",
+      "category": "creative",
+      "path": "creative/acoustic-guitar-composer.json"
+    },
+    {
+      "id": "knowledgeable-software-development-mentor",
+      "name": "Knowledgeable Software Development Mentor",
+      "category": "engineering",
+      "path": "engineering/knowledgeable-software-development-mentor.json"
+    },
+    {
+      "id": "logic-builder-tool",
+      "name": "Logic Builder Tool",
+      "category": "engineering",
+      "path": "engineering/logic-builder-tool.json"
+    },
+    {
+      "id": "guessing-game-master",
+      "name": "Guessing Game Master",
+      "category": "general",
+      "path": "general/guessing-game-master.json"
+    },
+    {
+      "id": "teacher-of-reactjs",
+      "name": "Teacher of React.js",
+      "category": "engineering",
+      "path": "engineering/teacher-of-reactjs.json"
+    },
+    {
+      "id": "github-expert",
+      "name": "GitHub Expert",
+      "category": "engineering",
+      "path": "engineering/github-expert.json"
+    },
+    {
+      "id": "any-programming-language-to-python-converter",
+      "name": "Any Programming Language to Python Converter",
+      "category": "engineering",
+      "path": "engineering/any-programming-language-to-python-converter.json"
+    },
+    {
+      "id": "virtual-fitness-coach",
+      "name": "Virtual Fitness Coach",
+      "category": "education",
+      "path": "education/virtual-fitness-coach.json"
+    },
+    {
+      "id": "flirting-boy",
+      "name": "Flirting Boy",
+      "category": "general",
+      "path": "general/flirting-boy.json"
+    },
+    {
+      "id": "girl-of-dreams",
+      "name": "Girl of Dreams",
+      "category": "general",
+      "path": "general/girl-of-dreams.json"
+    },
+    {
+      "id": "dax-terminal",
+      "name": "DAX Terminal",
+      "category": "engineering",
+      "path": "engineering/dax-terminal.json"
+    },
+    {
+      "id": "structured-iterative-reasoning-protocol-sirp",
+      "name": "Structured Iterative Reasoning Protocol (SIRP)",
+      "category": "general",
+      "path": "general/structured-iterative-reasoning-protocol-sirp.json"
+    },
+    {
+      "id": "pirate",
+      "name": "Pirate",
+      "category": "general",
+      "path": "general/pirate.json"
+    },
+    {
+      "id": "linkedin-ghostwriter",
+      "name": "LinkedIn Ghostwriter",
+      "category": "creative",
+      "path": "creative/linkedin-ghostwriter.json"
+    },
+    {
+      "id": "idea-clarifier-gpt",
+      "name": "Idea Clarifier GPT",
+      "category": "general",
+      "path": "general/idea-clarifier-gpt.json"
+    },
+    {
+      "id": "top-programming-expert",
+      "name": "Top Programming Expert",
+      "category": "engineering",
+      "path": "engineering/top-programming-expert.json"
+    },
+    {
+      "id": "architect-guide-for-programmers",
+      "name": "Architect Guide for Programmers",
+      "category": "engineering",
+      "path": "engineering/architect-guide-for-programmers.json"
+    },
+    {
+      "id": "childrens-book-creator",
+      "name": "Children's Book Creator",
+      "category": "general",
+      "path": "general/childrens-book-creator.json"
+    },
+    {
+      "id": "tech-challenged-customer",
+      "name": "Tech-Challenged Customer",
+      "category": "customer-service",
+      "path": "customer-service/tech-challenged-customer.json"
+    },
+    {
+      "id": "creative-branding-strategist",
+      "name": "Creative Branding Strategist",
+      "category": "creative",
+      "path": "creative/creative-branding-strategist.json"
+    },
+    {
+      "id": "book-summarizer",
+      "name": "Book Summarizer",
+      "category": "general",
+      "path": "general/book-summarizer.json"
+    },
+    {
+      "id": "study-planner",
+      "name": "Study planner",
+      "category": "general",
+      "path": "general/study-planner.json"
+    },
+    {
+      "id": "seo-specialist",
+      "name": "SEO specialist",
+      "category": "sales-marketing",
+      "path": "sales-marketing/seo-specialist.json"
+    },
+    {
+      "id": "note-taking-assistant",
+      "name": "Note-Taking Assistant",
+      "category": "general",
+      "path": "general/note-taking-assistant.json"
+    },
+    {
+      "id": "nutritionist",
+      "name": "Nutritionist",
+      "category": "healthcare",
+      "path": "healthcare/nutritionist.json"
+    },
+    {
+      "id": "yes-or-no-answer",
+      "name": "Yes or No answer",
+      "category": "general",
+      "path": "general/yes-or-no-answer.json"
+    },
+    {
+      "id": "healing-grandma",
+      "name": "Healing Grandma",
+      "category": "general",
+      "path": "general/healing-grandma.json"
+    },
+    {
+      "id": "remote-worker-fitness-trainer",
+      "name": "Remote Worker Fitness Trainer",
+      "category": "general",
+      "path": "general/remote-worker-fitness-trainer.json"
+    },
+    {
+      "id": "rephraser-with-obfuscation",
+      "name": "Rephraser with Obfuscation",
+      "category": "hr",
+      "path": "hr/rephraser-with-obfuscation.json"
+    },
+    {
+      "id": "large-language-models-security-specialist",
+      "name": "Large Language Models Security Specialist",
+      "category": "engineering",
+      "path": "engineering/large-language-models-security-specialist.json"
+    },
+    {
+      "id": "tech-troubleshooter",
+      "name": "Tech Troubleshooter",
+      "category": "engineering",
+      "path": "engineering/tech-troubleshooter.json"
+    },
+    {
+      "id": "ayurveda-food-tester",
+      "name": "Ayurveda Food Tester",
+      "category": "general",
+      "path": "general/ayurveda-food-tester.json"
+    },
+    {
+      "id": "music-video-designer",
+      "name": "Music Video Designer",
+      "category": "creative",
+      "path": "creative/music-video-designer.json"
+    },
+    {
+      "id": "virtual-event-planner",
+      "name": "Virtual Event Planner",
+      "category": "general",
+      "path": "general/virtual-event-planner.json"
+    },
+    {
+      "id": "linkedin-ghostwriter",
+      "name": "Linkedin Ghostwriter",
+      "category": "creative",
+      "path": "creative/linkedin-ghostwriter.json"
+    },
+    {
+      "id": "seo-prompt",
+      "name": "SEO Prompt",
+      "category": "engineering",
+      "path": "engineering/seo-prompt.json"
+    },
+    {
+      "id": "devops-engineer",
+      "name": "Devops Engineer",
+      "category": "engineering",
+      "path": "engineering/devops-engineer.json"
+    },
+    {
+      "id": "linux-script-developer",
+      "name": "Linux Script Developer",
+      "category": "engineering",
+      "path": "engineering/linux-script-developer.json"
+    },
+    {
+      "id": "reverse-prompt-engineer",
+      "name": "Reverse Prompt Engineer",
+      "category": "engineering",
+      "path": "engineering/reverse-prompt-engineer.json"
+    },
+    {
+      "id": "explainer-with-analogies",
+      "name": "Explainer with Analogies",
+      "category": "general",
+      "path": "general/explainer-with-analogies.json"
+    },
+    {
+      "id": "code-review-assistant",
+      "name": "Code Review Assistant",
+      "category": "engineering",
+      "path": "engineering/code-review-assistant.json"
+    },
+    {
+      "id": "data-transformer",
+      "name": "Data Transformer",
+      "category": "engineering",
+      "path": "engineering/data-transformer.json"
+    },
+    {
+      "id": "story-generator",
+      "name": "Story Generator",
+      "category": "general",
+      "path": "general/story-generator.json"
+    },
+    {
+      "id": "decision-filter",
+      "name": "Decision Filter",
+      "category": "general",
+      "path": "general/decision-filter.json"
+    },
+    {
+      "id": "tell-your-story",
+      "name": "Tell Your Story",
+      "category": "general",
+      "path": "general/tell-your-story.json"
+    },
+    {
+      "id": "create-project-spotlight",
+      "name": "Create Project Spotlight",
+      "category": "general",
+      "path": "general/create-project-spotlight.json"
+    },
+    {
+      "id": "show-direct-impact",
+      "name": "Show Direct Impact",
+      "category": "general",
+      "path": "general/show-direct-impact.json"
+    },
+    {
+      "id": "break-down-costs",
+      "name": "Break Down Costs",
+      "category": "general",
+      "path": "general/break-down-costs.json"
+    },
+    {
+      "id": "showcase-top-repositories",
+      "name": "Showcase Top Repositories",
+      "category": "general",
+      "path": "general/showcase-top-repositories.json"
+    },
+    {
+      "id": "student-tier",
+      "name": "Student Tier",
+      "category": "general",
+      "path": "general/student-tier.json"
+    },
+    {
+      "id": "recognize-sponsors",
+      "name": "Recognize Sponsors",
+      "category": "general",
+      "path": "general/recognize-sponsors.json"
+    },
+    {
+      "id": "time-commitment",
+      "name": "Time Commitment",
+      "category": "general",
+      "path": "general/time-commitment.json"
+    },
+    {
+      "id": "future-vision",
+      "name": "Future Vision",
+      "category": "general",
+      "path": "general/future-vision.json"
+    },
+    {
+      "id": "sponsor-hall-of-fame",
+      "name": "Sponsor Hall of Fame",
+      "category": "general",
+      "path": "general/sponsor-hall-of-fame.json"
+    },
+    {
+      "id": "explain-funding-impact",
+      "name": "Explain Funding Impact",
+      "category": "general",
+      "path": "general/explain-funding-impact.json"
+    },
+    {
+      "id": "monthly-updates",
+      "name": "Monthly Updates",
+      "category": "general",
+      "path": "general/monthly-updates.json"
+    },
+    {
+      "id": "write-tier-descriptions",
+      "name": "Write Tier Descriptions",
+      "category": "general",
+      "path": "general/write-tier-descriptions.json"
+    },
+    {
+      "id": "success-stories",
+      "name": "Success Stories",
+      "category": "general",
+      "path": "general/success-stories.json"
+    },
+    {
+      "id": "enterprise-sponsorship",
+      "name": "Enterprise Sponsorship",
+      "category": "general",
+      "path": "general/enterprise-sponsorship.json"
+    },
+    {
+      "id": "create-a-professional-bio",
+      "name": "Create a Professional Bio",
+      "category": "general",
+      "path": "general/create-a-professional-bio.json"
+    },
+    {
+      "id": "suggest-pricing-tiers",
+      "name": "Suggest Pricing Tiers",
+      "category": "general",
+      "path": "general/suggest-pricing-tiers.json"
+    },
+    {
+      "id": "impact-metrics",
+      "name": "Impact Metrics",
+      "category": "general",
+      "path": "general/impact-metrics.json"
+    },
+    {
+      "id": "announce-milestone",
+      "name": "Announce Milestone",
+      "category": "general",
+      "path": "general/announce-milestone.json"
+    },
+    {
+      "id": "creative-perks",
+      "name": "Creative Perks",
+      "category": "creative",
+      "path": "creative/creative-perks.json"
+    },
+    {
+      "id": "3d-racing-game",
+      "name": "3D Racing Game",
+      "category": "general",
+      "path": "general/3d-racing-game.json"
+    },
+    {
+      "id": "drawing-app",
+      "name": "Drawing App",
+      "category": "general",
+      "path": "general/drawing-app.json"
+    },
+    {
+      "id": "weather-dashboard",
+      "name": "Weather Dashboard",
+      "category": "general",
+      "path": "general/weather-dashboard.json"
+    },
+    {
+      "id": "markdown-notes",
+      "name": "Markdown Notes",
+      "category": "general",
+      "path": "general/markdown-notes.json"
+    },
+    {
+      "id": "interactive-quiz",
+      "name": "Interactive Quiz",
+      "category": "general",
+      "path": "general/interactive-quiz.json"
+    },
+    {
+      "id": "secure-password-generator-tool",
+      "name": "Secure Password Generator Tool",
+      "category": "general",
+      "path": "general/secure-password-generator-tool.json"
+    },
+    {
+      "id": "currency-exchange-calculator",
+      "name": "Currency Exchange Calculator",
+      "category": "general",
+      "path": "general/currency-exchange-calculator.json"
+    },
+    {
+      "id": "code-snippet-manager",
+      "name": "Code Snippet Manager",
+      "category": "engineering",
+      "path": "engineering/code-snippet-manager.json"
+    },
+    {
+      "id": "recipe-finder",
+      "name": "Recipe Finder",
+      "category": "general",
+      "path": "general/recipe-finder.json"
+    },
+    {
+      "id": "kanban-board",
+      "name": "Kanban Board",
+      "category": "general",
+      "path": "general/kanban-board.json"
+    },
+    {
+      "id": "music-player",
+      "name": "Music Player",
+      "category": "general",
+      "path": "general/music-player.json"
+    },
+    {
+      "id": "flashcard-study-system",
+      "name": "Flashcard Study System",
+      "category": "general",
+      "path": "general/flashcard-study-system.json"
+    },
+    {
+      "id": "habit-tracker",
+      "name": "Habit Tracker",
+      "category": "general",
+      "path": "general/habit-tracker.json"
+    },
+    {
+      "id": "text-analyzer-tool",
+      "name": "Text Analyzer Tool",
+      "category": "general",
+      "path": "general/text-analyzer-tool.json"
+    },
+    {
+      "id": "image-editor",
+      "name": "Image Editor",
+      "category": "general",
+      "path": "general/image-editor.json"
+    },
+    {
+      "id": "sudoku-game",
+      "name": "Sudoku Game",
+      "category": "general",
+      "path": "general/sudoku-game.json"
+    },
+    {
+      "id": "url-shortener",
+      "name": "URL Shortener",
+      "category": "general",
+      "path": "general/url-shortener.json"
+    },
+    {
+      "id": "chess-game",
+      "name": "Chess Game",
+      "category": "general",
+      "path": "general/chess-game.json"
+    },
+    {
+      "id": "typing-speed-test",
+      "name": "Typing Speed Test",
+      "category": "general",
+      "path": "general/typing-speed-test.json"
+    },
+    {
+      "id": "memory-card-game",
+      "name": "Memory Card Game",
+      "category": "general",
+      "path": "general/memory-card-game.json"
+    },
+    {
+      "id": "file-system-indexer-cli",
+      "name": "File System Indexer CLI",
+      "category": "general",
+      "path": "general/file-system-indexer-cli.json"
+    },
+    {
+      "id": "memory-profiler-cli",
+      "name": "Memory Profiler CLI",
+      "category": "general",
+      "path": "general/memory-profiler-cli.json"
+    },
+    {
+      "id": "3d-space-explorer",
+      "name": "3D Space Explorer",
+      "category": "general",
+      "path": "general/3d-space-explorer.json"
+    },
+    {
+      "id": "3d-fps-game",
+      "name": "3D FPS Game",
+      "category": "general",
+      "path": "general/3d-fps-game.json"
+    },
+    {
+      "id": "advanced-color-picker-tool",
+      "name": "Advanced Color Picker Tool",
+      "category": "general",
+      "path": "general/advanced-color-picker-tool.json"
+    },
+    {
+      "id": "multiplayer-3d-plane-game",
+      "name": "Multiplayer 3D Plane Game",
+      "category": "general",
+      "path": "general/multiplayer-3d-plane-game.json"
+    },
+    {
+      "id": "budget-tracker",
+      "name": "Budget Tracker",
+      "category": "general",
+      "path": "general/budget-tracker.json"
+    },
+    {
+      "id": "pomodoro-timer",
+      "name": "Pomodoro Timer",
+      "category": "general",
+      "path": "general/pomodoro-timer.json"
+    },
+    {
+      "id": "scientific-calculator",
+      "name": "Scientific Calculator",
+      "category": "general",
+      "path": "general/scientific-calculator.json"
+    },
+    {
+      "id": "http-benchmarking-tool-cli",
+      "name": "HTTP Benchmarking Tool CLI",
+      "category": "general",
+      "path": "general/http-benchmarking-tool-cli.json"
+    },
+    {
+      "id": "network-packet-analyzer-cli",
+      "name": "Network Packet Analyzer CLI",
+      "category": "general",
+      "path": "general/network-packet-analyzer-cli.json"
+    },
+    {
+      "id": "pdf-viewer",
+      "name": "PDF Viewer",
+      "category": "general",
+      "path": "general/pdf-viewer.json"
+    },
+    {
+      "id": "file-encryption-tool",
+      "name": "File Encryption Tool",
+      "category": "general",
+      "path": "general/file-encryption-tool.json"
+    },
+    {
+      "id": "health-metrics-calculator",
+      "name": "Health Metrics Calculator",
+      "category": "healthcare",
+      "path": "healthcare/health-metrics-calculator.json"
+    },
+    {
+      "id": "todo-list",
+      "name": "Todo List",
+      "category": "general",
+      "path": "general/todo-list.json"
+    },
+    {
+      "id": "meditation-timer",
+      "name": "Meditation Timer",
+      "category": "general",
+      "path": "general/meditation-timer.json"
+    },
+    {
+      "id": "isometric-city-diorama",
+      "name": "Isometric City Diorama",
+      "category": "general",
+      "path": "general/isometric-city-diorama.json"
+    },
+    {
+      "id": "the-silent-standoff",
+      "name": "The Silent Standoff",
+      "category": "general",
+      "path": "general/the-silent-standoff.json"
+    },
+    {
+      "id": "lifestyle-product-images",
+      "name": "Lifestyle Product Images",
+      "category": "general",
+      "path": "general/lifestyle-product-images.json"
+    },
+    {
+      "id": "web-design",
+      "name": "Web Design",
+      "category": "general",
+      "path": "general/web-design.json"
+    },
+    {
+      "id": "isometric-3d-weather-cityscapes-pbr-textures",
+      "name": "Isometric 3D Weather Cityscapes (PBR Textures)",
+      "category": "general",
+      "path": "general/isometric-3d-weather-cityscapes-pbr-textures.json"
+    },
+    {
+      "id": "whimsical-3d-brand-miniatures",
+      "name": "Whimsical 3D Brand Miniatures",
+      "category": "general",
+      "path": "general/whimsical-3d-brand-miniatures.json"
+    },
+    {
+      "id": "smart-rewriter-clarity-booster",
+      "name": "Smart Rewriter & Clarity Booster",
+      "category": "creative",
+      "path": "creative/smart-rewriter-clarity-booster.json"
+    },
+    {
+      "id": "world-landmarks-hyper-realistic-3d-dioramas",
+      "name": "World Landmarks: Hyper-Realistic 3D Dioramas",
+      "category": "general",
+      "path": "general/world-landmarks-hyper-realistic-3d-dioramas.json"
+    },
+    {
+      "id": "3d-isometric-miniature-diorama",
+      "name": "3D Isometric Miniature Diorama",
+      "category": "general",
+      "path": "general/3d-isometric-miniature-diorama.json"
+    },
+    {
+      "id": "architectural-sketch-markup-overlay",
+      "name": "Architectural Sketch & Markup Overlay",
+      "category": "engineering",
+      "path": "engineering/architectural-sketch-markup-overlay.json"
+    },
+    {
+      "id": "floating-city-island-photoreal-4k-poster",
+      "name": "Floating City Island - Photoreal 4K Poster",
+      "category": "general",
+      "path": "general/floating-city-island-photoreal-4k-poster.json"
+    },
+    {
+      "id": "interdisciplinary-connections-and-applications",
+      "name": "Interdisciplinary Connections and Applications",
+      "category": "general",
+      "path": "general/interdisciplinary-connections-and-applications.json"
+    },
+    {
+      "id": "expert-level-insights-and-advanced-resources",
+      "name": "Expert-Level Insights and Advanced Resources",
+      "category": "general",
+      "path": "general/expert-level-insights-and-advanced-resources.json"
+    },
+    {
+      "id": "vintage-botanical-illustration-generator",
+      "name": "Vintage Botanical Illustration Generator",
+      "category": "general",
+      "path": "general/vintage-botanical-illustration-generator.json"
+    },
+    {
+      "id": "ai2sql-sql-model-query-generator",
+      "name": "AI2sql SQL Model — Query Generator",
+      "category": "general",
+      "path": "general/ai2sql-sql-model-query-generator.json"
+    },
+    {
+      "id": "director-variation-grid-one-still-eight-auteur-re-shoots",
+      "name": "Director Variation Grid: One Still, Eight Auteur Re-Shoots",
+      "category": "general",
+      "path": "general/director-variation-grid-one-still-eight-auteur-re-shoots.json"
+    },
+    {
+      "id": "travel-poster",
+      "name": "Travel Poster",
+      "category": "general",
+      "path": "general/travel-poster.json"
+    },
+    {
+      "id": "profesor-creativo",
+      "name": "Profesor Creativo",
+      "category": "general",
+      "path": "general/profesor-creativo.json"
+    },
+    {
+      "id": "pitchside-tunnel-moment-with-your-favorite-footballer",
+      "name": "Pitchside Tunnel Moment with Your Favorite Footballer",
+      "category": "general",
+      "path": "general/pitchside-tunnel-moment-with-your-favorite-footballer.json"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "category": "general",
+      "path": "general/gemini.json"
+    },
+    {
+      "id": "deep-research-agent",
+      "name": "deep-research-agent",
+      "category": "general",
+      "path": "general/deep-research-agent.json"
+    },
+    {
+      "id": "bug-risk-analysis",
+      "name": "bug-risk-analysis",
+      "category": "general",
+      "path": "general/bug-risk-analysis.json"
+    },
+    {
+      "id": "devops-architect",
+      "name": "devops-architect",
+      "category": "engineering",
+      "path": "engineering/devops-architect.json"
+    },
+    {
+      "id": "quality-engineer",
+      "name": "quality-engineer",
+      "category": "engineering",
+      "path": "engineering/quality-engineer.json"
+    },
+    {
+      "id": "refactoring-expert",
+      "name": "refactoring-expert",
+      "category": "general",
+      "path": "general/refactoring-expert.json"
+    },
+    {
+      "id": "repo-indexer",
+      "name": "repo-indexer",
+      "category": "general",
+      "path": "general/repo-indexer.json"
+    },
+    {
+      "id": "root-cause-analyst",
+      "name": "root-cause-analyst",
+      "category": "bfsi",
+      "path": "bfsi/root-cause-analyst.json"
+    },
+    {
+      "id": "security-engineer",
+      "name": "security-engineer",
+      "category": "engineering",
+      "path": "engineering/security-engineer.json"
+    },
+    {
+      "id": "frontend-architect",
+      "name": "frontend-architect",
+      "category": "engineering",
+      "path": "engineering/frontend-architect.json"
+    },
+    {
+      "id": "performance-engineer",
+      "name": "performance-engineer",
+      "category": "engineering",
+      "path": "engineering/performance-engineer.json"
+    },
+    {
+      "id": "forensic-cinematic-analyst",
+      "name": "forensic-cinematic-analyst",
+      "category": "bfsi",
+      "path": "bfsi/forensic-cinematic-analyst.json"
+    },
+    {
+      "id": "video-analysis-expert",
+      "name": "video-analysis-expert",
+      "category": "general",
+      "path": "general/video-analysis-expert.json"
+    },
+    {
+      "id": "predictive-eye-tracking-heatmap-generator",
+      "name": "Predictive Eye Tracking Heatmap Generator",
+      "category": "engineering",
+      "path": "engineering/predictive-eye-tracking-heatmap-generator.json"
+    },
+    {
+      "id": "clean-bibtex-formatter-for-academic-projects",
+      "name": "Clean BibTeX Formatter for Academic Projects",
+      "category": "general",
+      "path": "general/clean-bibtex-formatter-for-academic-projects.json"
+    },
+    {
+      "id": "realistic-food-image-generator",
+      "name": "Realistic Food Image Generator",
+      "category": "general",
+      "path": "general/realistic-food-image-generator.json"
+    },
+    {
+      "id": "urban-casual-confidence",
+      "name": "Urban Casual Confidence",
+      "category": "general",
+      "path": "general/urban-casual-confidence.json"
+    },
+    {
+      "id": "what-does-chatgpt-knows-about-you",
+      "name": "What Does ChatGpt Knows about you?",
+      "category": "general",
+      "path": "general/what-does-chatgpt-knows-about-you.json"
+    },
+    {
+      "id": "legebdary-exploded-view-prompt-for-nanobanana",
+      "name": "Legebdary Exploded View Prompt For nanobanana",
+      "category": "general",
+      "path": "general/legebdary-exploded-view-prompt-for-nanobanana.json"
+    },
+    {
+      "id": "tarih-olay-görsel-oluşturma",
+      "name": "Tarih-olay- Görsel oluşturma",
+      "category": "general",
+      "path": "general/tarih-olay-görsel-oluşturma.json"
+    },
+    {
+      "id": "temitope",
+      "name": "Temitope",
+      "category": "general",
+      "path": "general/temitope.json"
+    },
+    {
+      "id": "gemi-gotchi",
+      "name": "Gemi-Gotchi",
+      "category": "general",
+      "path": "general/gemi-gotchi.json"
+    },
+    {
+      "id": "digital-product-ideas",
+      "name": "Digital product ideas",
+      "category": "general",
+      "path": "general/digital-product-ideas.json"
+    },
+    {
+      "id": "yt-video-geopolitic-analysis",
+      "name": "YT video  geopolitic analysis",
+      "category": "general",
+      "path": "general/yt-video-geopolitic-analysis.json"
+    },
+    {
+      "id": "double-exposure-portrait",
+      "name": "Double Exposure Portrait",
+      "category": "general",
+      "path": "general/double-exposure-portrait.json"
+    },
+    {
+      "id": "time-layer-photography",
+      "name": "Time Layer Photography",
+      "category": "general",
+      "path": "general/time-layer-photography.json"
+    },
+    {
+      "id": "a-clay-crafted-city-mini-city-name-world",
+      "name": "A Clay-Crafted City: Mini [CITY NAME] World",
+      "category": "general",
+      "path": "general/a-clay-crafted-city-mini-city-name-world.json"
+    },
+    {
+      "id": "architectural-study-sheet-historic_site_name",
+      "name": "Architectural Study Sheet: [HISTORIC_SITE_NAME]",
+      "category": "engineering",
+      "path": "engineering/architectural-study-sheet-historic_site_name.json"
+    },
+    {
+      "id": "professional-badge-photo-ready-to-use",
+      "name": "Professional Badge Photo, Ready to Use",
+      "category": "general",
+      "path": "general/professional-badge-photo-ready-to-use.json"
+    },
+    {
+      "id": "clean-clinic-portrait",
+      "name": "Clean Clinic Portrait",
+      "category": "general",
+      "path": "general/clean-clinic-portrait.json"
+    },
+    {
+      "id": "travel-planner-prompt",
+      "name": "Travel Planner Prompt",
+      "category": "general",
+      "path": "general/travel-planner-prompt.json"
+    },
+    {
+      "id": "hyper-realistic-clay-bust-from-photo-template",
+      "name": "Hyper-Realistic Clay Bust From Photo Template",
+      "category": "general",
+      "path": "general/hyper-realistic-clay-bust-from-photo-template.json"
+    },
+    {
+      "id": "3d-city-prompt",
+      "name": "3D City Prompt",
+      "category": "general",
+      "path": "general/3d-city-prompt.json"
+    },
+    {
+      "id": "django-unit-test-generator-for-viewsets",
+      "name": "Django Unit Test Generator for Viewsets",
+      "category": "engineering",
+      "path": "engineering/django-unit-test-generator-for-viewsets.json"
+    },
+    {
+      "id": "sales",
+      "name": "Sales",
+      "category": "sales-marketing",
+      "path": "sales-marketing/sales.json"
+    },
+    {
+      "id": "ultra-realistic-noir-portrait-creation",
+      "name": "Ultra-Realistic Noir Portrait Creation",
+      "category": "general",
+      "path": "general/ultra-realistic-noir-portrait-creation.json"
+    },
+    {
+      "id": "selar-ideas-for-automation",
+      "name": "Selar ideas for automation",
+      "category": "general",
+      "path": "general/selar-ideas-for-automation.json"
+    },
+    {
+      "id": "comprehensive-repository-analysis-and-bug-fixing-framework",
+      "name": "Comprehensive Repository Analysis and Bug Fixing Framework",
+      "category": "general",
+      "path": "general/comprehensive-repository-analysis-and-bug-fixing-framework.json"
+    },
+    {
+      "id": "virtual-game-console-simulator",
+      "name": "Virtual Game Console Simulator",
+      "category": "engineering",
+      "path": "engineering/virtual-game-console-simulator.json"
+    },
+    {
+      "id": "christmas-poster-festive-holiday-scene",
+      "name": "Christmas Poster - Festive Holiday Scene",
+      "category": "hr",
+      "path": "hr/christmas-poster-festive-holiday-scene.json"
+    },
+    {
+      "id": "crear-un-retrato-familiar-combinando-dos-personas",
+      "name": "Crear un retrato familiar combinando dos personas",
+      "category": "general",
+      "path": "general/crear-un-retrato-familiar-combinando-dos-personas.json"
+    },
+    {
+      "id": "turkish-cats-hanging-out-nearby-of-galata-tower",
+      "name": "Turkish Cats hanging out nearby of Galata Tower",
+      "category": "general",
+      "path": "general/turkish-cats-hanging-out-nearby-of-galata-tower.json"
+    },
+    {
+      "id": "ultrathinker",
+      "name": "Ultrathinker",
+      "category": "general",
+      "path": "general/ultrathinker.json"
+    },
+    {
+      "id": "code-review-assistant",
+      "name": "Code Review Assistant",
+      "category": "engineering",
+      "path": "engineering/code-review-assistant.json"
+    },
+    {
+      "id": "detailed-analysis-of-youtube-channels-databases-and-profiles",
+      "name": "Detailed Analysis of YouTube Channels, Databases, and Profiles",
+      "category": "general",
+      "path": "general/detailed-analysis-of-youtube-channels-databases-and-profiles.json"
+    },
+    {
+      "id": "when-to-clear-the-snow-generic",
+      "name": "When to clear the snow (generic)",
+      "category": "general",
+      "path": "general/when-to-clear-the-snow-generic.json"
+    },
+    {
+      "id": "create-skills-and-experience-markdown-file",
+      "name": "Create skills and experience markdown file",
+      "category": "general",
+      "path": "general/create-skills-and-experience-markdown-file.json"
+    },
+    {
+      "id": "turn-your-photo-into-a-simpsons-scene",
+      "name": "Turn Your Photo Into a Simpsons Scene",
+      "category": "general",
+      "path": "general/turn-your-photo-into-a-simpsons-scene.json"
+    },
+    {
+      "id": "saas-landing-page-builder",
+      "name": "SaaS Landing Page Builder",
+      "category": "general",
+      "path": "general/saas-landing-page-builder.json"
+    },
+    {
+      "id": "blender-object-maker",
+      "name": "Blender Object Maker",
+      "category": "general",
+      "path": "general/blender-object-maker.json"
+    },
+    {
+      "id": "code-review-agent",
+      "name": "Code Review Agent",
+      "category": "engineering",
+      "path": "engineering/code-review-agent.json"
+    },
+    {
+      "id": "editorial-winter-posterstyle-multi-panel-collage-generation",
+      "name": "Editorial Winter Poster–Style Multi-Panel Collage Generation",
+      "category": "general",
+      "path": "general/editorial-winter-posterstyle-multi-panel-collage-generation.json"
+    },
+    {
+      "id": "editorial-winter-posterstyle-multi-panel-collage-generation",
+      "name": "Editorial Winter Poster–Style Multi-Panel Collage Generation",
+      "category": "general",
+      "path": "general/editorial-winter-posterstyle-multi-panel-collage-generation.json"
+    },
+    {
+      "id": "senior-system-architect-agent",
+      "name": "Senior System Architect Agent",
+      "category": "engineering",
+      "path": "engineering/senior-system-architect-agent.json"
+    },
+    {
+      "id": "ai-themed-design-image-creation",
+      "name": "AI Themed Design Image Creation",
+      "category": "general",
+      "path": "general/ai-themed-design-image-creation.json"
+    },
+    {
+      "id": "bakery-merge-bounty-game-overview",
+      "name": "Bakery Merge Bounty Game Overview",
+      "category": "general",
+      "path": "general/bakery-merge-bounty-game-overview.json"
+    },
+    {
+      "id": "monetization-strategy-for-blockchain-based-merging-games",
+      "name": "Monetization Strategy for Blockchain-Based Merging Games",
+      "category": "general",
+      "path": "general/monetization-strategy-for-blockchain-based-merging-games.json"
+    },
+    {
+      "id": "corporate-studio-portrait-auto-outfit-for-menwomen",
+      "name": "Corporate Studio Portrait (Auto Outfit for Men/Women)",
+      "category": "general",
+      "path": "general/corporate-studio-portrait-auto-outfit-for-menwomen.json"
+    },
+    {
+      "id": "saas-payment-plan-options",
+      "name": "SaaS Payment Plan Options",
+      "category": "general",
+      "path": "general/saas-payment-plan-options.json"
+    },
+    {
+      "id": "ultra-detailed-vintage-photo-restoration-and-colorization",
+      "name": "Ultra-Detailed Vintage Photo Restoration and Colorization",
+      "category": "general",
+      "path": "general/ultra-detailed-vintage-photo-restoration-and-colorization.json"
+    },
+    {
+      "id": "ultra-detailed-vintage-photo-restoration-and-colorization",
+      "name": "Ultra-Detailed Vintage Photo Restoration and Colorization",
+      "category": "general",
+      "path": "general/ultra-detailed-vintage-photo-restoration-and-colorization.json"
+    },
+    {
+      "id": "revenue-performance-report",
+      "name": "Revenue Performance Report",
+      "category": "general",
+      "path": "general/revenue-performance-report.json"
+    },
+    {
+      "id": "revenue-performance-report",
+      "name": "Revenue Performance Report",
+      "category": "general",
+      "path": "general/revenue-performance-report.json"
+    },
+    {
+      "id": "harry-potter-marauders-map",
+      "name": "Harry Potter / Marauder’s Map",
+      "category": "general",
+      "path": "general/harry-potter-marauders-map.json"
+    },
+    {
+      "id": "create-a-cultural-superhero-movie-poster",
+      "name": "Create a Cultural Superhero Movie Poster",
+      "category": "general",
+      "path": "general/create-a-cultural-superhero-movie-poster.json"
+    },
+    {
+      "id": "недвижимость",
+      "name": "Недвижимость",
+      "category": "general",
+      "path": "general/недвижимость.json"
+    },
+    {
+      "id": "in-depth-article-enhancement-with-research",
+      "name": "In-Depth Article Enhancement with Research",
+      "category": "general",
+      "path": "general/in-depth-article-enhancement-with-research.json"
+    },
+    {
+      "id": "test-python-algorithmic-trading-project",
+      "name": "Test Python Algorithmic Trading Project",
+      "category": "engineering",
+      "path": "engineering/test-python-algorithmic-trading-project.json"
+    },
+    {
+      "id": "senior-prompt-engineer-role-guide",
+      "name": "Senior Prompt Engineer Role Guide",
+      "category": "engineering",
+      "path": "engineering/senior-prompt-engineer-role-guide.json"
+    },
+    {
+      "id": "mirror-selfie-with-face-preservation",
+      "name": "Mirror Selfie with Face Preservation",
+      "category": "general",
+      "path": "general/mirror-selfie-with-face-preservation.json"
+    },
+    {
+      "id": "патентный-поиск",
+      "name": "Патентный поиск",
+      "category": "general",
+      "path": "general/патентный-поиск.json"
+    },
+    {
+      "id": "comprehensive-content-review-plan",
+      "name": "Comprehensive Content Review Plan",
+      "category": "sales-marketing",
+      "path": "sales-marketing/comprehensive-content-review-plan.json"
+    },
+    {
+      "id": "arista-network-configuration-expert",
+      "name": "Arista Network Configuration Expert",
+      "category": "general",
+      "path": "general/arista-network-configuration-expert.json"
+    },
+    {
+      "id": "readability-logic-simulator-全功能翻译版",
+      "name": "Readability Logic Simulator - 全功能翻译版",
+      "category": "general",
+      "path": "general/readability-logic-simulator-全功能翻译版.json"
+    },
+    {
+      "id": "pitch",
+      "name": "Pitch",
+      "category": "general",
+      "path": "general/pitch.json"
+    },
+    {
+      "id": "小红书邮轮项目推广提示词",
+      "name": "小红书邮轮项目推广提示词",
+      "category": "general",
+      "path": "general/小红书邮轮项目推广提示词.json"
+    },
+    {
+      "id": "analyze-pdf-and-create-matlab-code",
+      "name": "Analyze PDF and Create MATLAB Code",
+      "category": "engineering",
+      "path": "engineering/analyze-pdf-and-create-matlab-code.json"
+    },
+    {
+      "id": "ai-customer-support-specialist",
+      "name": "AI Customer Support Specialist",
+      "category": "customer-service",
+      "path": "customer-service/ai-customer-support-specialist.json"
+    },
+    {
+      "id": "image-style-imitation",
+      "name": "Image Style Imitation",
+      "category": "general",
+      "path": "general/image-style-imitation.json"
+    },
+    {
+      "id": "medical-consultant",
+      "name": "Medical Consultant",
+      "category": "healthcare",
+      "path": "healthcare/medical-consultant.json"
+    },
+    {
+      "id": "virtual-doctor",
+      "name": "Virtual Doctor",
+      "category": "healthcare",
+      "path": "healthcare/virtual-doctor.json"
+    },
+    {
+      "id": "ai-new",
+      "name": "Ai new",
+      "category": "general",
+      "path": "general/ai-new.json"
+    },
+    {
+      "id": "removing-visual-noise-in-the-neural-networks-response",
+      "name": "Removing visual noise in the neural network's response",
+      "category": "general",
+      "path": "general/removing-visual-noise-in-the-neural-networks-response.json"
+    },
+    {
+      "id": "a-prompt-that-will-turn-your-photo-into-a-scene-from-a-cult-90s-movie",
+      "name": "A prompt that will turn your photo into a scene from a cult 90s movie",
+      "category": "general",
+      "path": "general/a-prompt-that-will-turn-your-photo-into-a-scene-from-a-cult-90s-movie.json"
+    },
+    {
+      "id": "diabetes-treatment-advisor",
+      "name": "Diabetes Treatment Advisor",
+      "category": "general",
+      "path": "general/diabetes-treatment-advisor.json"
+    },
+    {
+      "id": "worldquant",
+      "name": "worldquant",
+      "category": "general",
+      "path": "general/worldquant.json"
+    },
+    {
+      "id": "为您的公司设计薪酬体系",
+      "name": "为您的公司设计薪酬体系",
+      "category": "general",
+      "path": "general/为您的公司设计薪酬体系.json"
+    },
+    {
+      "id": "professional-buyer-qa-creator",
+      "name": "Professional Buyer Q&A Creator",
+      "category": "general",
+      "path": "general/professional-buyer-qa-creator.json"
+    },
+    {
+      "id": "vacuum-arc-modeling-under-transverse-magnetic-fields",
+      "name": "Vacuum Arc Modeling under Transverse Magnetic Fields",
+      "category": "general",
+      "path": "general/vacuum-arc-modeling-under-transverse-magnetic-fields.json"
+    },
+    {
+      "id": "ai-agent-security-evaluation-checklist",
+      "name": "AI Agent Security Evaluation Checklist",
+      "category": "general",
+      "path": "general/ai-agent-security-evaluation-checklist.json"
+    },
+    {
+      "id": "integrated-circuit-engineering-professor-role",
+      "name": "Integrated Circuit Engineering Professor Role",
+      "category": "engineering",
+      "path": "engineering/integrated-circuit-engineering-professor-role.json"
+    },
+    {
+      "id": "meeting-room-booking-web-app-development",
+      "name": "Meeting Room Booking Web App Development",
+      "category": "general",
+      "path": "general/meeting-room-booking-web-app-development.json"
+    },
+    {
+      "id": "compare-top-virtualization-solutions",
+      "name": "Compare Top Virtualization Solutions",
+      "category": "general",
+      "path": "general/compare-top-virtualization-solutions.json"
+    },
+    {
+      "id": "virtualization-expert",
+      "name": "Virtualization Expert",
+      "category": "general",
+      "path": "general/virtualization-expert.json"
+    },
+    {
+      "id": "studio-portraits-with-professional-postures",
+      "name": "Studio Portraits with Professional Postures",
+      "category": "general",
+      "path": "general/studio-portraits-with-professional-postures.json"
+    },
+    {
+      "id": "hts-veri-analiz-portalı-geliştirme-ve-hata-ayıklama",
+      "name": "HTS Veri Analiz Portalı Geliştirme ve Hata Ayıklama",
+      "category": "general",
+      "path": "general/hts-veri-analiz-portalı-geliştirme-ve-hata-ayıklama.json"
+    },
+    {
+      "id": "create-style_guidemd",
+      "name": "Create STYLE_GUIDE.md",
+      "category": "general",
+      "path": "general/create-style_guidemd.json"
+    },
+    {
+      "id": "analyse-énergétique-avec-dju-consommation-et-coûts",
+      "name": "Analyse Énergétique avec DJU, Consommation et Coûts",
+      "category": "general",
+      "path": "general/analyse-énergétique-avec-dju-consommation-et-coûts.json"
+    },
+    {
+      "id": "learn-to-speak-spanish",
+      "name": "Learn to Speak Spanish",
+      "category": "general",
+      "path": "general/learn-to-speak-spanish.json"
+    },
+    {
+      "id": "500hour-ai-consultant-prompt",
+      "name": "$500/Hour AI Consultant Prompt",
+      "category": "general",
+      "path": "general/500hour-ai-consultant-prompt.json"
+    },
+    {
+      "id": "viral-video-analyzer-for-tiktok-and-xiaohongshu",
+      "name": "Viral Video Analyzer for TikTok and Xiaohongshu",
+      "category": "general",
+      "path": "general/viral-video-analyzer-for-tiktok-and-xiaohongshu.json"
+    },
+    {
+      "id": "kognitiv-aktivierende-aufgaben-erstellen",
+      "name": "Kognitiv aktivierende Aufgaben erstellen",
+      "category": "general",
+      "path": "general/kognitiv-aktivierende-aufgaben-erstellen.json"
+    },
+    {
+      "id": "xiaomi-company-self-service-management-system-frontend-development",
+      "name": "Xiaomi Company Self-Service Management System Frontend Development",
+      "category": "customer-service",
+      "path": "customer-service/xiaomi-company-self-service-management-system-frontend-development.json"
+    },
+    {
+      "id": "analyse-énergétique-avec-dju-consommation-et-coûts",
+      "name": "Analyse Énergétique avec DJU, Consommation et Coûts",
+      "category": "general",
+      "path": "general/analyse-énergétique-avec-dju-consommation-et-coûts.json"
+    },
+    {
+      "id": "tiktok-marketing-visual-designer-agent",
+      "name": "TikTok Marketing Visual Designer Agent",
+      "category": "sales-marketing",
+      "path": "sales-marketing/tiktok-marketing-visual-designer-agent.json"
+    },
+    {
+      "id": "cti-analyst-cybersecurity-project-support",
+      "name": "CTI Analyst Cybersecurity Project Support",
+      "category": "customer-service",
+      "path": "customer-service/cti-analyst-cybersecurity-project-support.json"
+    },
+    {
+      "id": "customizable-web-template-for-company-branding",
+      "name": "Customizable Web Template for Company Branding",
+      "category": "general",
+      "path": "general/customizable-web-template-for-company-branding.json"
+    },
+    {
+      "id": "minimal-web-compatible-food-order-app-development",
+      "name": "Minimal Web-Compatible Food Order App Development",
+      "category": "general",
+      "path": "general/minimal-web-compatible-food-order-app-development.json"
+    },
+    {
+      "id": "real-time-multiplayer-defense-game",
+      "name": "Real-Time Multiplayer Defense Game",
+      "category": "general",
+      "path": "general/real-time-multiplayer-defense-game.json"
+    },
+    {
+      "id": "continue-coding-assistant",
+      "name": "Continue Coding Assistant",
+      "category": "engineering",
+      "path": "engineering/continue-coding-assistant.json"
+    },
+    {
+      "id": "create-a-new-greek-god",
+      "name": "Create a New Greek God",
+      "category": "general",
+      "path": "general/create-a-new-greek-god.json"
+    },
+    {
+      "id": "fdr-analysis-program-for-commercial-aircraft",
+      "name": "FDR Analysis Program for Commercial Aircraft",
+      "category": "general",
+      "path": "general/fdr-analysis-program-for-commercial-aircraft.json"
+    },
+    {
+      "id": "integration-and-planning-roadmap-for-calculator-content",
+      "name": "Integration and Planning Roadmap for Calculator Content",
+      "category": "sales-marketing",
+      "path": "sales-marketing/integration-and-planning-roadmap-for-calculator-content.json"
+    },
+    {
+      "id": "pixel-dissolve-minimalist-3d-food-transformation",
+      "name": "Pixel Dissolve: Minimalist 3D Food Transformation",
+      "category": "general",
+      "path": "general/pixel-dissolve-minimalist-3d-food-transformation.json"
+    },
+    {
+      "id": "brsorndnsg",
+      "name": "brsorndnsg",
+      "category": "general",
+      "path": "general/brsorndnsg.json"
+    },
+    {
+      "id": "luxury-ski-resort-selfie-scene-description",
+      "name": "Luxury Ski Resort Selfie Scene Description",
+      "category": "general",
+      "path": "general/luxury-ski-resort-selfie-scene-description.json"
+    },
+    {
+      "id": "internal-project-proposal-for-hospital-collaboration",
+      "name": "Internal Project Proposal for Hospital Collaboration",
+      "category": "general",
+      "path": "general/internal-project-proposal-for-hospital-collaboration.json"
+    },
+    {
+      "id": "ai-face-swapping-for-e-commerce-personalization",
+      "name": "AI Face Swapping for E-commerce Personalization",
+      "category": "general",
+      "path": "general/ai-face-swapping-for-e-commerce-personalization.json"
+    },
+    {
+      "id": "dark-style-image-prompt",
+      "name": "Dark Style Image Prompt",
+      "category": "general",
+      "path": "general/dark-style-image-prompt.json"
+    },
+    {
+      "id": "develop-a-lazy-learner-software",
+      "name": "Develop a Lazy Learner Software",
+      "category": "general",
+      "path": "general/develop-a-lazy-learner-software.json"
+    },
+    {
+      "id": "college-level-integrative-project-proposal-draft",
+      "name": "College-Level Integrative Project Proposal Draft",
+      "category": "general",
+      "path": "general/college-level-integrative-project-proposal-draft.json"
+    },
+    {
+      "id": "product-image-highlight-extraction",
+      "name": "Product Image Highlight Extraction",
+      "category": "general",
+      "path": "general/product-image-highlight-extraction.json"
+    },
+    {
+      "id": "ai-stocks-investment-helper",
+      "name": "AI Stocks Investment Helper",
+      "category": "bfsi",
+      "path": "bfsi/ai-stocks-investment-helper.json"
+    },
+    {
+      "id": "asisten-serba-bisa-untuk-kebutuhan-harian",
+      "name": "Asisten Serba Bisa untuk Kebutuhan Harian",
+      "category": "general",
+      "path": "general/asisten-serba-bisa-untuk-kebutuhan-harian.json"
+    },
+    {
+      "id": "custom-health-membership-annual-summary",
+      "name": "Custom Health Membership Annual Summary",
+      "category": "healthcare",
+      "path": "healthcare/custom-health-membership-annual-summary.json"
+    },
+    {
+      "id": "custom-health-membership-annual-summary",
+      "name": "Custom Health Membership Annual Summary",
+      "category": "healthcare",
+      "path": "healthcare/custom-health-membership-annual-summary.json"
+    },
+    {
+      "id": "childrens-story-about-apples",
+      "name": "Children's Story about Apples",
+      "category": "general",
+      "path": "general/childrens-story-about-apples.json"
+    },
+    {
+      "id": "lower-ai-generation-rate",
+      "name": "Lower AI Generation Rate",
+      "category": "general",
+      "path": "general/lower-ai-generation-rate.json"
+    },
+    {
+      "id": "academic-text-refinement-assistant",
+      "name": "Academic Text Refinement Assistant",
+      "category": "general",
+      "path": "general/academic-text-refinement-assistant.json"
+    },
+    {
+      "id": "tumor-medical-industry-solution-business-plan",
+      "name": "Tumor Medical Industry Solution Business Plan",
+      "category": "healthcare",
+      "path": "healthcare/tumor-medical-industry-solution-business-plan.json"
+    },
+    {
+      "id": "tumor-medical-industry-solution-business-plan",
+      "name": "Tumor Medical Industry Solution Business Plan",
+      "category": "healthcare",
+      "path": "healthcare/tumor-medical-industry-solution-business-plan.json"
+    },
+    {
+      "id": "starting-a-flutter-project",
+      "name": "Starting a Flutter Project",
+      "category": "general",
+      "path": "general/starting-a-flutter-project.json"
+    },
+    {
+      "id": "comprehensive-academic-paper-writing-guide",
+      "name": "Comprehensive Academic Paper Writing Guide",
+      "category": "general",
+      "path": "general/comprehensive-academic-paper-writing-guide.json"
+    },
+    {
+      "id": "military-insignia-json-structure",
+      "name": "Military Insignia JSON Structure",
+      "category": "general",
+      "path": "general/military-insignia-json-structure.json"
+    },
+    {
+      "id": "interview-preparation-coach",
+      "name": "Interview Preparation Coach",
+      "category": "education",
+      "path": "education/interview-preparation-coach.json"
+    },
+    {
+      "id": "comprehensive-uiux-mobile-app-analysis",
+      "name": "Comprehensive UI/UX Mobile App Analysis",
+      "category": "general",
+      "path": "general/comprehensive-uiux-mobile-app-analysis.json"
+    },
+    {
+      "id": "comprehensive-repository-analysis",
+      "name": "Comprehensive repository analysis",
+      "category": "general",
+      "path": "general/comprehensive-repository-analysis.json"
+    },
+    {
+      "id": "optimize-large-data-reading-in-code",
+      "name": "Optimize Large Data Reading in Code",
+      "category": "engineering",
+      "path": "engineering/optimize-large-data-reading-in-code.json"
+    },
+    {
+      "id": "pet-store-advertising-campaign-strategy",
+      "name": "Pet Store Advertising Campaign Strategy",
+      "category": "general",
+      "path": "general/pet-store-advertising-campaign-strategy.json"
+    },
+    {
+      "id": "linkedin-comments",
+      "name": "LinkedIn comments",
+      "category": "general",
+      "path": "general/linkedin-comments.json"
+    },
+    {
+      "id": "detailed-image-generation-prompt-for-fashion-and-portrait-photography",
+      "name": "Detailed Image Generation Prompt for Fashion and Portrait Photography",
+      "category": "general",
+      "path": "general/detailed-image-generation-prompt-for-fashion-and-portrait-photography.json"
+    },
+    {
+      "id": "high-end-beauty-editorial-photo-shoot-specification",
+      "name": "High-End Beauty Editorial Photo Shoot Specification",
+      "category": "general",
+      "path": "general/high-end-beauty-editorial-photo-shoot-specification.json"
+    },
+    {
+      "id": "flamenco-inspired-turkish-pop-song-for-suno-ai",
+      "name": "Flamenco inspired Turkish Pop song for Suno AI",
+      "category": "general",
+      "path": "general/flamenco-inspired-turkish-pop-song-for-suno-ai.json"
+    },
+    {
+      "id": "pov-smartphone-with-space-themed-twitter-ui-in-central-park",
+      "name": "POV Smartphone with Space-Themed Twitter UI in Central Park",
+      "category": "general",
+      "path": "general/pov-smartphone-with-space-themed-twitter-ui-in-central-park.json"
+    },
+    {
+      "id": "comprehensive-devops-guide",
+      "name": "Comprehensive DevOps Guide",
+      "category": "engineering",
+      "path": "engineering/comprehensive-devops-guide.json"
+    },
+    {
+      "id": "nextjs-specialized-front-end-developer",
+      "name": "Next.js Specialized Front-End Developer",
+      "category": "engineering",
+      "path": "engineering/nextjs-specialized-front-end-developer.json"
+    },
+    {
+      "id": "autosar-software-module-developer",
+      "name": "AUTOSAR Software Module Developer",
+      "category": "engineering",
+      "path": "engineering/autosar-software-module-developer.json"
+    },
+    {
+      "id": "fierce-medieval-queen-on-iron-throne-portrait",
+      "name": "Fierce Medieval Queen on Iron Throne Portrait",
+      "category": "hr",
+      "path": "hr/fierce-medieval-queen-on-iron-throne-portrait.json"
+    },
+    {
+      "id": "documentary-on-humanitarian-refugee-crises",
+      "name": "Documentary on Humanitarian & Refugee Crises",
+      "category": "general",
+      "path": "general/documentary-on-humanitarian-refugee-crises.json"
+    },
+    {
+      "id": "personal-financial-adviosr",
+      "name": "Personal Financial Adviosr",
+      "category": "bfsi",
+      "path": "bfsi/personal-financial-adviosr.json"
+    },
+    {
+      "id": "cinematic-lip-product-image",
+      "name": "Cinematic Lip Product Image",
+      "category": "general",
+      "path": "general/cinematic-lip-product-image.json"
+    },
+    {
+      "id": "act-as-a-senior-research-paper-evaluator",
+      "name": "Act as a Senior Research Paper Evaluator",
+      "category": "general",
+      "path": "general/act-as-a-senior-research-paper-evaluator.json"
+    },
+    {
+      "id": "manufacturing-workflow-optimization-with-or-tools",
+      "name": "Manufacturing Workflow Optimization with OR-Tools",
+      "category": "general",
+      "path": "general/manufacturing-workflow-optimization-with-or-tools.json"
+    },
+    {
+      "id": "act-as-a-conversational-ai",
+      "name": "Act as a Conversational AI",
+      "category": "general",
+      "path": "general/act-as-a-conversational-ai.json"
+    },
+    {
+      "id": "ai-for-casino-list-and-profit-simulation",
+      "name": "AI for Casino List and Profit Simulation",
+      "category": "general",
+      "path": "general/ai-for-casino-list-and-profit-simulation.json"
+    },
+    {
+      "id": "article-summary-and-comprehension",
+      "name": "Article Summary and Comprehension",
+      "category": "general",
+      "path": "general/article-summary-and-comprehension.json"
+    },
+    {
+      "id": "shift-tracking-telegram-mini-app",
+      "name": "Shift Tracking Telegram Mini App",
+      "category": "general",
+      "path": "general/shift-tracking-telegram-mini-app.json"
+    },
+    {
+      "id": "shift-tracking-telegram-mini-app",
+      "name": "Shift Tracking Telegram Mini App",
+      "category": "general",
+      "path": "general/shift-tracking-telegram-mini-app.json"
+    },
+    {
+      "id": "shift-tracking-telegram-mini-app",
+      "name": "Shift Tracking Telegram Mini App",
+      "category": "general",
+      "path": "general/shift-tracking-telegram-mini-app.json"
+    },
+    {
+      "id": "shift-tracking-telegram-mini-app",
+      "name": "Shift Tracking Telegram Mini App",
+      "category": "general",
+      "path": "general/shift-tracking-telegram-mini-app.json"
+    },
+    {
+      "id": "shift-tracking-telegram-mini-app",
+      "name": "Shift Tracking Telegram Mini App",
+      "category": "general",
+      "path": "general/shift-tracking-telegram-mini-app.json"
+    }
+  ]
+}

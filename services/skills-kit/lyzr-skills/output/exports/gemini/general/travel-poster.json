@@ -1,0 +1,28 @@
+{
+  "skill_id": "travel-poster",
+  "skill_name": "Travel Poster",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "{\n  \"style_definition\": {\n    \"art_style\": \"Modern Flat Vector Illustration\",\n    \"medium\": \"Digital Vector Art\",\n    \"vibe\": \"Optimistic, Cheerful, Travel Poster\",\n    \"rendering_engine_simulation\": \"Adobe Illustrator / Vectorized\"\n  },\n  \"visual_parameters\": {\n    \"lines_and_shapes\": \"Clean sharp lines, simplified geometry, lack of complex textures, rounded organic shapes for trees and clouds.\",\n    \"colors\": \"High saturation, vibrant palette. Dominant turquoise and cyan for water/sky, warm orange and terracotta for buildings, lush green for vegetation, cream/yellow for clouds.\",\n    \"lighting\": \"Flat lighting with soft gradients, minimal shadows, bright daylight atmosphere.\"\n  },\n  \"generation_prompt\": \"Transform the input photo into a high-quality modern flat vector illustration in the style of a corporate travel poster. The image should feature simplified shapes, clean lines, and a smooth matte finish. Use a vibrant color palette with bright turquoise water, warm orange rooftops, and lush green foliage. The sky should be bright blue with stylized fluffy clouds. Remove all photorealistic textures, noise, and grain. Make it look like a professional digital artwork found on Behance or Dribbble. Maintain the composition of the original photo but vectorize the details.\",\n  \"negative_prompt\": \"photorealistic, realistic, 3d render, glossy, shiny, grainy, noise, blur, bokeh, detailed textures, grunge, dark, gloomy, sketch, rough lines, low resolution, photography\"\n}",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "\"style_definition\": {\n    \"art_style\": \"Modern Flat Vector Illustration\",\n    \"medium\": \"Digital Vector Art\",\n    \"vibe\": \"Optimistic, Cheerful, Travel Poster\",\n    \"rendering_engine_simulation\": \"Adobe Illustrator / Vectorized\"",
+      "default": "",
+      "description": "Input for \n  \"style_definition\": {\n    \"art_style\": \"Modern Flat Vector Illustration\",\n    \"medium\": \"Digital Vector Art\",\n    \"vibe\": \"Optimistic, Cheerful, Travel Poster\",\n    \"rendering_engine_simulation\": \"Adobe Illustrator / Vectorized\"\n  "
+    },
+    {
+      "name": "\"lines_and_shapes\": \"Clean sharp lines, simplified geometry, lack of complex textures, rounded organic shapes for trees and clouds.\",\n    \"colors\": \"High saturation, vibrant palette. Dominant turquoise and cyan for water/sky, warm orange and terracotta for buildings, lush green for vegetation, cream/yellow for clouds.\",\n    \"lighting\": \"Flat lighting with soft gradients, minimal shadows, bright daylight atmosphere.\"",
+      "default": "",
+      "description": "Input for \n    \"lines_and_shapes\": \"Clean sharp lines, simplified geometry, lack of complex textures, rounded organic shapes for trees and clouds.\",\n    \"colors\": \"High saturation, vibrant palette. Dominant turquoise and cyan for water/sky, warm orange and terracotta for buildings, lush green for vegetation, cream/yellow for clouds.\",\n    \"lighting\": \"Flat lighting with soft gradients, minimal shadows, bright daylight atmosphere.\"\n  "
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"{\n  \"style_definition\": {\n    \"art_style\": \"Modern Flat Vector Illustration\",\n    \"medium\": \"Digital...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

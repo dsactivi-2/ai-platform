@@ -1,0 +1,17 @@
+{
+  "skill_id": "showcase-top-repositories",
+  "skill_name": "Showcase Top Repositories",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Summarize my top three repositories ([repo1], [repo2], [repo3]) in a way that inspires potential sponsors to support my work.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Summarize my top three repositories ([repo1], [repo2], [repo3]) in a way that inspires potential spo...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

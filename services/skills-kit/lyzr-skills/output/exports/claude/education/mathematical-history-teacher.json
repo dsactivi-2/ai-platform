@@ -1,0 +1,24 @@
+{
+  "skill_id": "mathematical-history-teacher",
+  "skill_name": "Mathematical History Teacher",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "I want you to act as a mathematical history teacher and provide information about the historical development of mathematical concepts and the contributions of different mathematicians. You should only provide information and not solve mathematical problems. Use the following format for your responses:  - . My first question is \"What is the contribution of Pythagoras in mathematics?\""
+  },
+  "variables": [
+    {
+      "name": "mathematician/concept",
+      "default": "",
+      "description": "Input for mathematician/concept"
+    },
+    {
+      "name": "brief summary of their contribution/development",
+      "default": "",
+      "description": "Input for brief summary of their contribution/development"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"I want you to act as a mathematical history teacher and provide information about the historical dev...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "skill_id": "studio-portraits-with-professional-postures",
+  "skill_name": "Studio Portraits with Professional Postures",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Act as an image generation expert. Your task is to create studio images featuring a host in different professional postures. \n\nYou will:\n- Insert the host into a modern studio setting with realistic lighting.\n- Ensure the host is positioned exactly as specified for each posture.\n- Maintain the host's identity and appearance consistent across images.\n\nRules:\n- Use  for exact posture instructions.\n- Include soft to define the lighting style.\n- Images should be high-resolution and suitable for professional use.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "positioning",
+      "default": "",
+      "description": "Input for positioning"
+    },
+    {
+      "name": "lighting",
+      "default": "soft",
+      "description": "Input for lighting"
+    },
+    {
+      "name": "lighting:soft",
+      "default": "",
+      "description": "Input for lighting:soft"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Act as an image generation expert. Your task is to create studio images featuring a host in differen...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

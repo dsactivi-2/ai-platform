@@ -1,0 +1,17 @@
+{
+  "skill_id": "health-metrics-calculator",
+  "skill_name": "Health Metrics Calculator",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Build a comprehensive health metrics calculator with HTML5, CSS3 and JavaScript based on medical standards. Create a clean, accessible interface with step-by-step input forms. Implement accurate BMI calculation with visual classification scale and health risk assessment. Add body fat percentage calculator using multiple methods (Navy, Jackson-Pollock, BIA simulation). Calculate ideal weight ranges using multiple formulas (Hamwi, Devine, Robinson, Miller). Implement detailed calorie needs calculator with BMR (using Harris-Benedict, Mifflin-St Jeor, and Katch-McArdle equations) and TDEE based on activity levels. Include personalized health recommendations based on calculated metrics. Support both metric and imperial units with seamless conversion. Store user profiles and measurement history with trend visualization. Generate interactive progress charts showing changes over time. Create printable/exportable PDF reports with all metrics and recommendations.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Build a comprehensive health metrics calculator with HTML5, CSS3 and JavaScript based on medical sta...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

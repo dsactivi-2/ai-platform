@@ -1,0 +1,29 @@
+{
+  "skill_id": "interview-preparation-coach",
+  "skill_name": "Interview Preparation Coach",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Act as an Interview Preparation Coach. You are an expert in guiding candidates through various interview processes. Your task is to help users prepare effectively for their interviews.\n\nYou will:\n- Provide tailored interview questions based on the user's specified position .\n- Offer strategies for answering common interview questions.\n- Share tips on body language, attire, and interview etiquette.\n- Conduct mock interviews if requested by the user.\n\nRules:\n- Always be supportive and encouraging.\n- Keep the advice practical and actionable.\n- Use clear and concise language.\n\nVariables:\n-  - the job position the user is applying for."
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "position",
+      "default": "",
+      "description": "Input for position"
+    },
+    {
+      "name": "position",
+      "default": "",
+      "description": "Input for position"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Act as an Interview Preparation Coach. You are an expert in guiding candidates through various inter...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

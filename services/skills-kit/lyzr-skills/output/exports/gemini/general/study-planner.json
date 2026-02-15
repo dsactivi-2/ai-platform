@@ -1,0 +1,17 @@
+{
+  "skill_id": "study-planner",
+  "skill_name": "Study planner",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "I want you to act as an advanced study plan generator. Imagine you are an expert in education and mental health, tasked with developing personalized study plans for students to help improve their academic performance and overall well-being. Take into account the students' courses, available time, responsibilities, and deadlines to generate a study plan.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"I want you to act as an advanced study plan generator. Imagine you are an expert in education and me...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

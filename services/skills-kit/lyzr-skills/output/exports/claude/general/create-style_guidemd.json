@@ -1,0 +1,19 @@
+{
+  "skill_id": "create-style_guidemd",
+  "skill_name": "Create STYLE_GUIDE.md",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "{\n  \"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    \"Overview\",\n    \"Color Palette\",\n    \"Typography\",\n    \"Spacing System\",\n    \"Component Styles\",\n    \"Shadows & Elevation\",\n    \"Animations & Transitions\",\n    \"Border Radius\",\n    \"Opacity & Transparency\",\n    \"Common Tailwind CSS Usage\"\n  ],\n  \"details\": \"Provide detailed analysis and descriptions to the project style system, ensuring no important details are missed.\",\n  \"example\": \"Include an example component reference design code.\"\n}"
+  },
+  "variables": [
+    {
+      "name": "\"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    \"Overview\",\n    \"Color Palette\",\n    \"Typography\",\n    \"Spacing System\",\n    \"Component Styles\",\n    \"Shadows & Elevation\",\n    \"Animations & Transitions\",\n    \"Border Radius\",\n    \"Opacity & Transparency\",\n    \"Common Tailwind CSS Usage\"\n  ],\n  \"details\": \"Provide detailed analysis and descriptions to the project style system, ensuring no important details are missed.\",\n  \"example\": \"Include an example component reference design code.\"",
+      "default": "",
+      "description": "Input for \n  \"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    \"Overview\",\n    \"Color Palette\",\n    \"Typography\",\n    \"Spacing System\",\n    \"Component Styles\",\n    \"Shadows & Elevation\",\n    \"Animations & Transitions\",\n    \"Border Radius\",\n    \"Opacity & Transparency\",\n    \"Common Tailwind CSS Usage\"\n  ],\n  \"details\": \"Provide detailed analysis and descriptions to the project style system, ensuring no important details are missed.\",\n  \"example\": \"Include an example component reference design code.\"\n"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"{\n  \"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    ...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

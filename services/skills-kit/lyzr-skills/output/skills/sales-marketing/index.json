@@ -1,0 +1,46 @@
+{
+  "category": "sales-marketing",
+  "count": 10,
+  "skills": [
+    {
+      "id": "advertiser",
+      "name": "Advertiser"
+    },
+    {
+      "id": "social-media-influencer",
+      "name": "Social Media Influencer"
+    },
+    {
+      "id": "educational-content-creator",
+      "name": "Educational Content Creator"
+    },
+    {
+      "id": "social-media-manager",
+      "name": "Social Media Manager"
+    },
+    {
+      "id": "salesperson",
+      "name": "Salesperson"
+    },
+    {
+      "id": "seo-specialist",
+      "name": "SEO specialist"
+    },
+    {
+      "id": "sales",
+      "name": "Sales"
+    },
+    {
+      "id": "comprehensive-content-review-plan",
+      "name": "Comprehensive Content Review Plan"
+    },
+    {
+      "id": "tiktok-marketing-visual-designer-agent",
+      "name": "TikTok Marketing Visual Designer Agent"
+    },
+    {
+      "id": "integration-and-planning-roadmap-for-calculator-content",
+      "name": "Integration and Planning Roadmap for Calculator Content"
+    }
+  ]
+}

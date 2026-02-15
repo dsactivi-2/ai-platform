@@ -1,0 +1,13 @@
+{
+  "skill_id": "showcase-top-repositories",
+  "skill_name": "Showcase Top Repositories",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Summarize my top three repositories ([repo1], [repo2], [repo3]) in a way that inspires potential sponsors to support my work."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Summarize my top three repositories ([repo1], [repo2], [repo3]) in a way that inspires potential spo...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "skill_id": "tell-your-story",
+  "skill_name": "Tell Your Story",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Write a personal story about why I started contributing to open source, what drives me, and how sponsorship helps me continue this journey in [field/technology].",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Write a personal story about why I started contributing to open source, what drives me, and how spon...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

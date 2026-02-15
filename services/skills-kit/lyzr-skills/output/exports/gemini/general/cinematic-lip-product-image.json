@@ -1,0 +1,17 @@
+{
+  "skill_id": "cinematic-lip-product-image",
+  "skill_name": "Cinematic Lip Product Image",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Create an image of a lip product in cinematic 1080p 4K resolution. The image should feature lip glosses in various shades that are inclusive and look flattering on people of different skin tones. Ensure that the presentation is visually striking, with a focus on a lip gloss drop dripping elegantly on the lip gloss tube, adding a touch of drama and luxury to the scene.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Create an image of a lip product in cinematic 1080p 4K resolution. The image should feature lip glos...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

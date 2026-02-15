@@ -1,0 +1,13 @@
+{
+  "skill_id": "creative-perks",
+  "skill_name": "Creative Perks",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Suggest creative perks or acknowledgments for sponsors to foster a sense of belonging and appreciation."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Suggest creative perks or acknowledgments for sponsors to foster a sense of belonging and appreciati...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

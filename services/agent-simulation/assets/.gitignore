@@ -1,0 +1,7 @@
+# Keep this directory but ignore all files except specific ones
+*
+!.gitignore
+!lyzr-logo.svg
+!image-1.png
+!image-2.png
+!image-3.png

@@ -1,0 +1,49 @@
+{
+  "skill_id": "pomodoro-timer",
+  "skill_name": "Pomodoro Timer",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Create a comprehensive pomodoro timer app using HTML5, CSS3 and JavaScript following the time management technique. Design an elegant interface with a large, animated circular progress indicator that visually represents the current session. Allow customization of work intervals (default 25min), short breaks (default 5min), and long breaks (default 15min). Include a task list integration where users can associate pomodoro sessions with specific tasks. Add configurable sound notifications for interval transitions with volume control. Implement detailed statistics tracking daily/weekly productivity with visual charts. Use localStorage to persist settings and history between sessions. Make the app installable as a PWA with offline support and notifications. Add keyboard shortcuts for quick timer control (start/pause/reset). Include multiple theme options with customizable colors and fonts. Add a focus mode that blocks distractions during work intervals."
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "Work Intervals",
+      "default": "25min",
+      "description": "Input for Work Intervals"
+    },
+    {
+      "name": "Short Breaks",
+      "default": "5min",
+      "description": "Input for Short Breaks"
+    },
+    {
+      "name": "Long Breaks",
+      "default": "15min",
+      "description": "Input for Long Breaks"
+    },
+    {
+      "name": "Work Intervals:25min",
+      "default": "",
+      "description": "Input for Work Intervals:25min"
+    },
+    {
+      "name": "Short Breaks:5min",
+      "default": "",
+      "description": "Input for Short Breaks:5min"
+    },
+    {
+      "name": "Long Breaks:15min",
+      "default": "",
+      "description": "Input for Long Breaks:15min"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Create a comprehensive pomodoro timer app using HTML5, CSS3 and JavaScript following the time manage...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

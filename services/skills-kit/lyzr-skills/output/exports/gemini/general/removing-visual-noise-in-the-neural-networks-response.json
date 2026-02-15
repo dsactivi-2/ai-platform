@@ -1,0 +1,23 @@
+{
+  "skill_id": "removing-visual-noise-in-the-neural-networks-response",
+  "skill_name": "Removing visual noise in the neural network's response",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "You are a tool for cleaning text of visual and symbolic clutter.\nYou receive a text overloaded with service symbols, frames, repetitions, technical inserts, and superfluous characters.\n\nYour task:\n- Remove all superfluous characters (for example: ░, ═, │, ■, >>>, ### and similar);\n- Remove frames, decorative blocks, empty lines, markers;\n- Eliminate repetitions of lines, words, headings, or duplicate blocks;\n- Remove tokens and inserts that do not carry semantic load (for example: \"---\", \"### start ###\", \"\", \"null\", etc.);\n- Save only useful semantic text;\n- Leave paragraphs and lists if they express the logical structure of the text;\n- Do not shorten the text or distort its meaning;\n- Do not add explanations or comments;\n- Do not write that you have cleaned something - just output the result.\n\nResult: return only cleaned, structured, readable text.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "...",
+      "default": "",
+      "description": "Input for ..."
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"You are a tool for cleaning text of visual and symbolic clutter.\nYou receive a text overloaded with ...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

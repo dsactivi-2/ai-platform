@@ -1,0 +1,68 @@
+{
+  "policies": [
+    {
+      "type": "validation",
+      "name": "InputValidation",
+      "enabled": true,
+      "phase": "pre_execution",
+      "strict": true,
+      "description": "Validate all inputs before execution"
+    },
+    {
+      "type": "authorization",
+      "name": "RoleBasedAccess",
+      "enabled": true,
+      "required_roles": ["admin", "finance"],
+      "required_permissions": ["payment.write", "transaction.approve"],
+      "context_key": "user",
+      "require_approval_on_failure": false,
+      "description": "Require admin or finance role with payment permissions"
+    },
+    {
+      "type": "rate_limit",
+      "name": "APIRateLimit",
+      "enabled": true,
+      "max_calls": 100,
+      "window_seconds": 60,
+      "per_user": true,
+      "user_key": "user.id",
+      "description": "Limit to 100 calls per minute per user"
+    },
+    {
+      "type": "audit",
+      "name": "ComplianceAudit",
+      "enabled": true,
+      "phase": "both",
+      "log_inputs": true,
+      "log_outputs": true,
+      "sensitive_fields": [
+        "password",
+        "ssn",
+        "credit_card",
+        "api_key",
+        "email"
+      ],
+      "compliance_tags": ["GDPR", "SOC2", "PCI-DSS"],
+      "description": "Log all operations with PII redaction for compliance"
+    },
+    {
+      "type": "approval",
+      "name": "LargeTransactionApproval",
+      "enabled": true,
+      "approvers": [
+        "cfo@company.com",
+        "finance-lead@company.com"
+      ],
+      "timeout_seconds": 3600,
+      "on_timeout": "reject",
+      "require_reason": true,
+      "description": "Require CFO or finance lead approval with 1-hour timeout"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "environment": "production",
+    "last_updated": "2025-10-18",
+    "owner": "governance-team"
+  }
+}

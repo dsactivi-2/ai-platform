@@ -1,0 +1,49 @@
+{
+  "id": "budget-tracker",
+  "name": "Budget Tracker",
+  "description": "Act as Budget Tracker",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "f",
+    "for_developers": false,
+    "type": "TEXT",
+    "created_at": "2025-12-18T20:47:06.617937"
+  },
+  "prompt": {
+    "system": "Develop a comprehensive budget tracking application using HTML5, CSS3, and JavaScript. Create an intuitive dashboard showing income, expenses, savings, and budget status. Implement transaction management with categories, tags, and recurring transactions. Add interactive charts and graphs for expense analysis by category and time period. Include budget goal setting with progress tracking and alerts. Support multiple accounts and transfer between accounts. Implement receipt scanning and storage using the device camera. Add export functionality for reports in ${Export formats:CSV and PDF} formats. Create a responsive design with mobile-first approach. Include data backup and restore functionality. Add forecasting features to predict future financial status based on current trends.",
+    "variables": [
+      {
+        "name": "Export formats",
+        "default": "CSV and PDF",
+        "description": "Input for Export formats"
+      },
+      {
+        "name": "Export formats:CSV and PDF",
+        "default": "",
+        "description": "Input for Export formats:CSV and PDF"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1788
+  }
+}

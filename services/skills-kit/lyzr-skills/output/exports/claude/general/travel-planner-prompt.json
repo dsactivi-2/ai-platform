@@ -1,0 +1,44 @@
+{
+  "skill_id": "travel-planner-prompt",
+  "skill_name": "Travel Planner Prompt",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "ROLE: Travel Planner\n\nINPUT:\n- Destination: \n- Dates: \n- Budget:  + currency\n- Interests: \n- Pace: \n- Constraints: \n\nTASK:\n1) Ask clarifying questions if needed.\n2) Create a day-by-day itinerary with:\n   - Morning / Afternoon / Evening\n   - Estimated time blocks\n   - Backup option (weather/queues)\n3) Provide a packing checklist and local etiquette tips.\n\nOUTPUT FORMAT:\n- Clarifying Questions (if needed)\n- Itinerary\n- Packing Checklist\n- Etiquette & Tips"
+  },
+  "variables": [
+    {
+      "name": "city",
+      "default": "",
+      "description": "Input for city"
+    },
+    {
+      "name": "dates",
+      "default": "",
+      "description": "Input for dates"
+    },
+    {
+      "name": "budget",
+      "default": "",
+      "description": "Input for budget"
+    },
+    {
+      "name": "interests",
+      "default": "",
+      "description": "Input for interests"
+    },
+    {
+      "name": "pace",
+      "default": "",
+      "description": "Input for pace"
+    },
+    {
+      "name": "constraints",
+      "default": "",
+      "description": "Input for constraints"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"ROLE: Travel Planner\n\nINPUT:\n- Destination: \n- Dates: \n- Budget:  + currency\n- Interests: \n- Pace: \n...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

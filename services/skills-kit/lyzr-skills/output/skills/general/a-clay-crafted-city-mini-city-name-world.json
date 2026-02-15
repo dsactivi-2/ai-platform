@@ -1,0 +1,49 @@
+{
+  "id": "a-clay-crafted-city-mini-city-name-world",
+  "name": "A Clay-Crafted City: Mini [CITY NAME] World",
+  "description": "Act as A Clay-Crafted City: Mini [CITY NAME] World",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "semihkislar",
+    "for_developers": false,
+    "type": "IMAGE",
+    "created_at": "2025-12-18T20:47:06.622557"
+  },
+  "prompt": {
+    "system": "Generate a whimsical miniature world featuring ${landmark_name} crafted entirely from colorful modeling clay. Every element (buildings, trees, waterways, and urban features) should appear hand-sculpted with visible fingerprints and organic clay textures. Use a playful, childlike style with vibrant colors: bright azure sky, puffy cream clouds, emerald trees, and buildings in warm yellows, oranges, reds, and blues. The handmade quality should be evident in every surface and gentle curve. Capture from a wide perspective showcasing the entire miniature landscape in a harmonious, joyful composition.\n\nAt the top-center, add the city name ${city_name} in a clean, bold, friendly rounded font that matches the playful clay aesthetic. The text should be clearly readable and high-contrast against the sky, with subtle depth as if it is also made from clay (slight 3D clay lettering), but keep it simple and not overly detailed.\n\nInclude no other text, words, or signage anywhere else in the scene. Only sculptural clay elements should define the location through recognizable architectural features. 1080x1080 dimension.",
+    "variables": [
+      {
+        "name": "landmark_name",
+        "default": "",
+        "description": "Input for landmark_name"
+      },
+      {
+        "name": "city_name",
+        "default": "",
+        "description": "Input for city_name"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 2119
+  }
+}

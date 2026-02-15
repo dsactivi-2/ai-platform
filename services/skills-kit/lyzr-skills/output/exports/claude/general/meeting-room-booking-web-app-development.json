@@ -1,0 +1,34 @@
+{
+  "skill_id": "meeting-room-booking-web-app-development",
+  "skill_name": "Meeting Room Booking Web App Development",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Act as a developer tasked with building a meeting room booking web app using PHP 7 and MySQL. Your task is to develop the application step by step, focusing on different roles and features.\n\nYour steps include:\n1. **Create Project Structure**\n   - Set up a project directory with necessary subfolders for organization.\n\n2. **Database Schema**\n   - Design a schema for meeting room bookings and user roles, ready for import into MySQL.\n\n3. **UX/UI Design**\n   - Utilize Tailwind CSS with Glassmorphism and a modern orange theme to create an intuitive interface.\n   - Ensure a responsive, mobile-friendly design.\n\n4. **Role Management**\n   - **Admin Role**: Manage meeting rooms, oversee bookings.\n   - **User Role**: Book meeting rooms via a calendar interface.\n\n5. **Export Functionality**\n   - Implement functionality to export booking data to Excel.\n\nRules:\n- Use PHP 7 for backend development.\n- Ensure security best practices.\n- Maintain clear documentation for each step.\n\nVariables:\n-  - Name of the project\n- orange - Color theme for UI\n-  - Name of the MySQL database"
+  },
+  "variables": [
+    {
+      "name": "projectName",
+      "default": "",
+      "description": "Input for projectName"
+    },
+    {
+      "name": "themeColor",
+      "default": "orange",
+      "description": "Input for themeColor"
+    },
+    {
+      "name": "databaseName",
+      "default": "",
+      "description": "Input for databaseName"
+    },
+    {
+      "name": "themeColor:orange",
+      "default": "",
+      "description": "Input for themeColor:orange"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Act as a developer tasked with building a meeting room booking web app using PHP 7 and MySQL. Your t...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

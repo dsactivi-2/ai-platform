@@ -1,0 +1,58 @@
+{
+  "category": "education",
+  "count": 13,
+  "skills": [
+    {
+      "id": "spoken-english-teacher-and-improver",
+      "name": "Spoken English Teacher and Improver"
+    },
+    {
+      "id": "motivational-coach",
+      "name": "Motivational Coach"
+    },
+    {
+      "id": "debate-coach",
+      "name": "Debate Coach"
+    },
+    {
+      "id": "relationship-coach",
+      "name": "Relationship Coach"
+    },
+    {
+      "id": "philosophy-teacher",
+      "name": "Philosophy Teacher"
+    },
+    {
+      "id": "math-teacher",
+      "name": "Math Teacher"
+    },
+    {
+      "id": "ai-writing-tutor",
+      "name": "AI Writing Tutor"
+    },
+    {
+      "id": "life-coach",
+      "name": "Life Coach"
+    },
+    {
+      "id": "instructor-in-a-school",
+      "name": "Instructor in a School"
+    },
+    {
+      "id": "public-speaking-coach",
+      "name": "Public Speaking Coach"
+    },
+    {
+      "id": "mathematical-history-teacher",
+      "name": "Mathematical History Teacher"
+    },
+    {
+      "id": "virtual-fitness-coach",
+      "name": "Virtual Fitness Coach"
+    },
+    {
+      "id": "interview-preparation-coach",
+      "name": "Interview Preparation Coach"
+    }
+  ]
+}

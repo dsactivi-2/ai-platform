@@ -1,0 +1,38 @@
+{
+  "skill_id": "urban-casual-confidence",
+  "skill_name": "Urban Casual Confidence",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Hyper-realistic portrait of a man in tailored casual wear (dark jeans, quality sweater) leaning against weathered brick wall in golden hour light. Maintain original face structure and features. Create natural skin texture with subtle pores and realistic stubble. Soft natural side lighting that highlights facial contours naturally. Street photography style, slight grain, authentic and unposed feel.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "gender",
+      "default": "man",
+      "description": "Input for gender"
+    },
+    {
+      "name": "position",
+      "default": "leaning against weathered brick wall",
+      "description": "Input for position"
+    },
+    {
+      "name": "gender:man",
+      "default": "",
+      "description": "Input for gender:man"
+    },
+    {
+      "name": "position:leaning against weathered brick wall",
+      "default": "",
+      "description": "Input for position:leaning against weathered brick wall"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Hyper-realistic portrait of a man in tailored casual wear (dark jeans, quality sweater) leaning agai...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

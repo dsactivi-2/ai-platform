@@ -1,0 +1,17 @@
+{
+  "skill_id": "create-project-spotlight",
+  "skill_name": "Create Project Spotlight",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Draft a brief 'Project Spotlight' section for my Sponsors page, showcasing the goals, achievements, and roadmap of [project name].",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Draft a brief 'Project Spotlight' section for my Sponsors page, showcasing the goals, achievements, ...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

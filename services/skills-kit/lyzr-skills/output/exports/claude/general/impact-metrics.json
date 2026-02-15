@@ -1,0 +1,13 @@
+{
+  "skill_id": "impact-metrics",
+  "skill_name": "Impact Metrics",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Create a compelling data-driven section showing the impact of [project name]: downloads, users helped, issues resolved, and community growth statistics."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Create a compelling data-driven section showing the impact of [project name]: downloads, users helpe...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

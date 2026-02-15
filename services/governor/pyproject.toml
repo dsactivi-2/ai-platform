@@ -1,0 +1,96 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "governor"
+version = "0.2.0"
+description = "A clean, minimal governance library for agentic systems with state management, policies, and human-in-the-loop support"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Lyzr", email = "contact@lyzr.ai" }
+]
+keywords = ["governance", "agents", "agentic", "policy", "state-management", "human-in-the-loop"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "pydantic>=2.0.0",
+    "typing-extensions>=4.5.0",
+]
+
+[project.optional-dependencies]
+mongodb = [
+    "motor>=3.3.0",  # Async MongoDB driver
+]
+fastapi = [
+    "fastapi>=0.104.0",
+]
+dashboard = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "websockets>=12.0",
+]
+yaml = [
+    "pyyaml>=6.0.0",  # YAML support for policy configs
+]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.1.0",
+    "mypy>=1.5.0",
+    "build>=1.0.0",
+    "twine>=4.0.0",
+]
+all = [
+    "governor[mongodb,fastapi,dashboard,yaml,dev]",
+]
+
+[project.urls]
+Homepage = "https://github.com/LyzrCore/governor"
+Documentation = "https://github.com/LyzrCore/governor#readme"
+Repository = "https://github.com/LyzrCore/governor"
+Issues = "https://github.com/LyzrCore/governor/issues"
+Changelog = "https://github.com/LyzrCore/governor/releases"
+
+[tool.hatch.build.targets.wheel]
+packages = ["governor"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = []
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=governor --cov-report=term-missing"

@@ -1,0 +1,44 @@
+{
+  "id": "pixel-dissolve-minimalist-3d-food-transformation",
+  "name": "Pixel Dissolve: Minimalist 3D Food Transformation",
+  "description": "Act as Pixel Dissolve: Minimalist 3D Food Transformation",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "semihkislar",
+    "for_developers": false,
+    "type": "TEXT",
+    "created_at": "2025-12-18T20:47:06.627779"
+  },
+  "prompt": {
+    "system": "Minimalist food photograph, [1080x1080] – a single ${food} rests on a light, matte surface and is captured mid-transformation into a 3D pixelized form: one half remains intact while the other organically fragments into large, floating cubes that drift outward, each cube revealing the object’s texture, ingredients, and colors. Studio lighting with soft, realistic shadows, shallow depth of field, tasteful perspective and composition, hyperrealistic detail, stylish geometric abstraction, subtle motion blur on the cubes, high resolution, cinematic close-up.",
+    "variables": [
+      {
+        "name": "food",
+        "default": "",
+        "description": "Input for food"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1559
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "skill_id": "dark-style-image-prompt",
+  "skill_name": "Dark Style Image Prompt",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Create an image with a dark aesthetic. Your image should feature:\n\n- **Lighting:** Moody and low-key, highlighting shadows.\n- **Color Palette:** Dark tones with high contrast.\n- **Elements:** Include mysterious or shadowy figures, gothic architecture, or night-time scenery.\n\nFeel free to adjust the  to match your vision of a dark style image."
+  },
+  "variables": [
+    {
+      "name": "style",
+      "default": "dark",
+      "description": "Input for style"
+    },
+    {
+      "name": "elements",
+      "default": "",
+      "description": "Input for elements"
+    },
+    {
+      "name": "style:dark",
+      "default": "",
+      "description": "Input for style:dark"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Create an image with a dark aesthetic. Your image should feature:\n\n- **Lighting:** Moody and low-key...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

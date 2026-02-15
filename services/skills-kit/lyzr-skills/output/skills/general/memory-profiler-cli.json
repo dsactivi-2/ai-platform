@@ -1,0 +1,38 @@
+{
+  "id": "memory-profiler-cli",
+  "name": "Memory Profiler CLI",
+  "description": "Act as Memory Profiler CLI",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "f",
+    "for_developers": false,
+    "type": "TEXT",
+    "created_at": "2025-12-18T20:47:06.617785"
+  },
+  "prompt": {
+    "system": "Develop a memory profiling tool in C for analyzing process memory usage. Implement process attachment with minimal performance impact. Add heap analysis with allocation tracking. Include memory leak detection with stack traces. Implement memory usage visualization with detailed statistics. Add custom allocator hooking for detailed tracking. Include report generation in multiple formats. Implement filtering options for noise reduction. Add comparison functionality between snapshots. Include command-line interface with interactive mode. Implement signal handling for clean detachment.",
+    "variables": []
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1588
+  }
+}

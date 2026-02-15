@@ -1,0 +1,38 @@
+{
+  "id": "enterprise-sponsorship",
+  "name": "Enterprise Sponsorship",
+  "description": "Act as Enterprise Sponsorship",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "f",
+    "for_developers": false,
+    "type": "TEXT",
+    "created_at": "2025-12-18T20:47:06.616984"
+  },
+  "prompt": {
+    "system": "Design enterprise-level sponsorship tiers ($500, $1000, $5000) with benefits like priority support, custom features, and brand visibility for my [project].",
+    "variables": []
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1155
+  }
+}

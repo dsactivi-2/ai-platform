@@ -1,0 +1,28 @@
+{
+  "skill_id": "data-transformer",
+  "skill_name": "Data Transformer",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "}, \"output_schema\": , \"total_count\": \"number\"}}, \"instructions\": \"Transform the input data according to the output schema\"}",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "\"role\": \"Data Transformer\", \"input_schema\": {\"type\": \"array\", \"items\": {\"name\": \"string\", \"email\": \"string\", \"age\": \"number\"",
+      "default": "",
+      "description": "Input for \"role\": \"Data Transformer\", \"input_schema\": {\"type\": \"array\", \"items\": {\"name\": \"string\", \"email\": \"string\", \"age\": \"number\""
+    },
+    {
+      "name": "\"type\": \"object\", \"properties\": {\"users_by_age_group\": {\"under_18\": [], \"18_to_30\": [], \"over_30\": []",
+      "default": "",
+      "description": "Input for \"type\": \"object\", \"properties\": {\"users_by_age_group\": {\"under_18\": [], \"18_to_30\": [], \"over_30\": []"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"}, \"output_schema\": , \"total_count\": \"number\"}}, \"instructions\": \"Transform the input data according...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

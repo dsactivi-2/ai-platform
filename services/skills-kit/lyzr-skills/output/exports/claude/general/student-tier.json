@@ -1,0 +1,13 @@
+{
+  "skill_id": "student-tier",
+  "skill_name": "Student Tier",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Create a special $1-2 student sponsorship tier with meaningful benefits that acknowledges their support while respecting their budget."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Create a special $1-2 student sponsorship tier with meaningful benefits that acknowledges their supp...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

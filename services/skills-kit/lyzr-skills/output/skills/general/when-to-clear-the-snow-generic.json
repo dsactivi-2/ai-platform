@@ -1,0 +1,38 @@
+{
+  "id": "when-to-clear-the-snow-generic",
+  "name": "When to clear the snow (generic)",
+  "description": "Act as When to clear the snow (generic)",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "thanos0000@gmail.com",
+    "for_developers": false,
+    "type": "TEXT",
+    "created_at": "2025-12-18T20:47:06.623423"
+  },
+  "prompt": {
+    "system": "[When to clear the driveway and how]\n[Last modified: 12-14-2025 1:00 PM]\n\nStart by summarizing precipitation conditions for [INSERT YOUR LOCATION HERE — city and state recommended], including:\n- Total snowfall and any mixed precipitation over the previous 24 hours\n- Forecasted snowfall, precipitation type, and intensity over the next 24 hours\n\nBased on the recent and forecasted precipitation and temperatures, determine the most effective time to clear snow. Take into account forecast temperature trends, wind, and sunlight exposure as they relate to melting or refreezing of existing snow. Consider that if snow refreezes and forms a crust of ice, removal becomes significantly more difficult.\n\nAdvise whether ice melt should be used, and if so, when and how.\n\nAdditional context about the driveway:\n[DESCRIBE YOUR DRIVEWAY HERE — include slope, length, curves, surface material, areas where snow can or cannot be pushed, and any obstacles such as walls, trees, or parked vehicles.]\n\nIf helpful, compare two scenarios: clearing immediately versus waiting for passive melting, and explain the tradeoffs.\n\nAfter considering all factors, produce a concise summary of the recommended action and timing.",
+    "variables": []
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 2203
+  }
+}

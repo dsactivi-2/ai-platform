@@ -1,0 +1,24 @@
+{
+  "skill_id": "job-interviewer",
+  "skill_name": "Job Interviewer",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the Software Developer position. I want you to only reply as the interviewer. Do not write all the conversation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers.\n\nMy first sentence is \"Hi\""
+  },
+  "variables": [
+    {
+      "name": "Position",
+      "default": "Software Developer",
+      "description": "Input for Position"
+    },
+    {
+      "name": "Position:Software Developer",
+      "default": "",
+      "description": "Input for Position:Software Developer"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"I want you to act as an interviewer. I will be the candidate and you will ask me the interview quest...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

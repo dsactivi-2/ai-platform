@@ -1,0 +1,17 @@
+{
+  "skill_id": "clean-bibtex-formatter-for-academic-projects",
+  "skill_name": "Clean BibTeX Formatter for Academic Projects",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "I am preparing a BibTeX file for an academic project.\nPlease convert the following references into a single, consistent BibTeX format with these rules:\nUse a single citation key format: firstauthorlastname + year (e.g., esteva2017)\nUse @article for journal papers and @misc for web tools or demos\nInclude at least the following fields: title, author, journal (if applicable), year\nAdditionally, include doi, url, and a short abstract if available\nEnsure author names follow BibTeX standards (Last name, First name)\nAvoid Turkish characters, uppercase letters, or long citation keys\nOutput only valid BibTeX entries.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"I am preparing a BibTeX file for an academic project.\nPlease convert the following references into a...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "skill_id": "whimsical-3d-brand-miniatures",
+  "skill_name": "Whimsical 3D Brand Miniatures",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "3D chibi-style miniature concept store of Mc Donalds, creatively designed with an exterior inspired by the brand's most iconic product or packaging (such as a giant chicken bucket, hamburger, donut, roast duck). The store features two floors with large glass windows clearly showcasing the cozy and finely decorated interior: -themed decor, warm lighting, and busy staff dressed in outfits matching the brand. Adorable tiny figures stroll or sit along the street, surrounded by benches, street lamps, and potted plants, creating a charming urban scene. Rendered in a miniature cityscape style using Cinema 4D, with a blind-box toy aesthetic, rich in details and realism, and bathed in soft lighting that evokes a relaxing afternoon atmosphere. --ar 2:3\n\nBrand name: Mc Donalds"
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "Brand Name",
+      "default": "Mc Donalds",
+      "description": "Input for Brand Name"
+    },
+    {
+      "name": "Brand's core product",
+      "default": "chicken bucket, hamburger, donut, roast duck",
+      "description": "Input for Brand's core product"
+    },
+    {
+      "name": "Brand Name",
+      "default": "Mc Donalds",
+      "description": "Input for Brand Name"
+    },
+    {
+      "name": "Brand Name:Mc Donalds",
+      "default": "",
+      "description": "Input for Brand Name:Mc Donalds"
+    },
+    {
+      "name": "Brand's core product:chicken bucket, hamburger, donut, roast duck",
+      "default": "",
+      "description": "Input for Brand's core product:chicken bucket, hamburger, donut, roast duck"
+    },
+    {
+      "name": "brand's primary color",
+      "default": "",
+      "description": "Input for brand's primary color"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"3D chibi-style miniature concept store of Mc Donalds, creatively designed with an exterior inspired ...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

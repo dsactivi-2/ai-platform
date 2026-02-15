@@ -1,0 +1,84 @@
+{
+  "skill_id": "tarih-olay-görsel-oluşturma",
+  "skill_name": "Tarih-olay- Görsel oluşturma",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "{\n  \"meta\": {\n    \"model\": \"nano-banana-pro\",\n    \"mode\": \"thinking\",\n    \"use_search_grounding\": true,\n    \"language\": \"tr\"\n  },\n  \"input\": {\n    \"location\": \"\",\n    \"date\": \"\",\n    \"aspectRatio\": \"\",\n    \"timeOfDay\": \"\",\n    \"mood\": \"\"\n  },\n  \"prompt\": {\n    \"positive\": \"Konum: \\nTarih: \\n\\nÖnce güvenilir kaynaklarla arama yap ve bu tarihte bu konumda gerçekleşen en önemli tarihsel olayı belirle. Sonra bu olayı temsil eden tek bir foto-gerçekçi, ultra detaylı, sinematik kare üret.\\n\\nDönem doğruluğu zorunlu: mimari, kıyafet, silah/araç ve şehir dokusu tarihle tutarlı olsun. Modern hiçbir obje, bina, araç veya tabela görünmesin. Tek sahne, tek an, gerçek kamera fiziği, doğal insan oranları, yüksek mikro detay.\",\n    \"negative\": \"modern buildings, cars, asphalt, neon, smartphones, wrong era clothing/armor, fantasy, anime, cartoon, text overlay, blurry, low-res, extra limbs\"\n  },\n  \"render\": {\n    \"quality\": \"ultra\",\n    \"resolution\": \"4k\"\n  },\n  \"name\": \"My Workflow\",\n  \"steps\": []\n}"
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "Location",
+      "default": "Location",
+      "description": "Input for Location"
+    },
+    {
+      "name": "Date",
+      "default": "YYYY-MM-DD",
+      "description": "Input for Date"
+    },
+    {
+      "name": "Aspect Ratio",
+      "default": "16:9 | 4:3 | 1:1 | 9:16",
+      "description": "Input for Aspect Ratio"
+    },
+    {
+      "name": "Time of the Day",
+      "default": "",
+      "description": "Input for Time of the Day"
+    },
+    {
+      "name": "Mood",
+      "default": "epic | solemn | celebratory | tense | melancholic",
+      "description": "Input for Mood"
+    },
+    {
+      "name": "Location",
+      "default": "Location",
+      "description": "Input for Location"
+    },
+    {
+      "name": "Date",
+      "default": "YYYY-MM-DD",
+      "description": "Input for Date"
+    },
+    {
+      "name": "\"meta\": {\n    \"model\": \"nano-banana-pro\",\n    \"mode\": \"thinking\",\n    \"use_search_grounding\": true,\n    \"language\": \"tr\"",
+      "default": "",
+      "description": "Input for \n  \"meta\": {\n    \"model\": \"nano-banana-pro\",\n    \"mode\": \"thinking\",\n    \"use_search_grounding\": true,\n    \"language\": \"tr\"\n  "
+    },
+    {
+      "name": "Location: Location",
+      "default": "",
+      "description": "Input for Location: Location"
+    },
+    {
+      "name": "Date: YYYY-MM-DD",
+      "default": "",
+      "description": "Input for Date: YYYY-MM-DD"
+    },
+    {
+      "name": "Aspect Ratio: 16:9 | 4:3 | 1:1 | 9:16",
+      "default": "",
+      "description": "Input for Aspect Ratio: 16:9 | 4:3 | 1:1 | 9:16"
+    },
+    {
+      "name": "Mood: epic | solemn | celebratory | tense | melancholic",
+      "default": "",
+      "description": "Input for Mood: epic | solemn | celebratory | tense | melancholic"
+    },
+    {
+      "name": "\"quality\": \"ultra\",\n    \"resolution\": \"4k\"",
+      "default": "",
+      "description": "Input for \n    \"quality\": \"ultra\",\n    \"resolution\": \"4k\"\n  "
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"{\n  \"meta\": {\n    \"model\": \"nano-banana-pro\",\n    \"mode\": \"thinking\",\n    \"use_search_grounding\": tr...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "skill_id": "smart-rewriter-clarity-booster",
+  "skill_name": "Smart Rewriter & Clarity Booster",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Rewrite the user’s text so it becomes clearer, more concise, and easy to understand for a general audience. Keep the original meaning intact. Remove unnecessary jargon, filler words, and overly long sentences. If the text contains unclear arguments, briefly point them out and suggest a clearer version.\nOffer the rewritten text first, then a short note explaining the major improvements.\nDo not add new facts or invent details. This is the content:\n\n"
+  },
+  "variables": [
+    {
+      "name": "content",
+      "default": "",
+      "description": "Input for content"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Rewrite the user’s text so it becomes clearer, more concise, and easy to understand for a general au...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

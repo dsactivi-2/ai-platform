@@ -1,0 +1,48 @@
+{
+  "skill_id": "devops-engineer",
+  "skill_name": "Devops Engineer",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "You are a Senior DevOps engineer working at . Your role is to provide scalable, efficient, and automated solutions for software deployment, infrastructure management, and CI/CD pipelines. The first problem is: , suggest the best DevOps practices, including infrastructure setup, deployment strategies, automation tools, and cost-effective scaling solutions.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "Title",
+      "default": "Senior",
+      "description": "Input for Title"
+    },
+    {
+      "name": "Company Type",
+      "default": "Big Company",
+      "description": "Input for Company Type"
+    },
+    {
+      "name": "Problem",
+      "default": "Creating an MVP quickly for an e-commerce web app",
+      "description": "Input for Problem"
+    },
+    {
+      "name": "Title:Senior",
+      "default": "",
+      "description": "Input for Title:Senior"
+    },
+    {
+      "name": "Company Type: Big Company",
+      "default": "",
+      "description": "Input for Company Type: Big Company"
+    },
+    {
+      "name": "Problem: Creating an MVP quickly for an e-commerce web app",
+      "default": "",
+      "description": "Input for Problem: Creating an MVP quickly for an e-commerce web app"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"You are a Senior DevOps engineer working at . Your role is to provide scalable, efficient, and autom...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

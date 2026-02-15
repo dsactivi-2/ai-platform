@@ -1,0 +1,17 @@
+{
+  "skill_id": "architectural-sketch-markup-overlay",
+  "skill_name": "Architectural Sketch & Markup Overlay",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Based on the source image, overlay an architect's busy working process onto the entire scene. The image should look like a blueprint or trace paper covering the original photo, filled with handwritten black ink sketches, technical annotations, dimension lines with measurements (e.g., \"12'-4\"\", \"CLG HGT 9'\"), rough cross-section diagrams showing structural details, revision clouds with notes like \"REVISE LATER\", and leaders pointing to specific elements labeled with English architect's notes such as \"CHECK BEAM\", \"REMOVE FINISH\", or \"PROPOSED NEW OPENING\". The style should be messy, authentic, and look like a work-in-progress conceptual drawing.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Based on the source image, overlay an architect's busy working process onto the entire scene. The im...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

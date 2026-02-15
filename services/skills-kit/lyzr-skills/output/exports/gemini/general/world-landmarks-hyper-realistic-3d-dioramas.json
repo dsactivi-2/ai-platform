@@ -1,0 +1,43 @@
+{
+  "skill_id": "world-landmarks-hyper-realistic-3d-dioramas",
+  "skill_name": "World Landmarks: Hyper-Realistic 3D Dioramas",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Create a hyper-realistic 3D diorama-style model of EIFFEL TOWER. The model should appear as a miniature, set on a raised cross-section of earth that reveals soil and rock layers beneath a lush grassy surface. The structure must be highly detailed and proportionally accurate, surrounded by tiny realistic elements like region-appropriate street lamps, native trees, shrubs, water features like small fountains, and historically or culturally fitting pathways. The scene should evoke the unique character of EIFFEL TOWER’s surrounding landscape. The environment must include a soft white background to draw full attention to the model. Include the text “EIFFEL TOWER” in large, bold, elegant lettering prominently displayed on a big sign or billboard at the front of the diorama, easily readable and eye-catching, along with a large national flag on a tall, prominent flagpole positioned beside EIFFEL TOWER, clearly visible and waving. 1080x1080 dimension",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "Landmark Name",
+      "default": "EIFFEL TOWER",
+      "description": "Input for Landmark Name"
+    },
+    {
+      "name": "Landmark Name",
+      "default": "EIFFEL TOWER",
+      "description": "Input for Landmark Name"
+    },
+    {
+      "name": "Landmark Name",
+      "default": "EIFFEL TOWER",
+      "description": "Input for Landmark Name"
+    },
+    {
+      "name": "Landmark Name",
+      "default": "EIFFEL TOWER",
+      "description": "Input for Landmark Name"
+    },
+    {
+      "name": "Landmark Name:EIFFEL TOWER",
+      "default": "",
+      "description": "Input for Landmark Name:EIFFEL TOWER"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Create a hyper-realistic 3D diorama-style model of EIFFEL TOWER. The model should appear as a miniat...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

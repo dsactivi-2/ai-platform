@@ -1,0 +1,72 @@
+# agent-govern Policy Configuration (YAML)
+# This file defines governance policies that can be loaded dynamically
+
+policies:
+  # Validation Policy - Input/output validation
+  - type: validation
+    name: InputValidation
+    enabled: true
+    phase: pre_execution
+    strict: true
+    description: "Validate all inputs before execution"
+
+  # Authorization Policy - Role-based access control
+  - type: authorization
+    name: RoleBasedAccess
+    enabled: true
+    required_roles:
+      - admin
+      - finance
+    required_permissions:
+      - payment.write
+      - transaction.approve
+    context_key: user
+    require_approval_on_failure: false
+    description: "Require admin or finance role with payment permissions"
+
+  # Rate Limit Policy - Prevent abuse
+  - type: rate_limit
+    name: APIRateLimit
+    enabled: true
+    max_calls: 100
+    window_seconds: 60
+    per_user: true
+    user_key: user.id
+    description: "Limit to 100 calls per minute per user"
+
+  # Audit Policy - Compliance logging
+  - type: audit
+    name: ComplianceAudit
+    enabled: true
+    phase: both
+    log_inputs: true
+    log_outputs: true
+    sensitive_fields:
+      - password
+      - ssn
+      - credit_card
+      - api_key
+      - email
+    compliance_tags:
+      - GDPR
+      - SOC2
+      - PCI-DSS
+    description: "Log all operations with PII redaction for compliance"
+
+  # Approval Policy - Human-in-the-loop
+  - type: approval
+    name: LargeTransactionApproval
+    enabled: true
+    approvers:
+      - cfo@company.com
+      - finance-lead@company.com
+    timeout_seconds: 3600
+    on_timeout: reject
+    require_reason: true
+    description: "Require CFO or finance lead approval with 1-hour timeout"
+
+# Metadata
+version: "1.0"
+environment: production
+last_updated: "2025-10-18"
+owner: governance-team

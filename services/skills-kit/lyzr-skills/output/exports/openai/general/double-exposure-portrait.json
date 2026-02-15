@@ -1,0 +1,29 @@
+{
+  "skill_id": "double-exposure-portrait",
+  "skill_name": "Double Exposure Portrait",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "A double exposure portrait set in a sunny forest. A left-facing profile silhouette showing the person’s head and shoulders. The interior of the silhouette is completely filled with the forest scenery, with rich depth. Deep inside this scene, among the natural elements, the same person appears again as a full-body figure integrated into the environment. The outer background is a bright, overexposed white light. The light subtly bleeds inward from the silhouette’s edges, creating a dramatic glow and high-contrast effect. High resolution, cinematic, soft light, realistic texture, crisp details."
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "name",
+      "default": "sunny forest",
+      "description": "Input for name"
+    },
+    {
+      "name": "name:sunny forest",
+      "default": "",
+      "description": "Input for name:sunny forest"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"A double exposure portrait set in a sunny forest. A left-facing profile silhouette showing the perso...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

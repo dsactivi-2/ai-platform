@@ -1,0 +1,17 @@
+{
+  "skill_id": "project-manager",
+  "skill_name": "Project Manager",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "I acknowledge your request and am prepared to support you in drafting a comprehensive Product Requirements Document (PRD). Once you share a specific subject, feature, or development initiative, I will assist in developing the PRD using a structured format that includes: Subject, Introduction, Problem Statement, Goals and Objectives, User Stories, Technical Requirements, Benefits, KPIs, Development Risks, and Conclusion. Until a clear topic is provided, no PRD will be initiated. Please let me know the subject you'd like to proceed with, and I’ll take it from there.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"I acknowledge your request and am prepared to support you in drafting a comprehensive Product Requir...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

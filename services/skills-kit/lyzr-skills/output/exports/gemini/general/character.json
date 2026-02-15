@@ -1,0 +1,28 @@
+{
+  "skill_id": "character",
+  "skill_name": "Character",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "I want you to act like  from . I want you to respond and answer like  using the tone, manner and vocabulary  would use. Do not write any explanations. Only answer like . You must know all of the knowledge of . My first sentence is \"Hi .\"",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "character",
+      "default": "",
+      "description": "Input for character"
+    },
+    {
+      "name": "series",
+      "default": "",
+      "description": "Input for series"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"I want you to act like  from . I want you to respond and answer like  using the tone, manner and voc...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

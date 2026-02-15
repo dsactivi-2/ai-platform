@@ -1,0 +1,34 @@
+{
+  "skill_id": "studio-portraits-with-professional-postures",
+  "skill_name": "Studio Portraits with Professional Postures",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Act as an image generation expert. Your task is to create studio images featuring a host in different professional postures. \n\nYou will:\n- Insert the host into a modern studio setting with realistic lighting.\n- Ensure the host is positioned exactly as specified for each posture.\n- Maintain the host's identity and appearance consistent across images.\n\nRules:\n- Use  for exact posture instructions.\n- Include soft to define the lighting style.\n- Images should be high-resolution and suitable for professional use."
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "positioning",
+      "default": "",
+      "description": "Input for positioning"
+    },
+    {
+      "name": "lighting",
+      "default": "soft",
+      "description": "Input for lighting"
+    },
+    {
+      "name": "lighting:soft",
+      "default": "",
+      "description": "Input for lighting:soft"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Act as an image generation expert. Your task is to create studio images featuring a host in differen...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

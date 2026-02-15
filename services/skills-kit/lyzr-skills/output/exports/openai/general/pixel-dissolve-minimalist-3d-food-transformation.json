@@ -1,0 +1,24 @@
+{
+  "skill_id": "pixel-dissolve-minimalist-3d-food-transformation",
+  "skill_name": "Pixel Dissolve: Minimalist 3D Food Transformation",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Minimalist food photograph, [1080x1080] – a single  rests on a light, matte surface and is captured mid-transformation into a 3D pixelized form: one half remains intact while the other organically fragments into large, floating cubes that drift outward, each cube revealing the object’s texture, ingredients, and colors. Studio lighting with soft, realistic shadows, shallow depth of field, tasteful perspective and composition, hyperrealistic detail, stylish geometric abstraction, subtle motion blur on the cubes, high resolution, cinematic close-up."
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "food",
+      "default": "",
+      "description": "Input for food"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Minimalist food photograph, [1080x1080] – a single  rests on a light, matte surface and is captured ...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

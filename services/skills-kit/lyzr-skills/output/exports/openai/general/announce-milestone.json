@@ -1,0 +1,18 @@
+{
+  "skill_id": "announce-milestone",
+  "skill_name": "Announce Milestone",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write an announcement for my Sponsors page about a new milestone or feature in [project], encouraging new and existing sponsors to get involved."
+      }
+    ]
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Write an announcement for my Sponsors page about a new milestone or feature in [project], encouragin...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

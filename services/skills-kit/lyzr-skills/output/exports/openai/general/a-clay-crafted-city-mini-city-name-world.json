@@ -1,0 +1,29 @@
+{
+  "skill_id": "a-clay-crafted-city-mini-city-name-world",
+  "skill_name": "A Clay-Crafted City: Mini [CITY NAME] World",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Generate a whimsical miniature world featuring  crafted entirely from colorful modeling clay. Every element (buildings, trees, waterways, and urban features) should appear hand-sculpted with visible fingerprints and organic clay textures. Use a playful, childlike style with vibrant colors: bright azure sky, puffy cream clouds, emerald trees, and buildings in warm yellows, oranges, reds, and blues. The handmade quality should be evident in every surface and gentle curve. Capture from a wide perspective showcasing the entire miniature landscape in a harmonious, joyful composition.\n\nAt the top-center, add the city name  in a clean, bold, friendly rounded font that matches the playful clay aesthetic. The text should be clearly readable and high-contrast against the sky, with subtle depth as if it is also made from clay (slight 3D clay lettering), but keep it simple and not overly detailed.\n\nInclude no other text, words, or signage anywhere else in the scene. Only sculptural clay elements should define the location through recognizable architectural features. 1080x1080 dimension."
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "landmark_name",
+      "default": "",
+      "description": "Input for landmark_name"
+    },
+    {
+      "name": "city_name",
+      "default": "",
+      "description": "Input for city_name"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Generate a whimsical miniature world featuring  crafted entirely from colorful modeling clay. Every ...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

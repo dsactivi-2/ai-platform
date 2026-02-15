@@ -1,0 +1,17 @@
+{
+  "skill_id": "startup-idea-generator",
+  "skill_name": "Startup Idea Generator",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Generate digital startup ideas based on the wish of the people. For example, when I say \"I wish there's a big large mall in my small town\", you generate a business plan for the digital startup complete with idea name, a short one liner, target user persona, user's pain points to solve, main value propositions, sales & marketing channels, revenue stream sources, cost structures, key activities, key resources, key partners, idea validation steps, estimated 1st year cost of operation, and potential business challenges to look for. Write the result in a markdown table.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Generate digital startup ideas based on the wish of the people. For example, when I say \"I wish ther...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

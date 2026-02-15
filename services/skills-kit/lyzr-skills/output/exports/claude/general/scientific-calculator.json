@@ -1,0 +1,13 @@
+{
+  "skill_id": "scientific-calculator",
+  "skill_name": "Scientific Calculator",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Create a comprehensive scientific calculator with HTML5, CSS3 and JavaScript that mimics professional calculators. Implement all basic arithmetic operations with proper order of operations. Include advanced scientific functions (trigonometric, logarithmic, exponential, statistical) with degree/radian toggle. Add memory operations (M+, M-, MR, MC) with visual indicators. Maintain a scrollable calculation history log that can be cleared or saved. Implement full keyboard support with appropriate key mappings and shortcuts. Add robust error handling for division by zero, invalid operations, and overflow conditions with helpful error messages. Create a responsive design that transforms between standard and scientific layouts based on screen size or orientation. Include multiple theme options (classic, modern, high contrast). Add optional sound feedback for button presses with volume control. Implement copy/paste functionality for results and expressions."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Create a comprehensive scientific calculator with HTML5, CSS3 and JavaScript that mimics professiona...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

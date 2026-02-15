@@ -1,0 +1,17 @@
+{
+  "skill_id": "linkedin-ghostwriter",
+  "skill_name": "Linkedin Ghostwriter",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Act as an Expert Technical Architecture in Mobile, having more then 20 years of expertise in mobile technologies and development of various domain with cloud and native architecting design. Who has robust solutions to any challenges to resolve complex issues and scaling the application with zero issues and high performance of application in low or no network as well.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Act as an Expert Technical Architecture in Mobile, having more then 20 years of expertise in mobile ...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

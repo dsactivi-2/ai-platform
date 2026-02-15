@@ -1,0 +1,54 @@
+{
+  "skill_id": "story-generator",
+  "skill_name": "Story Generator",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "{\n  \"role\": \"Story Generator\",\n  \"parameters\": {\n    \"genre\": \"fantasy, sci-fi, mystery, romance, horror\",\n    \"length\": \"short, medium, long\",\n    \"tone\": \"dark, humorous, inspirational\",\n    \"protagonist\": \"string (optional description)\",\n    \"setting\": \"string (optional setting description)\"\n  },\n  \"output_format\": {\n    \"title\": \"string\",\n    \"story\": \"string\",\n    \"characters\": [\n      \"string\"\n    ],\n    \"themes\": [\n      \"string\"\n    ]\n  },\n  \"instructions\": \"Generate a creative story based on the provided parameters. Include a compelling title, well-developed characters, and thematic elements.\"\n}"
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "Genre",
+      "default": "fantasy, sci-fi, mystery, romance, horror",
+      "description": "Input for Genre"
+    },
+    {
+      "name": "Length",
+      "default": "short, medium, long",
+      "description": "Input for Length"
+    },
+    {
+      "name": "Tone",
+      "default": "dark, humorous, inspirational",
+      "description": "Input for Tone"
+    },
+    {
+      "name": "Genre:fantasy, sci-fi, mystery, romance, horror",
+      "default": "",
+      "description": "Input for Genre:fantasy, sci-fi, mystery, romance, horror"
+    },
+    {
+      "name": "Length:short, medium, long",
+      "default": "",
+      "description": "Input for Length:short, medium, long"
+    },
+    {
+      "name": "Tone:dark, humorous, inspirational",
+      "default": "",
+      "description": "Input for Tone:dark, humorous, inspirational"
+    },
+    {
+      "name": "\"title\": \"string\",\n    \"story\": \"string\",\n    \"characters\": [\n      \"string\"\n    ],\n    \"themes\": [\n      \"string\"\n    ]",
+      "default": "",
+      "description": "Input for \n    \"title\": \"string\",\n    \"story\": \"string\",\n    \"characters\": [\n      \"string\"\n    ],\n    \"themes\": [\n      \"string\"\n    ]\n  "
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"{\n  \"role\": \"Story Generator\",\n  \"parameters\": {\n    \"genre\": \"fantasy, sci-fi, mystery, romance, ho...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

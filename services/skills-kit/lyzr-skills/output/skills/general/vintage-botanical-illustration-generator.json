@@ -1,0 +1,44 @@
+{
+  "id": "vintage-botanical-illustration-generator",
+  "name": "Vintage Botanical Illustration Generator",
+  "description": "Act as Vintage Botanical Illustration Generator",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "iamcanturk",
+    "for_developers": false,
+    "type": "TEXT",
+    "created_at": "2025-12-18T20:47:06.619066"
+  },
+  "prompt": {
+    "system": "A botanical diagram of a ${subject}, illustrated in the style of vintage scientific journals. Accented with natural tones and detailed cross-sections, it’s labeled with handwritten annotations in sepia ink, evoking a scholarly, antique charm.",
+    "variables": [
+      {
+        "name": "subject",
+        "default": "",
+        "description": "Input for subject"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1242
+  }
+}

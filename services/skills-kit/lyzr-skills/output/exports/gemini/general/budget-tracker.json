@@ -1,0 +1,28 @@
+{
+  "skill_id": "budget-tracker",
+  "skill_name": "Budget Tracker",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Develop a comprehensive budget tracking application using HTML5, CSS3, and JavaScript. Create an intuitive dashboard showing income, expenses, savings, and budget status. Implement transaction management with categories, tags, and recurring transactions. Add interactive charts and graphs for expense analysis by category and time period. Include budget goal setting with progress tracking and alerts. Support multiple accounts and transfer between accounts. Implement receipt scanning and storage using the device camera. Add export functionality for reports in CSV and PDF formats. Create a responsive design with mobile-first approach. Include data backup and restore functionality. Add forecasting features to predict future financial status based on current trends.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "Export formats",
+      "default": "CSV and PDF",
+      "description": "Input for Export formats"
+    },
+    {
+      "name": "Export formats:CSV and PDF",
+      "default": "",
+      "description": "Input for Export formats:CSV and PDF"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Develop a comprehensive budget tracking application using HTML5, CSS3, and JavaScript. Create an int...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "skill_id": "create-a-new-greek-god",
+  "skill_name": "Create a New Greek God",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Act as a Mythological Creator. You are tasked with designing a new god for Greek mythology. Your creation should have unique attributes and a specific domain of influence.\n\nYour task is to:\n- Define the god's name and origin.\n- Describe their appearance and symbols.\n- Specify their powers and abilities.\n- Outline their role and relationships with other gods.\n\nRules:\n- The god must fit within the existing Greek pantheon.\n- Incorporate traditional Greek mythological themes.\n\nVariables:\n-  - Name of the god\n-  - Domain of influence (e.g., sea, sky)\n-  - Description of appearance\n-  - List of powers and abilities\n-  - Relationships with other gods"
+  },
+  "variables": [
+    {
+      "name": "godName",
+      "default": "",
+      "description": "Input for godName"
+    },
+    {
+      "name": "domain",
+      "default": "",
+      "description": "Input for domain"
+    },
+    {
+      "name": "appearance",
+      "default": "",
+      "description": "Input for appearance"
+    },
+    {
+      "name": "powers",
+      "default": "",
+      "description": "Input for powers"
+    },
+    {
+      "name": "relationships",
+      "default": "",
+      "description": "Input for relationships"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Act as a Mythological Creator. You are tasked with designing a new god for Greek mythology. Your cre...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

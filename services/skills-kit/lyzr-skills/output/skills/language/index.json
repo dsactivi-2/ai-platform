@@ -1,0 +1,34 @@
+{
+  "category": "language",
+  "count": 7,
+  "skills": [
+    {
+      "id": "english-translator-and-improver",
+      "name": "English Translator and Improver"
+    },
+    {
+      "id": "english-pronunciation-helper",
+      "name": "English Pronunciation Helper"
+    },
+    {
+      "id": "biblical-translator",
+      "name": "Biblical Translator"
+    },
+    {
+      "id": "emoji-translator",
+      "name": "Emoji Translator"
+    },
+    {
+      "id": "new-language-creator",
+      "name": "New Language Creator"
+    },
+    {
+      "id": "language-detector",
+      "name": "Language Detector"
+    },
+    {
+      "id": "speech-language-pathologist-slp",
+      "name": "Speech-Language Pathologist (SLP)"
+    }
+  ]
+}

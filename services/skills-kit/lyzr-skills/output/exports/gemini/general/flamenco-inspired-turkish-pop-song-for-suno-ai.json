@@ -1,0 +1,17 @@
+{
+  "skill_id": "flamenco-inspired-turkish-pop-song-for-suno-ai",
+  "skill_name": "Flamenco inspired Turkish Pop song for Suno AI",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Neşeli ve sıcak bir flamenko esintili aşk şarkısı.\nTürkçe sözler, kadın–erkek düet vokal, karşılıklı ve uyumlu söyleyiş.\nHızlı akustik gitar ritimleri, canlı el çırpmaları ve doğal vurmalı çalgılar.\nAkdeniz hissi veren hareketli tempo, açık havada kutlama duygusu.\nGüçlü melodik kıtalar ve akılda kalıcı, yükselen bir nakarat.\nSamimi, insani, hafif kusurlu performans — yapay veya stok müzik hissi yok.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Neşeli ve sıcak bir flamenko esintili aşk şarkısı.\nTürkçe sözler, kadın–erkek düet vokal, karşılıklı...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

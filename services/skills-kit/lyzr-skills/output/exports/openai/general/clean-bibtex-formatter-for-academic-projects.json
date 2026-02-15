@@ -1,0 +1,18 @@
+{
+  "skill_id": "clean-bibtex-formatter-for-academic-projects",
+  "skill_name": "Clean BibTeX Formatter for Academic Projects",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "I am preparing a BibTeX file for an academic project.\nPlease convert the following references into a single, consistent BibTeX format with these rules:\nUse a single citation key format: firstauthorlastname + year (e.g., esteva2017)\nUse @article for journal papers and @misc for web tools or demos\nInclude at least the following fields: title, author, journal (if applicable), year\nAdditionally, include doi, url, and a short abstract if available\nEnsure author names follow BibTeX standards (Last name, First name)\nAvoid Turkish characters, uppercase letters, or long citation keys\nOutput only valid BibTeX entries."
+      }
+    ]
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"I am preparing a BibTeX file for an academic project.\nPlease convert the following references into a...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

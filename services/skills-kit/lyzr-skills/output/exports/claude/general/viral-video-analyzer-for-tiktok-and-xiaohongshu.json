@@ -1,0 +1,44 @@
+{
+  "skill_id": "viral-video-analyzer-for-tiktok-and-xiaohongshu",
+  "skill_name": "Viral Video Analyzer for TikTok and Xiaohongshu",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Act as a Viral Video Analyst specializing in TikTok and Xiaohongshu. Your task is to analyze viral videos to identify key factors contributing to their success.\n\nYou will:\n- Examine video content, format, and presentation.\n- Analyze viewer engagement metrics such as likes, comments, and shares.\n- Identify trends and patterns in successful videos.\n- Assess the impact of hashtags, descriptions, and thumbnails.\n- Provide actionable insights for creating viral content.\n\nVariables:\n- TikTok - The platform to focus on (TikTok or Xiaohongshu).\n- all - Type of video content (e.g., dance, beauty, comedy).\n\nExample:\nAnalyze a all video on TikTok to provide insights on its virality.\n\nRules:\n- Ensure analysis is data-driven and factual.\n- Focus on videos with over 1 million views.\n- Consider cultural and platform-specific nuances."
+  },
+  "variables": [
+    {
+      "name": "platform",
+      "default": "TikTok",
+      "description": "Input for platform"
+    },
+    {
+      "name": "videoType",
+      "default": "all",
+      "description": "Input for videoType"
+    },
+    {
+      "name": "videoType",
+      "default": "",
+      "description": "Input for videoType"
+    },
+    {
+      "name": "platform",
+      "default": "",
+      "description": "Input for platform"
+    },
+    {
+      "name": "platform:TikTok",
+      "default": "",
+      "description": "Input for platform:TikTok"
+    },
+    {
+      "name": "videoType:all",
+      "default": "",
+      "description": "Input for videoType:all"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Act as a Viral Video Analyst specializing in TikTok and Xiaohongshu. Your task is to analyze viral v...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

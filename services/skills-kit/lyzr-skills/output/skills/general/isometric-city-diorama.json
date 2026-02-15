@@ -1,0 +1,79 @@
+{
+  "id": "isometric-city-diorama",
+  "name": "Isometric City Diorama",
+  "description": "Act as Isometric City Diorama",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "f",
+    "for_developers": false,
+    "type": "STRUCTURED",
+    "created_at": "2025-12-18T20:47:06.618347"
+  },
+  "prompt": {
+    "system": "{\n  \"meta\": {\n    \"description\": \"Structured prompt for generating an isometric city diorama in a miniature 3D style, with weather and environment adaptive to the specified city.\",\n    \"variable\": \"${City:San Francisco}\"\n  },\n  \"prompt_structure\": {\n    \"perspective_and_format\": {\n      \"view\": \"Isometric camera view\",\n      \"format\": \"Miniature 3D diorama resting on a floating square base serving as the ground plinth.\",\n      \"ratio\": \"16:9 (vertical phone)\"\n    },\n    \"art_style\": {\n      \"medium\": \"High-detail 3D render\",\n      \"texture_quality\": \"Realistic textures appropriate for the region's architecture (e.g., stone/brick, stucco/adobe, glass/steel).\",\n      \"vibe\": \"Toy-like but highly sophisticated architectural model with tactile material qualities.\"\n    },\n    \"environment_and_atmosphere\": {\n      \"weather\": \"Typical climate and weather conditions associated with the specified city (e.g., overcast/rainy for London, bright/sunny/arid for Cairo, snowy for Moscow). Lighting matches the weather.\",\n      \"ground\": \"Ground surface material typical for the city (e.g., asphalt, cobblestones, sand, dirt). Surface conditions reflect the weather (e.g., wet with reflections if rainy, dry and dusty if arid, snow-covered if winter).\",\n      \"background\": \"Sky gradient and atmosphere matching the chosen weather, filling the upper frame.\"\n    },\n    \"architectural_elements\": {\n      \"housing\": \"Dense cluster of residential or commercial buildings reflecting the city's vernacular architecture style.\",\n      \"landmarks\": \"Isometric miniature representations of iconic landmarks defining the city.\"\n    },\n    \"props_and_details\": {\n      \"street_level\": \"Miniature elements specific to the city's vibe (e.g., iconic vehicles like yellow cabs or red buses, specific vegetation like palm trees or deciduous trees, streetlights, signage).\",\n      \"life\": \"Tiny, stylized figures dressed in clothing appropriate for the climate and culture.\"\n    },\n    \"text_overlay\": {\n      \"content\": \"${City:San Francisco}\",\n      \"font_style\": \"White, sans-serif, bold, uppercase letters\",\n      \"placement\": \"Centered floating at the very top of the frame.\"\n    }\n  }\n}",
+    "variables": [
+      {
+        "name": "City",
+        "default": "San Francisco",
+        "description": "Input for City"
+      },
+      {
+        "name": "City",
+        "default": "San Francisco",
+        "description": "Input for City"
+      },
+      {
+        "name": "City:San Francisco",
+        "default": "",
+        "description": "Input for City:San Francisco"
+      },
+      {
+        "name": "\"perspective_and_format\": {\n      \"view\": \"Isometric camera view\",\n      \"format\": \"Miniature 3D diorama resting on a floating square base serving as the ground plinth.\",\n      \"ratio\": \"16:9 (vertical phone)\"",
+        "default": "",
+        "description": "Input for \n    \"perspective_and_format\": {\n      \"view\": \"Isometric camera view\",\n      \"format\": \"Miniature 3D diorama resting on a floating square base serving as the ground plinth.\",\n      \"ratio\": \"16:9 (vertical phone)\"\n    "
+      },
+      {
+        "name": "\"medium\": \"High-detail 3D render\",\n      \"texture_quality\": \"Realistic textures appropriate for the region's architecture (e.g., stone/brick, stucco/adobe, glass/steel).\",\n      \"vibe\": \"Toy-like but highly sophisticated architectural model with tactile material qualities.\"",
+        "default": "",
+        "description": "Input for \n      \"medium\": \"High-detail 3D render\",\n      \"texture_quality\": \"Realistic textures appropriate for the region's architecture (e.g., stone/brick, stucco/adobe, glass/steel).\",\n      \"vibe\": \"Toy-like but highly sophisticated architectural model with tactile material qualities.\"\n    "
+      },
+      {
+        "name": "\"weather\": \"Typical climate and weather conditions associated with the specified city (e.g., overcast/rainy for London, bright/sunny/arid for Cairo, snowy for Moscow). Lighting matches the weather.\",\n      \"ground\": \"Ground surface material typical for the city (e.g., asphalt, cobblestones, sand, dirt). Surface conditions reflect the weather (e.g., wet with reflections if rainy, dry and dusty if arid, snow-covered if winter).\",\n      \"background\": \"Sky gradient and atmosphere matching the chosen weather, filling the upper frame.\"",
+        "default": "",
+        "description": "Input for \n      \"weather\": \"Typical climate and weather conditions associated with the specified city (e.g., overcast/rainy for London, bright/sunny/arid for Cairo, snowy for Moscow). Lighting matches the weather.\",\n      \"ground\": \"Ground surface material typical for the city (e.g., asphalt, cobblestones, sand, dirt). Surface conditions reflect the weather (e.g., wet with reflections if rainy, dry and dusty if arid, snow-covered if winter).\",\n      \"background\": \"Sky gradient and atmosphere matching the chosen weather, filling the upper frame.\"\n    "
+      },
+      {
+        "name": "\"housing\": \"Dense cluster of residential or commercial buildings reflecting the city's vernacular architecture style.\",\n      \"landmarks\": \"Isometric miniature representations of iconic landmarks defining the city.\"",
+        "default": "",
+        "description": "Input for \n      \"housing\": \"Dense cluster of residential or commercial buildings reflecting the city's vernacular architecture style.\",\n      \"landmarks\": \"Isometric miniature representations of iconic landmarks defining the city.\"\n    "
+      },
+      {
+        "name": "\"street_level\": \"Miniature elements specific to the city's vibe (e.g., iconic vehicles like yellow cabs or red buses, specific vegetation like palm trees or deciduous trees, streetlights, signage).\",\n      \"life\": \"Tiny, stylized figures dressed in clothing appropriate for the climate and culture.\"",
+        "default": "",
+        "description": "Input for \n      \"street_level\": \"Miniature elements specific to the city's vibe (e.g., iconic vehicles like yellow cabs or red buses, specific vegetation like palm trees or deciduous trees, streetlights, signage).\",\n      \"life\": \"Tiny, stylized figures dressed in clothing appropriate for the climate and culture.\"\n    "
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 3174
+  }
+}

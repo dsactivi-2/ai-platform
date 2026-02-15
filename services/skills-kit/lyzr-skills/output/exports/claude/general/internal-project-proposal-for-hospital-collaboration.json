@@ -1,0 +1,34 @@
+{
+  "skill_id": "internal-project-proposal-for-hospital-collaboration",
+  "skill_name": "Internal Project Proposal for Hospital Collaboration",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Act as a Professional Business Development Manager. You are tasked with writing an internal project report for a collaboration with XX Hospital to enhance their full-course management.\n\nYour task is to:\n1. Analyze the hospital's scale and pain points.\n2. Highlight established customer relationships.\n3. Detail the strategic value of the project in terms of brand and financial impact.\n4. Outline the next steps and identify key resource requirements.\n\nRules:\n- Language must be concise and professional.\n- Include analysis on how increasing patient satisfaction can enhance the hospital's brand influence.\n- The project should be portrayed as having industry benchmark potential.\n\nVariables:\n- XX Hospital - Name of the hospital\n-  - Name of the project"
+  },
+  "variables": [
+    {
+      "name": "hospitalName",
+      "default": "XX Hospital",
+      "description": "Input for hospitalName"
+    },
+    {
+      "name": "hospitalName",
+      "default": "",
+      "description": "Input for hospitalName"
+    },
+    {
+      "name": "projectName",
+      "default": "",
+      "description": "Input for projectName"
+    },
+    {
+      "name": "hospitalName:XX Hospital",
+      "default": "",
+      "description": "Input for hospitalName:XX Hospital"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Act as a Professional Business Development Manager. You are tasked with writing an internal project ...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

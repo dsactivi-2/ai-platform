@@ -1,0 +1,318 @@
+{
+  "category": "engineering",
+  "count": 78,
+  "skills": [
+    {
+      "id": "ethereum-developer",
+      "name": "Ethereum Developer"
+    },
+    {
+      "id": "linux-terminal",
+      "name": "Linux Terminal"
+    },
+    {
+      "id": "javascript-console",
+      "name": "JavaScript Console"
+    },
+    {
+      "id": "excel-sheet",
+      "name": "Excel Sheet"
+    },
+    {
+      "id": "uxui-developer",
+      "name": "UX/UI Developer"
+    },
+    {
+      "id": "cyber-security-specialist",
+      "name": "Cyber Security Specialist"
+    },
+    {
+      "id": "web-design-consultant",
+      "name": "Web Design Consultant"
+    },
+    {
+      "id": "sql-terminal",
+      "name": "SQL Terminal"
+    },
+    {
+      "id": "smart-domain-name-generator",
+      "name": "Smart Domain Name Generator"
+    },
+    {
+      "id": "tech-reviewer",
+      "name": "Tech Reviewer"
+    },
+    {
+      "id": "developer-relations-consultant",
+      "name": "Developer Relations Consultant"
+    },
+    {
+      "id": "it-architect",
+      "name": "IT Architect"
+    },
+    {
+      "id": "scientific-data-visualizer",
+      "name": "Scientific Data Visualizer"
+    },
+    {
+      "id": "tech-writer",
+      "name": "Tech Writer"
+    },
+    {
+      "id": "ascii-artist",
+      "name": "Ascii Artist"
+    },
+    {
+      "id": "python-interpreter",
+      "name": "Python Interpreter"
+    },
+    {
+      "id": "machine-learning-engineer",
+      "name": "Machine Learning Engineer"
+    },
+    {
+      "id": "svg-designer",
+      "name": "SVG designer"
+    },
+    {
+      "id": "it-expert",
+      "name": "IT Expert"
+    },
+    {
+      "id": "fullstack-software-developer",
+      "name": "Fullstack Software Developer"
+    },
+    {
+      "id": "regex-generator",
+      "name": "RegEx Generator"
+    },
+    {
+      "id": "r-programming-interpreter",
+      "name": "R Programming Interpreter"
+    },
+    {
+      "id": "stackoverflow-post",
+      "name": "StackOverflow Post"
+    },
+    {
+      "id": "php-interpreter",
+      "name": "PHP Interpreter"
+    },
+    {
+      "id": "software-quality-assurance-tester",
+      "name": "Software Quality Assurance Tester"
+    },
+    {
+      "id": "password-generator",
+      "name": "Password Generator"
+    },
+    {
+      "id": "web-browser",
+      "name": "Web Browser"
+    },
+    {
+      "id": "senior-frontend-developer",
+      "name": "Senior Frontend Developer"
+    },
+    {
+      "id": "code-reviewer",
+      "name": "Code Reviewer"
+    },
+    {
+      "id": "accessibility-auditor",
+      "name": "Accessibility Auditor"
+    },
+    {
+      "id": "solr-search-engine",
+      "name": "Solr Search Engine"
+    },
+    {
+      "id": "conventional-commit-message-generator",
+      "name": "Conventional Commit Message Generator"
+    },
+    {
+      "id": "diagram-generator",
+      "name": "Diagram Generator"
+    },
+    {
+      "id": "technology-transferer",
+      "name": "Technology Transferer"
+    },
+    {
+      "id": "prompt-enhancer",
+      "name": "Prompt Enhancer"
+    },
+    {
+      "id": "data-scientist",
+      "name": "Data Scientist"
+    },
+    {
+      "id": "architectural-expert",
+      "name": "Architectural Expert"
+    },
+    {
+      "id": "llm-researcher",
+      "name": "LLM Researcher"
+    },
+    {
+      "id": "unit-tester-assistant",
+      "name": "Unit Tester Assistant"
+    },
+    {
+      "id": "knowledgeable-software-development-mentor",
+      "name": "Knowledgeable Software Development Mentor"
+    },
+    {
+      "id": "logic-builder-tool",
+      "name": "Logic Builder Tool"
+    },
+    {
+      "id": "teacher-of-reactjs",
+      "name": "Teacher of React.js"
+    },
+    {
+      "id": "github-expert",
+      "name": "GitHub Expert"
+    },
+    {
+      "id": "any-programming-language-to-python-converter",
+      "name": "Any Programming Language to Python Converter"
+    },
+    {
+      "id": "dax-terminal",
+      "name": "DAX Terminal"
+    },
+    {
+      "id": "top-programming-expert",
+      "name": "Top Programming Expert"
+    },
+    {
+      "id": "architect-guide-for-programmers",
+      "name": "Architect Guide for Programmers"
+    },
+    {
+      "id": "large-language-models-security-specialist",
+      "name": "Large Language Models Security Specialist"
+    },
+    {
+      "id": "tech-troubleshooter",
+      "name": "Tech Troubleshooter"
+    },
+    {
+      "id": "seo-prompt",
+      "name": "SEO Prompt"
+    },
+    {
+      "id": "devops-engineer",
+      "name": "Devops Engineer"
+    },
+    {
+      "id": "linux-script-developer",
+      "name": "Linux Script Developer"
+    },
+    {
+      "id": "reverse-prompt-engineer",
+      "name": "Reverse Prompt Engineer"
+    },
+    {
+      "id": "code-review-assistant",
+      "name": "Code Review Assistant"
+    },
+    {
+      "id": "data-transformer",
+      "name": "Data Transformer"
+    },
+    {
+      "id": "code-snippet-manager",
+      "name": "Code Snippet Manager"
+    },
+    {
+      "id": "architectural-sketch-markup-overlay",
+      "name": "Architectural Sketch & Markup Overlay"
+    },
+    {
+      "id": "devops-architect",
+      "name": "devops-architect"
+    },
+    {
+      "id": "quality-engineer",
+      "name": "quality-engineer"
+    },
+    {
+      "id": "security-engineer",
+      "name": "security-engineer"
+    },
+    {
+      "id": "frontend-architect",
+      "name": "frontend-architect"
+    },
+    {
+      "id": "performance-engineer",
+      "name": "performance-engineer"
+    },
+    {
+      "id": "predictive-eye-tracking-heatmap-generator",
+      "name": "Predictive Eye Tracking Heatmap Generator"
+    },
+    {
+      "id": "architectural-study-sheet-historic_site_name",
+      "name": "Architectural Study Sheet: [HISTORIC_SITE_NAME]"
+    },
+    {
+      "id": "django-unit-test-generator-for-viewsets",
+      "name": "Django Unit Test Generator for Viewsets"
+    },
+    {
+      "id": "virtual-game-console-simulator",
+      "name": "Virtual Game Console Simulator"
+    },
+    {
+      "id": "code-review-assistant",
+      "name": "Code Review Assistant"
+    },
+    {
+      "id": "code-review-agent",
+      "name": "Code Review Agent"
+    },
+    {
+      "id": "senior-system-architect-agent",
+      "name": "Senior System Architect Agent"
+    },
+    {
+      "id": "test-python-algorithmic-trading-project",
+      "name": "Test Python Algorithmic Trading Project"
+    },
+    {
+      "id": "senior-prompt-engineer-role-guide",
+      "name": "Senior Prompt Engineer Role Guide"
+    },
+    {
+      "id": "analyze-pdf-and-create-matlab-code",
+      "name": "Analyze PDF and Create MATLAB Code"
+    },
+    {
+      "id": "integrated-circuit-engineering-professor-role",
+      "name": "Integrated Circuit Engineering Professor Role"
+    },
+    {
+      "id": "continue-coding-assistant",
+      "name": "Continue Coding Assistant"
+    },
+    {
+      "id": "optimize-large-data-reading-in-code",
+      "name": "Optimize Large Data Reading in Code"
+    },
+    {
+      "id": "comprehensive-devops-guide",
+      "name": "Comprehensive DevOps Guide"
+    },
+    {
+      "id": "nextjs-specialized-front-end-developer",
+      "name": "Next.js Specialized Front-End Developer"
+    },
+    {
+      "id": "autosar-software-module-developer",
+      "name": "AUTOSAR Software Module Developer"
+    }
+  ]
+}

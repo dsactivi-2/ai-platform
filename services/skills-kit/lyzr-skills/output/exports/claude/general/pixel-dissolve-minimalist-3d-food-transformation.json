@@ -1,0 +1,19 @@
+{
+  "skill_id": "pixel-dissolve-minimalist-3d-food-transformation",
+  "skill_name": "Pixel Dissolve: Minimalist 3D Food Transformation",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Minimalist food photograph, [1080x1080] – a single  rests on a light, matte surface and is captured mid-transformation into a 3D pixelized form: one half remains intact while the other organically fragments into large, floating cubes that drift outward, each cube revealing the object’s texture, ingredients, and colors. Studio lighting with soft, realistic shadows, shallow depth of field, tasteful perspective and composition, hyperrealistic detail, stylish geometric abstraction, subtle motion blur on the cubes, high resolution, cinematic close-up."
+  },
+  "variables": [
+    {
+      "name": "food",
+      "default": "",
+      "description": "Input for food"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Minimalist food photograph, [1080x1080] – a single  rests on a light, matte surface and is captured ...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

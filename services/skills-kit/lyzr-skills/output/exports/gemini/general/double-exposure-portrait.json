@@ -1,0 +1,28 @@
+{
+  "skill_id": "double-exposure-portrait",
+  "skill_name": "Double Exposure Portrait",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "A double exposure portrait set in a sunny forest. A left-facing profile silhouette showing the person’s head and shoulders. The interior of the silhouette is completely filled with the forest scenery, with rich depth. Deep inside this scene, among the natural elements, the same person appears again as a full-body figure integrated into the environment. The outer background is a bright, overexposed white light. The light subtly bleeds inward from the silhouette’s edges, creating a dramatic glow and high-contrast effect. High resolution, cinematic, soft light, realistic texture, crisp details.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "name",
+      "default": "sunny forest",
+      "description": "Input for name"
+    },
+    {
+      "name": "name:sunny forest",
+      "default": "",
+      "description": "Input for name:sunny forest"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"A double exposure portrait set in a sunny forest. A left-facing profile silhouette showing the perso...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

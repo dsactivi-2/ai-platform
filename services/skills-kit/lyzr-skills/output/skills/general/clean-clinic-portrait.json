@@ -1,0 +1,38 @@
+{
+  "id": "clean-clinic-portrait",
+  "name": "Clean Clinic Portrait",
+  "description": "Act as Clean Clinic Portrait",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "semihkislar",
+    "for_developers": false,
+    "type": "IMAGE",
+    "created_at": "2025-12-18T20:47:06.622676"
+  },
+  "prompt": {
+    "system": "Use the uploaded photo of the person as the main subject. Keep the face, hair and identity identical.\n\nPlace the person sitting slightly reclined in a modern dentist chair, in a clean, bright dental clinic with soft white lighting. Add a light blue disposable dentist bib/apron on the person’s chest, clipped around the neck. Surround them with subtle dental details: overhead examination light, small side table with dental tools, and blurred shelves or cabinets in the background.\n\nKeep the original camera angle and approximate framing from the uploaded photo. Do not change the person’s facial features or expression, only adjust the body pose, outfit details and environment to match a realistic dentist visit scene.",
+    "variables": []
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1721
+  }
+}

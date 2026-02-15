@@ -1,0 +1,13 @@
+{
+  "skill_id": "success-stories",
+  "skill_name": "Success Stories",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Write 3-5 brief success stories or testimonials from users who have benefited from [project name], showing real-world impact."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Write 3-5 brief success stories or testimonials from users who have benefited from [project name], s...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

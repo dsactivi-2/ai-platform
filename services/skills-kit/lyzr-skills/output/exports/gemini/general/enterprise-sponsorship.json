@@ -1,0 +1,17 @@
+{
+  "skill_id": "enterprise-sponsorship",
+  "skill_name": "Enterprise Sponsorship",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Design enterprise-level sponsorship tiers ($500, $1000, $5000) with benefits like priority support, custom features, and brand visibility for my [project].",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Design enterprise-level sponsorship tiers ($500, $1000, $5000) with benefits like priority support, ...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

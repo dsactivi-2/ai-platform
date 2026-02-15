@@ -1,0 +1,83 @@
+{
+  "skill_id": "luxury-ski-resort-selfie-scene-description",
+  "skill_name": "Luxury Ski Resort Selfie Scene Description",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "{\n  \"scene_type\": \"luxury ski resort hallway selfie, post-club drunk glow, cold-weather outfit but extremely revealing underneath\",\n\n  \"camera_perspective\": {\n    \"pov\": \"we ARE her phone screen\",\n    \"phone_visibility\": \"not visible\",\n    \"angle\": \"slightly high angled selfie, classic hot-girl angle\",\n    \"framing\": \"face + cleavage + micro skirt + thigh-highs fully visible\"\n  },\n\n  \"subject\": {\n    \"action\": \"leaning against wooden ski-lodge hallway wall after club night, taking a selfie while slightly tipsy, jacket slipping off shoulder\",\n    \"pose\": {\n      \"stance\": \"one leg crossed over the other, knee turned inward to look shy-hot\",\n      \"hip\": \"pushed out naturally, exaggerating curves\",\n      \"upper_body\": \"jacket sliding down one arm, revealing tight top\",\n      \"arm\": \"one arm extended holding phone, the other gripping jacket collar\"\n    },\n\n    \"expression\": {\n      \"eyes\": \"warm, glossy bedroom eyes looking slightly up at camera\",\n      \"mouth\": \"soft parted lips with bitten-lip energy\",\n      \"overall\": \"club-tired but insanely hot, knows she looks good\"\n    },\n\n    \"physical\": {\n      \"age\": \"early 20s\",\n      \"body\": \"slim-thick, narrow waist, soft curves, thighs full\",\n      \"hair\": {\n        \"color\": \"dark brunette\",\n        \"style\": \"long loose waves, slightly messy from dancing\",\n        \"details\": \"snowflakes melting in hair from outside\"\n      },\n      \"skin\": \"cool-toned from winter air, slight pink flush on cheeks\"\n    },\n\n    \"outfit\": {\n      \"jacket\": {\n        \"type\": \"oversized white faux-fur ski jacket\",\n        \"state\": \"falling off one shoulder, exposing outfit underneath\"\n      },\n      \"top\": {\n        \"type\": \"tight black corset top\",\n        \"fit\": \"pushing cleavage up dramatically\",\n        \"details\": \"laced front, shiny material catching hallway lights\"\n      },\n      \"bottom\": {\n        \"type\": \"micro mini skirt\",\n        \"color\": \"silver metallic\",\n        \"fit\": \"ultra-short, barely covering anything\",\n        \"motion\": \"slightly lifted from her pose, showing upper thighs\"\n      },\n      \"legs\": {\n        \"item\": \"black thigh-high stockings\",\n        \"texture\": \"opaque but with subtle sheen\",\n        \"fit\": \"tight around thighs, soft squeeze, natural skin texture visible above band\"\n      },\n      \"shoes\": {\n        \"type\": \"heeled winter boots\",\n        \"style\": \"white faux fur trim\"\n      }\n    }\n  },\n\n  \"accessories\": {\n    \"earrings\": \"large silver hoops\",\n    \"necklace\": \"thin chain with tiny snowflake pendant\",\n    \"rings\": \"multiple silver rings\",\n    \"nails\": \"dark wine-red glossy polish\"\n  },\n\n  \"environment\": {\n    \"location\": \"luxury ski resort hallway at night\",\n    \"elements\": [\n      \"warm yellow lantern-style lights\",\n      \"wooden lodge walls\",\n      \"window showing falling snow outside\",\n      \"a pair of abandoned ski goggles on a bench\"\n    ],\n    \"lighting\": \"warm indoor lights contrasting with her cool winter skin flush\",\n    \"vibe\": \"end of night, cozy-warm building but she still looks like trouble\"\n  },\n\n  \"camera\": {\n    \"quality\": \"iPhone selfie quality, slight grain from low light\",\n    \"aspect\": \"9:16\",\n    \"effect\": \"warm tone from lights + glossy reflections from outfit\"\n  },\n\n  \"realism_details\": {\n    \"makeup\": \"slightly smudged eyeliner, lips glossy but fading from drinks\",\n    \"hair\": \"some strands stuck to lip gloss, snow melting into frizz at ends\",\n    \"skin\": \"natural shine from dancing, slight cold flush\",\n    \"clothes\": \"corset slightly shifted, mini skirt wrinkled from sitting earlier\"\n  },\n\n  \"vibe\": \"hot ski-resort party girl energy, drunken warmth, dangerously pretty, the girl guys fall in love with for no reason\"\n}",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "\"scene_type\": \"luxury ski resort hallway selfie, post-club drunk glow, cold-weather outfit but extremely revealing underneath\",\n\n  \"camera_perspective\": {\n    \"pov\": \"we ARE her phone screen\",\n    \"phone_visibility\": \"not visible\",\n    \"angle\": \"slightly high angled selfie, classic hot-girl angle\",\n    \"framing\": \"face + cleavage + micro skirt + thigh-highs fully visible\"",
+      "default": "",
+      "description": "Input for \n  \"scene_type\": \"luxury ski resort hallway selfie, post-club drunk glow, cold-weather outfit but extremely revealing underneath\",\n\n  \"camera_perspective\": {\n    \"pov\": \"we ARE her phone screen\",\n    \"phone_visibility\": \"not visible\",\n    \"angle\": \"slightly high angled selfie, classic hot-girl angle\",\n    \"framing\": \"face + cleavage + micro skirt + thigh-highs fully visible\"\n  "
+    },
+    {
+      "name": "\"action\": \"leaning against wooden ski-lodge hallway wall after club night, taking a selfie while slightly tipsy, jacket slipping off shoulder\",\n    \"pose\": {\n      \"stance\": \"one leg crossed over the other, knee turned inward to look shy-hot\",\n      \"hip\": \"pushed out naturally, exaggerating curves\",\n      \"upper_body\": \"jacket sliding down one arm, revealing tight top\",\n      \"arm\": \"one arm extended holding phone, the other gripping jacket collar\"",
+      "default": "",
+      "description": "Input for \n    \"action\": \"leaning against wooden ski-lodge hallway wall after club night, taking a selfie while slightly tipsy, jacket slipping off shoulder\",\n    \"pose\": {\n      \"stance\": \"one leg crossed over the other, knee turned inward to look shy-hot\",\n      \"hip\": \"pushed out naturally, exaggerating curves\",\n      \"upper_body\": \"jacket sliding down one arm, revealing tight top\",\n      \"arm\": \"one arm extended holding phone, the other gripping jacket collar\"\n    "
+    },
+    {
+      "name": "\"eyes\": \"warm, glossy bedroom eyes looking slightly up at camera\",\n      \"mouth\": \"soft parted lips with bitten-lip energy\",\n      \"overall\": \"club-tired but insanely hot, knows she looks good\"",
+      "default": "",
+      "description": "Input for \n      \"eyes\": \"warm, glossy bedroom eyes looking slightly up at camera\",\n      \"mouth\": \"soft parted lips with bitten-lip energy\",\n      \"overall\": \"club-tired but insanely hot, knows she looks good\"\n    "
+    },
+    {
+      "name": "\"age\": \"early 20s\",\n      \"body\": \"slim-thick, narrow waist, soft curves, thighs full\",\n      \"hair\": {\n        \"color\": \"dark brunette\",\n        \"style\": \"long loose waves, slightly messy from dancing\",\n        \"details\": \"snowflakes melting in hair from outside\"",
+      "default": "",
+      "description": "Input for \n      \"age\": \"early 20s\",\n      \"body\": \"slim-thick, narrow waist, soft curves, thighs full\",\n      \"hair\": {\n        \"color\": \"dark brunette\",\n        \"style\": \"long loose waves, slightly messy from dancing\",\n        \"details\": \"snowflakes melting in hair from outside\"\n      "
+    },
+    {
+      "name": "\"jacket\": {\n        \"type\": \"oversized white faux-fur ski jacket\",\n        \"state\": \"falling off one shoulder, exposing outfit underneath\"",
+      "default": "",
+      "description": "Input for \n      \"jacket\": {\n        \"type\": \"oversized white faux-fur ski jacket\",\n        \"state\": \"falling off one shoulder, exposing outfit underneath\"\n      "
+    },
+    {
+      "name": "\"type\": \"tight black corset top\",\n        \"fit\": \"pushing cleavage up dramatically\",\n        \"details\": \"laced front, shiny material catching hallway lights\"",
+      "default": "",
+      "description": "Input for \n        \"type\": \"tight black corset top\",\n        \"fit\": \"pushing cleavage up dramatically\",\n        \"details\": \"laced front, shiny material catching hallway lights\"\n      "
+    },
+    {
+      "name": "\"type\": \"micro mini skirt\",\n        \"color\": \"silver metallic\",\n        \"fit\": \"ultra-short, barely covering anything\",\n        \"motion\": \"slightly lifted from her pose, showing upper thighs\"",
+      "default": "",
+      "description": "Input for \n        \"type\": \"micro mini skirt\",\n        \"color\": \"silver metallic\",\n        \"fit\": \"ultra-short, barely covering anything\",\n        \"motion\": \"slightly lifted from her pose, showing upper thighs\"\n      "
+    },
+    {
+      "name": "\"item\": \"black thigh-high stockings\",\n        \"texture\": \"opaque but with subtle sheen\",\n        \"fit\": \"tight around thighs, soft squeeze, natural skin texture visible above band\"",
+      "default": "",
+      "description": "Input for \n        \"item\": \"black thigh-high stockings\",\n        \"texture\": \"opaque but with subtle sheen\",\n        \"fit\": \"tight around thighs, soft squeeze, natural skin texture visible above band\"\n      "
+    },
+    {
+      "name": "\"type\": \"heeled winter boots\",\n        \"style\": \"white faux fur trim\"",
+      "default": "",
+      "description": "Input for \n        \"type\": \"heeled winter boots\",\n        \"style\": \"white faux fur trim\"\n      "
+    },
+    {
+      "name": "\"earrings\": \"large silver hoops\",\n    \"necklace\": \"thin chain with tiny snowflake pendant\",\n    \"rings\": \"multiple silver rings\",\n    \"nails\": \"dark wine-red glossy polish\"",
+      "default": "",
+      "description": "Input for \n    \"earrings\": \"large silver hoops\",\n    \"necklace\": \"thin chain with tiny snowflake pendant\",\n    \"rings\": \"multiple silver rings\",\n    \"nails\": \"dark wine-red glossy polish\"\n  "
+    },
+    {
+      "name": "\"location\": \"luxury ski resort hallway at night\",\n    \"elements\": [\n      \"warm yellow lantern-style lights\",\n      \"wooden lodge walls\",\n      \"window showing falling snow outside\",\n      \"a pair of abandoned ski goggles on a bench\"\n    ],\n    \"lighting\": \"warm indoor lights contrasting with her cool winter skin flush\",\n    \"vibe\": \"end of night, cozy-warm building but she still looks like trouble\"",
+      "default": "",
+      "description": "Input for \n    \"location\": \"luxury ski resort hallway at night\",\n    \"elements\": [\n      \"warm yellow lantern-style lights\",\n      \"wooden lodge walls\",\n      \"window showing falling snow outside\",\n      \"a pair of abandoned ski goggles on a bench\"\n    ],\n    \"lighting\": \"warm indoor lights contrasting with her cool winter skin flush\",\n    \"vibe\": \"end of night, cozy-warm building but she still looks like trouble\"\n  "
+    },
+    {
+      "name": "\"quality\": \"iPhone selfie quality, slight grain from low light\",\n    \"aspect\": \"9:16\",\n    \"effect\": \"warm tone from lights + glossy reflections from outfit\"",
+      "default": "",
+      "description": "Input for \n    \"quality\": \"iPhone selfie quality, slight grain from low light\",\n    \"aspect\": \"9:16\",\n    \"effect\": \"warm tone from lights + glossy reflections from outfit\"\n  "
+    },
+    {
+      "name": "\"makeup\": \"slightly smudged eyeliner, lips glossy but fading from drinks\",\n    \"hair\": \"some strands stuck to lip gloss, snow melting into frizz at ends\",\n    \"skin\": \"natural shine from dancing, slight cold flush\",\n    \"clothes\": \"corset slightly shifted, mini skirt wrinkled from sitting earlier\"",
+      "default": "",
+      "description": "Input for \n    \"makeup\": \"slightly smudged eyeliner, lips glossy but fading from drinks\",\n    \"hair\": \"some strands stuck to lip gloss, snow melting into frizz at ends\",\n    \"skin\": \"natural shine from dancing, slight cold flush\",\n    \"clothes\": \"corset slightly shifted, mini skirt wrinkled from sitting earlier\"\n  "
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"{\n  \"scene_type\": \"luxury ski resort hallway selfie, post-club drunk glow, cold-weather outfit but e...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

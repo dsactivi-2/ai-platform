@@ -1,0 +1,18 @@
+{
+  "model": "gemini",
+  "exported_at": "2025-12-18T20:47:18.250056",
+  "total_skills": 442,
+  "categories": {
+    "bfsi": 8,
+    "general": 288,
+    "customer-service": 4,
+    "healthcare": 11,
+    "education": 13,
+    "sales-marketing": 10,
+    "language": 7,
+    "hr": 8,
+    "creative": 14,
+    "legal": 2,
+    "engineering": 77
+  }
+}

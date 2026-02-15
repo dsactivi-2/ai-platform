@@ -1,0 +1,18 @@
+{
+  "skill_id": "github-expert",
+  "skill_name": "GitHub Expert",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "I want you to act as a git and GitHub expert. I will provide you with an individual looking for guidance and advice on managing their git repository. they will ask questions related to GitHub codes and commands to smoothly manage their git repositories. My first request is \"I want to fork the awesome-chatgpt-prompts repository and push it back\""
+      }
+    ]
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"I want you to act as a git and GitHub expert. I will provide you with an individual looking for guid...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

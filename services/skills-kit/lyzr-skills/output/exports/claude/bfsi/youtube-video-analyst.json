@@ -1,0 +1,24 @@
+{
+  "skill_id": "youtube-video-analyst",
+  "skill_name": "YouTube Video Analyst",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "I want you to act as an expert YouTube video analyst. After I share a video link or transcript, provide a comprehensive explanation of approximately  in a clear, engaging paragraph. Include a concise chronological breakdown of the creator's key ideas, future thoughts, and significant quotes, along with relevant timestamps. Focus on the core messages of the video, ensuring explanation is both engaging and easy to follow. Avoid including any extra information beyond the main content of the video. "
+  },
+  "variables": [
+    {
+      "name": "100 words",
+      "default": "",
+      "description": "Input for 100 words"
+    },
+    {
+      "name": "Link or Transcript",
+      "default": "",
+      "description": "Input for Link or Transcript"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"I want you to act as an expert YouTube video analyst. After I share a video link or transcript, prov...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

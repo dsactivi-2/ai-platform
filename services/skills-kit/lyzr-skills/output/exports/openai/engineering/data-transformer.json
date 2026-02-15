@@ -1,0 +1,29 @@
+{
+  "skill_id": "data-transformer",
+  "skill_name": "Data Transformer",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "}, \"output_schema\": , \"total_count\": \"number\"}}, \"instructions\": \"Transform the input data according to the output schema\"}"
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "\"role\": \"Data Transformer\", \"input_schema\": {\"type\": \"array\", \"items\": {\"name\": \"string\", \"email\": \"string\", \"age\": \"number\"",
+      "default": "",
+      "description": "Input for \"role\": \"Data Transformer\", \"input_schema\": {\"type\": \"array\", \"items\": {\"name\": \"string\", \"email\": \"string\", \"age\": \"number\""
+    },
+    {
+      "name": "\"type\": \"object\", \"properties\": {\"users_by_age_group\": {\"under_18\": [], \"18_to_30\": [], \"over_30\": []",
+      "default": "",
+      "description": "Input for \"type\": \"object\", \"properties\": {\"users_by_age_group\": {\"under_18\": [], \"18_to_30\": [], \"over_30\": []"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"}, \"output_schema\": , \"total_count\": \"number\"}}, \"instructions\": \"Transform the input data according...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

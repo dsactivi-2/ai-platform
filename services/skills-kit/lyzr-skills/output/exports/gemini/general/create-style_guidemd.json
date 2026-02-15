@@ -1,0 +1,23 @@
+{
+  "skill_id": "create-style_guidemd",
+  "skill_name": "Create STYLE_GUIDE.md",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "{\n  \"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    \"Overview\",\n    \"Color Palette\",\n    \"Typography\",\n    \"Spacing System\",\n    \"Component Styles\",\n    \"Shadows & Elevation\",\n    \"Animations & Transitions\",\n    \"Border Radius\",\n    \"Opacity & Transparency\",\n    \"Common Tailwind CSS Usage\"\n  ],\n  \"details\": \"Provide detailed analysis and descriptions to the project style system, ensuring no important details are missed.\",\n  \"example\": \"Include an example component reference design code.\"\n}",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "\"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    \"Overview\",\n    \"Color Palette\",\n    \"Typography\",\n    \"Spacing System\",\n    \"Component Styles\",\n    \"Shadows & Elevation\",\n    \"Animations & Transitions\",\n    \"Border Radius\",\n    \"Opacity & Transparency\",\n    \"Common Tailwind CSS Usage\"\n  ],\n  \"details\": \"Provide detailed analysis and descriptions to the project style system, ensuring no important details are missed.\",\n  \"example\": \"Include an example component reference design code.\"",
+      "default": "",
+      "description": "Input for \n  \"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    \"Overview\",\n    \"Color Palette\",\n    \"Typography\",\n    \"Spacing System\",\n    \"Component Styles\",\n    \"Shadows & Elevation\",\n    \"Animations & Transitions\",\n    \"Border Radius\",\n    \"Opacity & Transparency\",\n    \"Common Tailwind CSS Usage\"\n  ],\n  \"details\": \"Provide detailed analysis and descriptions to the project style system, ensuring no important details are missed.\",\n  \"example\": \"Include an example component reference design code.\"\n"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"{\n  \"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    ...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "skill_id": "недвижимость",
+  "skill_name": "Недвижимость",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "A modern apartment in Montenegro with a panoramic sea view. A bright, spacious living room with a calm, elegant interior. A mother and her son are sitting on the sofa, a blanket and soft cushions nearby, creating a feeling of warmth and closeness. There is a sense of quiet celebration in the air, with the New Year just around the corner and the home filled with comfort and a peaceful family atmosphere."
+      }
+    ]
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"A modern apartment in Montenegro with a panoramic sea view. A bright, spacious living room with a ca...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

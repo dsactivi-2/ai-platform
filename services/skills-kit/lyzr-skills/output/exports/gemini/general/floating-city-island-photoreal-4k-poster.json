@@ -1,0 +1,38 @@
+{
+  "skill_id": "floating-city-island-photoreal-4k-poster",
+  "skill_name": "Floating City Island - Photoreal 4K Poster",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Design a \"floating miniature island\" shaped like the denizli map/silhouette, gliding above white clouds. On the island, seamlessly blend denizli’s most iconic landmarks, architectural structures, and natural landscapes (parks, waterfronts, hills). Integrate large white 3D letters spelling \"denizli\" into the island’s surface or geographic texture. Enhance the atmosphere with city-specific birds, cinematic sunlight, vibrant colors, aerial perspective, and realistic shadow/reflection rendering. Ultra HD quality, hyper-realistic textures, 4K+ resolution, digital poster format. Square 1×1 composition, photoreal, volumetric lighting, global illumination, ray tracing.",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "city",
+      "default": "denizli",
+      "description": "Input for city"
+    },
+    {
+      "name": "city",
+      "default": "denizli",
+      "description": "Input for city"
+    },
+    {
+      "name": "city",
+      "default": "denizli",
+      "description": "Input for city"
+    },
+    {
+      "name": "city:denizli",
+      "default": "",
+      "description": "Input for city:denizli"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Design a \"floating miniature island\" shaped like the denizli map/silhouette, gliding above white clo...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "time-layer-photography",
+  "name": "Time Layer Photography",
+  "description": "Act as Time Layer Photography",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "apo-bozdag",
+    "for_developers": false,
+    "type": "IMAGE",
+    "created_at": "2025-12-18T20:47:06.622506"
+  },
+  "prompt": {
+    "system": "A single photograph of ${location:Galata Tower, Istanbul} where the frame is divided into organic, flowing sections, each showing a different era: ${era1:1890s sepia Ottoman period}, ${era2:1960s faded color}, ${era3:present day digital clarity}. The transitions between eras are seamless, blending through architectural details, people's clothing, and vehicles. Same camera angle, same perspective, different times bleeding into each other. Street level view. Photorealistic for each era's authentic photography style.",
+    "variables": [
+      {
+        "name": "location",
+        "default": "Galata Tower, Istanbul",
+        "description": "Input for location"
+      },
+      {
+        "name": "era1",
+        "default": "1890s sepia Ottoman period",
+        "description": "Input for era1"
+      },
+      {
+        "name": "era2",
+        "default": "1960s faded color",
+        "description": "Input for era2"
+      },
+      {
+        "name": "era3",
+        "default": "present day digital clarity",
+        "description": "Input for era3"
+      },
+      {
+        "name": "location:Galata Tower, Istanbul",
+        "default": "",
+        "description": "Input for location:Galata Tower, Istanbul"
+      },
+      {
+        "name": "era1:1890s sepia Ottoman period",
+        "default": "",
+        "description": "Input for era1:1890s sepia Ottoman period"
+      },
+      {
+        "name": "era2:1960s faded color",
+        "default": "",
+        "description": "Input for era2:1960s faded color"
+      },
+      {
+        "name": "era3:present day digital clarity",
+        "default": "",
+        "description": "Input for era3:present day digital clarity"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1519
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "skill_id": "mathematical-history-teacher",
+  "skill_name": "Mathematical History Teacher",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "I want you to act as a mathematical history teacher and provide information about the historical development of mathematical concepts and the contributions of different mathematicians. You should only provide information and not solve mathematical problems. Use the following format for your responses:  - . My first question is \"What is the contribution of Pythagoras in mathematics?\""
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "mathematician/concept",
+      "default": "",
+      "description": "Input for mathematician/concept"
+    },
+    {
+      "name": "brief summary of their contribution/development",
+      "default": "",
+      "description": "Input for brief summary of their contribution/development"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"I want you to act as a mathematical history teacher and provide information about the historical dev...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

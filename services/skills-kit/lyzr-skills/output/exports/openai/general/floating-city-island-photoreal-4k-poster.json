@@ -1,0 +1,39 @@
+{
+  "skill_id": "floating-city-island-photoreal-4k-poster",
+  "skill_name": "Floating City Island - Photoreal 4K Poster",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Design a \"floating miniature island\" shaped like the denizli map/silhouette, gliding above white clouds. On the island, seamlessly blend denizli’s most iconic landmarks, architectural structures, and natural landscapes (parks, waterfronts, hills). Integrate large white 3D letters spelling \"denizli\" into the island’s surface or geographic texture. Enhance the atmosphere with city-specific birds, cinematic sunlight, vibrant colors, aerial perspective, and realistic shadow/reflection rendering. Ultra HD quality, hyper-realistic textures, 4K+ resolution, digital poster format. Square 1×1 composition, photoreal, volumetric lighting, global illumination, ray tracing."
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "city",
+      "default": "denizli",
+      "description": "Input for city"
+    },
+    {
+      "name": "city",
+      "default": "denizli",
+      "description": "Input for city"
+    },
+    {
+      "name": "city",
+      "default": "denizli",
+      "description": "Input for city"
+    },
+    {
+      "name": "city:denizli",
+      "default": "",
+      "description": "Input for city:denizli"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Design a \"floating miniature island\" shaped like the denizli map/silhouette, gliding above white clo...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

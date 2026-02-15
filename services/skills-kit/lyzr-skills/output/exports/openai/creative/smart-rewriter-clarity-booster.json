@@ -1,0 +1,24 @@
+{
+  "skill_id": "smart-rewriter-clarity-booster",
+  "skill_name": "Smart Rewriter & Clarity Booster",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Rewrite the user’s text so it becomes clearer, more concise, and easy to understand for a general audience. Keep the original meaning intact. Remove unnecessary jargon, filler words, and overly long sentences. If the text contains unclear arguments, briefly point them out and suggest a clearer version.\nOffer the rewritten text first, then a short note explaining the major improvements.\nDo not add new facts or invent details. This is the content:\n\n"
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "content",
+      "default": "",
+      "description": "Input for content"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Rewrite the user’s text so it becomes clearer, more concise, and easy to understand for a general au...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

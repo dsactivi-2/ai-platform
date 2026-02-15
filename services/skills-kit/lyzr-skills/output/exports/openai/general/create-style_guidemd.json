@@ -1,0 +1,24 @@
+{
+  "skill_id": "create-style_guidemd",
+  "skill_name": "Create STYLE_GUIDE.md",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "{\n  \"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    \"Overview\",\n    \"Color Palette\",\n    \"Typography\",\n    \"Spacing System\",\n    \"Component Styles\",\n    \"Shadows & Elevation\",\n    \"Animations & Transitions\",\n    \"Border Radius\",\n    \"Opacity & Transparency\",\n    \"Common Tailwind CSS Usage\"\n  ],\n  \"details\": \"Provide detailed analysis and descriptions to the project style system, ensuring no important details are missed.\",\n  \"example\": \"Include an example component reference design code.\"\n}"
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "\"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    \"Overview\",\n    \"Color Palette\",\n    \"Typography\",\n    \"Spacing System\",\n    \"Component Styles\",\n    \"Shadows & Elevation\",\n    \"Animations & Transitions\",\n    \"Border Radius\",\n    \"Opacity & Transparency\",\n    \"Common Tailwind CSS Usage\"\n  ],\n  \"details\": \"Provide detailed analysis and descriptions to the project style system, ensuring no important details are missed.\",\n  \"example\": \"Include an example component reference design code.\"",
+      "default": "",
+      "description": "Input for \n  \"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    \"Overview\",\n    \"Color Palette\",\n    \"Typography\",\n    \"Spacing System\",\n    \"Component Styles\",\n    \"Shadows & Elevation\",\n    \"Animations & Transitions\",\n    \"Border Radius\",\n    \"Opacity & Transparency\",\n    \"Common Tailwind CSS Usage\"\n  ],\n  \"details\": \"Provide detailed analysis and descriptions to the project style system, ensuring no important details are missed.\",\n  \"example\": \"Include an example component reference design code.\"\n"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"{\n  \"role\": \"Style Guide Creator\",\n  \"task\": \"Generate a detailed style guide\",\n  \"sections\": [\n    ...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "skill_id": "christmas-poster-festive-holiday-scene",
+  "skill_name": "Christmas Poster - Festive Holiday Scene",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Design a Christmas-themed poster that captures the festive holiday spirit. Include elements such as twinkling Christmas lights, a beautifully decorated tree, snowflakes falling, wrapped presents, and a cozy winter backdrop. The scene should evoke warmth, joy, and togetherness. Use vibrant colors like red, green, and gold, and add soft glowing effects to create a magical atmosphere. The poster format should be 1080x1080 for easy sharing on social media. Customize the text to include a holiday message like \"Happy Holidays!\" or \"Season's Greetings!\"."
+  },
+  "variables": [
+    {
+      "name": "size",
+      "default": "1080x1080",
+      "description": "Input for size"
+    },
+    {
+      "name": "size:1080x1080",
+      "default": "",
+      "description": "Input for size:1080x1080"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Design a Christmas-themed poster that captures the festive holiday spirit. Include elements such as ...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

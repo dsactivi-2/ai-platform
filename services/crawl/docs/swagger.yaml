@@ -1,0 +1,374 @@
+basePath: /
+definitions:
+  models.ContentBatchResponse:
+    properties:
+      failed:
+        type: integer
+      results:
+        items:
+          $ref: '#/definitions/models.ContentResponse'
+        type: array
+      success:
+        type: integer
+      total:
+        type: integer
+    type: object
+  models.ContentRequest:
+    properties:
+      concurrency:
+        example: 50
+        type: integer
+      url:
+        example: https://example.com
+        type: string
+      urls:
+        example:
+        - '["https://example.com"'
+        - ' "https://another.com"]'
+        items:
+          type: string
+        type: array
+    type: object
+  models.ContentResponse:
+    properties:
+      content_type:
+        example: text/html; charset=UTF-8
+        type: string
+      error:
+        type: string
+      headers:
+        additionalProperties:
+          type: string
+        type: object
+      markdown:
+        example: |-
+          # Example
+
+          Clean markdown content
+        type: string
+      sizes:
+        $ref: '#/definitions/models.ContentSizes'
+      status_code:
+        example: 200
+        type: integer
+      url:
+        example: https://example.com
+        type: string
+    type: object
+  models.ContentSizes:
+    properties:
+      markdown:
+        example: 1680
+        type: integer
+    type: object
+  models.CrawlRequest:
+    properties:
+      delay:
+        example: 200ms
+        type: string
+      depth:
+        example: 2
+        type: integer
+      enable_headless:
+        example: false
+        type: boolean
+      enable_html:
+        example: true
+        type: boolean
+      enable_sitemap:
+        example: true
+        type: boolean
+      headless_timeout:
+        example: 30
+        type: integer
+      job_id:
+        example: my-custom-session-123
+        type: string
+      max_urls:
+        example: 1000
+        type: integer
+      url:
+        example: https://example.com
+        type: string
+      wait_for_js:
+        example: true
+        type: boolean
+      workers:
+        example: 10
+        type: integer
+    required:
+    - url
+    type: object
+  models.CrawlResponse:
+    properties:
+      job_id:
+        example: 60f7b3b3b3b3b3b3b3b3b3b3
+        type: string
+      message:
+        example: Crawl job started successfully
+        type: string
+      status:
+        example: accepted
+        type: string
+    type: object
+  models.CrawlResult:
+    properties:
+      crawled_at:
+        type: string
+      duration:
+        type: string
+      id:
+        type: string
+      settings:
+        $ref: '#/definitions/models.CrawlSettings'
+      target_url:
+        type: string
+      total_urls:
+        type: integer
+      urls:
+        items:
+          type: string
+        type: array
+      urls_per_second:
+        type: string
+    type: object
+  models.CrawlSettings:
+    properties:
+      delay:
+        type: string
+      depth:
+        type: integer
+      workers:
+        type: integer
+    type: object
+  models.JobStatus:
+    properties:
+      created_at:
+        example: "2023-07-18T10:30:45Z"
+        type: string
+      error:
+        example: Error message if failed
+        type: string
+      id:
+        example: 60f7b3b3b3b3b3b3b3b3b3b3
+        type: string
+      progress:
+        example: Starting crawl...
+        type: string
+      request:
+        $ref: '#/definitions/models.CrawlRequest'
+      result:
+        $ref: '#/definitions/models.CrawlResult'
+      status:
+        example: completed
+        type: string
+      updated_at:
+        example: "2023-07-18T10:32:15Z"
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: A fast web crawler API that extracts URLs from websites and stores
+    results in MongoDB
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Web Crawler API
+  version: "1.0"
+paths:
+  /content:
+    post:
+      consumes:
+      - application/json
+      description: Fetches webpage content and returns it in HTML, clean text, and
+        markdown formats
+      parameters:
+      - description: Content request with URL or URLs
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.ContentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ContentBatchResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Get webpage content in all formats (HTML, text, markdown)
+      tags:
+      - content
+  /crawl:
+    post:
+      consumes:
+      - application/json
+      description: Initiates a web crawling job for the specified URL with configurable
+        parameters
+      parameters:
+      - description: Crawl parameters
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.CrawlRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CrawlResponse'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Start a new web crawl
+      tags:
+      - crawl
+  /health:
+    get:
+      description: Returns the health status of the API and its dependencies
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Health check
+      tags:
+      - health
+  /jobs:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves a list of recent jobs from the database
+      parameters:
+      - default: 10
+        description: Maximum number of results to return
+        in: query
+        name: limit
+        type: integer
+      - description: Filter by job status (running, completed, failed)
+        in: query
+        name: status
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.JobStatus'
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "503":
+          description: Service Unavailable
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: List recent jobs
+      tags:
+      - jobs
+  /jobs/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves the current status and progress of a crawl job
+      parameters:
+      - description: Job ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.JobStatus'
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: Get crawl job status
+      tags:
+      - jobs
+  /ws/{id}:
+    get:
+      description: Establishes a WebSocket connection to receive real-time updates
+        for a specific crawl job
+      parameters:
+      - description: Job ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses: {}
+      summary: Connect to live crawl updates
+      tags:
+      - websocket
+securityDefinitions:
+  ApiKeyAuth:
+    description: 'API key authentication. Use the header ''X-API-Key: sk-default-cnsksmcnneheufhruenchguenhgcneirhgcehlnhacueraicnrhecnleiurcnhiunrciuahcnuh'''
+    in: header
+    name: X-API-Key
+    type: apiKey
+swagger: "2.0"

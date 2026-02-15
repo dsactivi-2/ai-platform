@@ -1,0 +1,48 @@
+{
+  "skill_id": "brsorndnsg",
+  "skill_name": "brsorndnsg",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "{\n  \"shot\": {\n    \"composition\": \"medium full-body shot with the subject reclining on a white curved platform against a deep black background\",\n    \"camera_proximity\": \"medium_full_shot\",\n    \"camera_angle\": \"eye_level\",\n    \"film_grain\": \"digital_clean_no_grain\"\n  },\n  \"subject\": {\n    \"description\": \"female subject whose facial features, hair appearance, body proportions and overall look match the reference image, captured in a serene editorial pose\",\n    \"wardrobe\": \"white fuzzy tube top paired with matching shorts and oversized white fuzzy earmuffs\",\n    \"emotion_and_mood\": \"calm, elegant, minimal\",\n    \"pose\": \"reclining on the curved platform with the right arm supporting the upper body and the left arm resting softly on the thigh, gaze directed off-camera to the right\"\n  },\n  \"visual_details\": {\n    \"action\": \"static composed pose emphasizing clean lines and contrast between textures\",\n    \"props\": \"white curved platform, chunky silver bracelets worn on both wrists\"\n  },\n  \"scene\": {\n    \"location\": \"minimalist indoor studio with a black backdrop\",\n    \"time_of_day\": \"controlled studio lighting\",\n    \"environment\": \"clean modern studio space with strong contrast between white elements and dark surroundings\"\n  },\n  \"cinematography\": {\n    \"lighting\": \"soft_key\",\n    \"tone\": \"minimal\",\n    \"color_palette\": \"high_contrast_bw\"\n  },\n  \"visual_style\": {\n    \"style\": \"modern minimalist fashion editorial\",\n    \"elements\": \"soft spotlight from the front-left creating gentle highlights and shadows, smooth skin tones, crisp silhouette separation from background, refined texture contrast, no text, no logos\"\n  }\n}",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "\"shot\": {\n    \"composition\": \"medium full-body shot with the subject reclining on a white curved platform against a deep black background\",\n    \"camera_proximity\": \"medium_full_shot\",\n    \"camera_angle\": \"eye_level\",\n    \"film_grain\": \"digital_clean_no_grain\"",
+      "default": "",
+      "description": "Input for \n  \"shot\": {\n    \"composition\": \"medium full-body shot with the subject reclining on a white curved platform against a deep black background\",\n    \"camera_proximity\": \"medium_full_shot\",\n    \"camera_angle\": \"eye_level\",\n    \"film_grain\": \"digital_clean_no_grain\"\n  "
+    },
+    {
+      "name": "\"description\": \"female subject whose facial features, hair appearance, body proportions and overall look match the reference image, captured in a serene editorial pose\",\n    \"wardrobe\": \"white fuzzy tube top paired with matching shorts and oversized white fuzzy earmuffs\",\n    \"emotion_and_mood\": \"calm, elegant, minimal\",\n    \"pose\": \"reclining on the curved platform with the right arm supporting the upper body and the left arm resting softly on the thigh, gaze directed off-camera to the right\"",
+      "default": "",
+      "description": "Input for \n    \"description\": \"female subject whose facial features, hair appearance, body proportions and overall look match the reference image, captured in a serene editorial pose\",\n    \"wardrobe\": \"white fuzzy tube top paired with matching shorts and oversized white fuzzy earmuffs\",\n    \"emotion_and_mood\": \"calm, elegant, minimal\",\n    \"pose\": \"reclining on the curved platform with the right arm supporting the upper body and the left arm resting softly on the thigh, gaze directed off-camera to the right\"\n  "
+    },
+    {
+      "name": "\"action\": \"static composed pose emphasizing clean lines and contrast between textures\",\n    \"props\": \"white curved platform, chunky silver bracelets worn on both wrists\"",
+      "default": "",
+      "description": "Input for \n    \"action\": \"static composed pose emphasizing clean lines and contrast between textures\",\n    \"props\": \"white curved platform, chunky silver bracelets worn on both wrists\"\n  "
+    },
+    {
+      "name": "\"location\": \"minimalist indoor studio with a black backdrop\",\n    \"time_of_day\": \"controlled studio lighting\",\n    \"environment\": \"clean modern studio space with strong contrast between white elements and dark surroundings\"",
+      "default": "",
+      "description": "Input for \n    \"location\": \"minimalist indoor studio with a black backdrop\",\n    \"time_of_day\": \"controlled studio lighting\",\n    \"environment\": \"clean modern studio space with strong contrast between white elements and dark surroundings\"\n  "
+    },
+    {
+      "name": "\"lighting\": \"soft_key\",\n    \"tone\": \"minimal\",\n    \"color_palette\": \"high_contrast_bw\"",
+      "default": "",
+      "description": "Input for \n    \"lighting\": \"soft_key\",\n    \"tone\": \"minimal\",\n    \"color_palette\": \"high_contrast_bw\"\n  "
+    },
+    {
+      "name": "\"style\": \"modern minimalist fashion editorial\",\n    \"elements\": \"soft spotlight from the front-left creating gentle highlights and shadows, smooth skin tones, crisp silhouette separation from background, refined texture contrast, no text, no logos\"",
+      "default": "",
+      "description": "Input for \n    \"style\": \"modern minimalist fashion editorial\",\n    \"elements\": \"soft spotlight from the front-left creating gentle highlights and shadows, smooth skin tones, crisp silhouette separation from background, refined texture contrast, no text, no logos\"\n  "
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"{\n  \"shot\": {\n    \"composition\": \"medium full-body shot with the subject reclining on a white curved...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

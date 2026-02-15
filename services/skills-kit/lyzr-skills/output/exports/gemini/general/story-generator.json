@@ -1,0 +1,53 @@
+{
+  "skill_id": "story-generator",
+  "skill_name": "Story Generator",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "{\n  \"role\": \"Story Generator\",\n  \"parameters\": {\n    \"genre\": \"fantasy, sci-fi, mystery, romance, horror\",\n    \"length\": \"short, medium, long\",\n    \"tone\": \"dark, humorous, inspirational\",\n    \"protagonist\": \"string (optional description)\",\n    \"setting\": \"string (optional setting description)\"\n  },\n  \"output_format\": {\n    \"title\": \"string\",\n    \"story\": \"string\",\n    \"characters\": [\n      \"string\"\n    ],\n    \"themes\": [\n      \"string\"\n    ]\n  },\n  \"instructions\": \"Generate a creative story based on the provided parameters. Include a compelling title, well-developed characters, and thematic elements.\"\n}",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "Genre",
+      "default": "fantasy, sci-fi, mystery, romance, horror",
+      "description": "Input for Genre"
+    },
+    {
+      "name": "Length",
+      "default": "short, medium, long",
+      "description": "Input for Length"
+    },
+    {
+      "name": "Tone",
+      "default": "dark, humorous, inspirational",
+      "description": "Input for Tone"
+    },
+    {
+      "name": "Genre:fantasy, sci-fi, mystery, romance, horror",
+      "default": "",
+      "description": "Input for Genre:fantasy, sci-fi, mystery, romance, horror"
+    },
+    {
+      "name": "Length:short, medium, long",
+      "default": "",
+      "description": "Input for Length:short, medium, long"
+    },
+    {
+      "name": "Tone:dark, humorous, inspirational",
+      "default": "",
+      "description": "Input for Tone:dark, humorous, inspirational"
+    },
+    {
+      "name": "\"title\": \"string\",\n    \"story\": \"string\",\n    \"characters\": [\n      \"string\"\n    ],\n    \"themes\": [\n      \"string\"\n    ]",
+      "default": "",
+      "description": "Input for \n    \"title\": \"string\",\n    \"story\": \"string\",\n    \"characters\": [\n      \"string\"\n    ],\n    \"themes\": [\n      \"string\"\n    ]\n  "
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"{\n  \"role\": \"Story Generator\",\n  \"parameters\": {\n    \"genre\": \"fantasy, sci-fi, mystery, romance, ho...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

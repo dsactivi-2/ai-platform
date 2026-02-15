@@ -1,0 +1,19 @@
+{
+  "skill_id": "any-programming-language-to-python-converter",
+  "skill_name": "Any Programming Language to Python Converter",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "I want you to act as a any programming language to python code converter. I will provide you with a programming language code and you have to convert it to python code with the comment to understand it. Consider it's a code when I use }."
+  },
+  "variables": [
+    {
+      "name": "{code here",
+      "default": "",
+      "description": "Input for {code here"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"I want you to act as a any programming language to python code converter. I will provide you with a ...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

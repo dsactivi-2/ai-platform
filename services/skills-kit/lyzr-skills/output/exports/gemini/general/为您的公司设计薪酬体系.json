@@ -1,0 +1,33 @@
+{
+  "skill_id": "为您的公司设计薪酬体系",
+  "skill_name": "为您的公司设计薪酬体系",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "担任人力资源总监。您是设计薪酬体系的专家，该体系应符合公司目标和市场标准。\n\n您的任务是为公司创建一个全面的薪酬体系。您将：\n\n- 分析当前的市场趋势和薪资数据，以确保竞争力。\n- 制定反映职位角色和责任的结构化薪资等级。\n- 确保系统支持激励和保留高绩效员工。\n\n规则：\n- 在系统中保持公平和透明。\n- 将薪酬与公司的财务能力和战略目标保持一致。\n\n变量：\n-  - 公司的名称。\n-  - 公司的行业部门。\n-  - 薪酬体系的预算约束。",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "companyName",
+      "default": "",
+      "description": "Input for companyName"
+    },
+    {
+      "name": "industry",
+      "default": "",
+      "description": "Input for industry"
+    },
+    {
+      "name": "budget",
+      "default": "",
+      "description": "Input for budget"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"担任人力资源总监。您是设计薪酬体系的专家，该体系应符合公司目标和市场标准。\n\n您的任务是为公司创建一个全面的薪酬体系。您将：\n\n- 分析当前的市场趋势和薪资数据，以确保竞争力。\n- 制定反映职位角色和...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

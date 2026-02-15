@@ -1,0 +1,29 @@
+{
+  "skill_id": "realistic-food-image-generator",
+  "skill_name": "Realistic Food Image Generator",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Ultra-realistic food photography–style image of Fried chicken tenders with french fries, presented in a clean, appetizing, and professional composition suitable for restaurant menus, promotional materials, digital screens, and delivery platforms.\n\nThe dish is shown in its most recognizable and ideal serving form, with accurate proportions and highly realistic details — natural textures, crispy surfaces, moist interiors, visible steam where appropriate, glossy but natural sauces, and fresh ingredients.\n\nLighting is soft, controlled, and natural, inspired by professional studio food photography, with balanced highlights, realistic shadows, and true-to-life colors that enhance freshness without exaggeration.\n\nThe food is plated on a simple, elegant plate or bowl, styled minimally to keep full focus on the dish. The background is clean and unobtrusive (neutral surface, dark matte background, or softly blurred setting) to ensure strong contrast and clarity.\n\nCaptured with a high-end DSLR look — shallow depth of field, sharp focus on the food, natural lens perspective, and high resolution. No illustration, no stylization, no artificial effects.\n\nCommercial-grade realism, appetizing, trustworthy, and ready for real restaurant use.\n\n--ar 4:5"
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "FOOD_NAME",
+      "default": "Fried chicken tenders with french fries",
+      "description": "Input for FOOD_NAME"
+    },
+    {
+      "name": "FOOD_NAME:Fried chicken tenders with french fries",
+      "default": "",
+      "description": "Input for FOOD_NAME:Fried chicken tenders with french fries"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"Ultra-realistic food photography–style image of Fried chicken tenders with french fries, presented i...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

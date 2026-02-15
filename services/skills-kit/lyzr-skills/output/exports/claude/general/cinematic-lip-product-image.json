@@ -1,0 +1,13 @@
+{
+  "skill_id": "cinematic-lip-product-image",
+  "skill_name": "Cinematic Lip Product Image",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Create an image of a lip product in cinematic 1080p 4K resolution. The image should feature lip glosses in various shades that are inclusive and look flattering on people of different skin tones. Ensure that the presentation is visually striking, with a focus on a lip gloss drop dripping elegantly on the lip gloss tube, adding a touch of drama and luxury to the scene."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Create an image of a lip product in cinematic 1080p 4K resolution. The image should feature lip glos...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

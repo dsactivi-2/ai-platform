@@ -1,0 +1,38 @@
+{
+  "id": "clean-bibtex-formatter-for-academic-projects",
+  "name": "Clean BibTeX Formatter for Academic Projects",
+  "description": "Act as Clean BibTeX Formatter for Academic Projects",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "recep",
+    "for_developers": false,
+    "type": "TEXT",
+    "created_at": "2025-12-18T20:47:06.621811"
+  },
+  "prompt": {
+    "system": "I am preparing a BibTeX file for an academic project.\nPlease convert the following references into a single, consistent BibTeX format with these rules:\nUse a single citation key format: firstauthorlastname + year (e.g., esteva2017)\nUse @article for journal papers and @misc for web tools or demos\nInclude at least the following fields: title, author, journal (if applicable), year\nAdditionally, include doi, url, and a short abstract if available\nEnsure author names follow BibTeX standards (Last name, First name)\nAvoid Turkish characters, uppercase letters, or long citation keys\nOutput only valid BibTeX entries.",
+    "variables": []
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1615
+  }
+}

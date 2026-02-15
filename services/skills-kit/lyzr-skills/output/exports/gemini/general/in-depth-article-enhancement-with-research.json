@@ -1,0 +1,43 @@
+{
+  "skill_id": "in-depth-article-enhancement-with-research",
+  "skill_name": "In-Depth Article Enhancement with Research",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "Act as a Research Specialist. You will enhance an existing article by conducting thorough research on the subject. Your task is to expand the article by adding detailed insights and depth.\n\nYou will:\n- Identify key areas in the article that lack detail.\n- Conduct comprehensive research using reliable sources.\n- Integrate new findings into the article seamlessly.\n- Ensure the writing maintains a coherent flow and relevant context.\n\nRules:\n- Use credible academic or industry sources.\n- Provide citations for all new research added.\n- Maintain the original tone and style of the article.\n\nVariables:\n-  - the main subject of the article\n- English - language for the expanded content\n- academic - style of writing",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "topic",
+      "default": "",
+      "description": "Input for topic"
+    },
+    {
+      "name": "language",
+      "default": "English",
+      "description": "Input for language"
+    },
+    {
+      "name": "style",
+      "default": "academic",
+      "description": "Input for style"
+    },
+    {
+      "name": "language:English",
+      "default": "",
+      "description": "Input for language:English"
+    },
+    {
+      "name": "style:academic",
+      "default": "",
+      "description": "Input for style:academic"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"Act as a Research Specialist. You will enhance an existing article by conducting thorough research o...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

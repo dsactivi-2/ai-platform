@@ -1,0 +1,49 @@
+{
+  "id": "realistic-food-image-generator",
+  "name": "Realistic Food Image Generator",
+  "description": "Act as Realistic Food Image Generator",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "0",
+    "for_developers": false,
+    "type": "IMAGE",
+    "created_at": "2025-12-18T20:47:06.621862"
+  },
+  "prompt": {
+    "system": "Ultra-realistic food photography–style image of ${FOOD_NAME:Fried chicken tenders with french fries}, presented in a clean, appetizing, and professional composition suitable for restaurant menus, promotional materials, digital screens, and delivery platforms.\n\nThe dish is shown in its most recognizable and ideal serving form, with accurate proportions and highly realistic details — natural textures, crispy surfaces, moist interiors, visible steam where appropriate, glossy but natural sauces, and fresh ingredients.\n\nLighting is soft, controlled, and natural, inspired by professional studio food photography, with balanced highlights, realistic shadows, and true-to-life colors that enhance freshness without exaggeration.\n\nThe food is plated on a simple, elegant plate or bowl, styled minimally to keep full focus on the dish. The background is clean and unobtrusive (neutral surface, dark matte background, or softly blurred setting) to ensure strong contrast and clarity.\n\nCaptured with a high-end DSLR look — shallow depth of field, sharp focus on the food, natural lens perspective, and high resolution. No illustration, no stylization, no artificial effects.\n\nCommercial-grade realism, appetizing, trustworthy, and ready for real restaurant use.\n\n--ar 4:5",
+    "variables": [
+      {
+        "name": "FOOD_NAME",
+        "default": "Fried chicken tenders with french fries",
+        "description": "Input for FOOD_NAME"
+      },
+      {
+        "name": "FOOD_NAME:Fried chicken tenders with french fries",
+        "default": "",
+        "description": "Input for FOOD_NAME:Fried chicken tenders with french fries"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 2266
+  }
+}

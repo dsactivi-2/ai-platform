@@ -1,0 +1,13 @@
+{
+  "skill_id": "suggest-pricing-tiers",
+  "skill_name": "Suggest Pricing Tiers",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Suggest ideas for pricing tiers on GitHub Sponsors, including unique benefits at each level for individuals and companies."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Suggest ideas for pricing tiers on GitHub Sponsors, including unique benefits at each level for indi...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

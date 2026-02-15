@@ -1,0 +1,73 @@
+# Production Environment Policy Configuration
+# Strict governance for production environment
+
+policies:
+  # Strict input validation
+  - type: validation
+    name: ProductionValidation
+    enabled: true
+    phase: pre_execution
+    strict: true
+    description: "Strict validation - block on any error"
+
+  # Strong authorization requirements
+  - type: authorization
+    name: ProductionAuth
+    enabled: true
+    required_roles:
+      - admin
+    required_permissions:
+      - production.deploy
+      - production.write
+    context_key: user
+    require_approval_on_failure: true  # Require approval if auth fails
+    description: "Admin role required with production permissions"
+
+  # Strict rate limiting
+  - type: rate_limit
+    name: ProductionRateLimit
+    enabled: true
+    max_calls: 50  # Conservative limit
+    window_seconds: 60
+    per_user: true
+    user_key: user.id
+    description: "Strict rate limits to prevent abuse"
+
+  # Comprehensive audit logging
+  - type: audit
+    name: ProductionAudit
+    enabled: true
+    phase: both
+    log_inputs: true
+    log_outputs: true
+    sensitive_fields:
+      - password
+      - ssn
+      - credit_card
+      - api_key
+      - token
+      - secret
+      - email
+      - phone
+    compliance_tags:
+      - GDPR
+      - SOC2
+      - ISO27001
+      - production
+    description: "Full audit logging with comprehensive PII redaction"
+
+  # Mandatory approval for production changes
+  - type: approval
+    name: ProductionApproval
+    enabled: true
+    approvers:
+      - sre-lead@company.com
+      - cto@company.com
+    timeout_seconds: 7200  # 2 hours
+    on_timeout: reject
+    require_reason: true
+    description: "SRE or CTO approval required for production changes"
+
+version: "1.0"
+environment: production
+description: "Strict governance policies for production environment"

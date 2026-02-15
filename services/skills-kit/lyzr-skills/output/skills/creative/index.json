@@ -1,0 +1,66 @@
+{
+  "category": "creative",
+  "count": 15,
+  "skills": [
+    {
+      "id": "storyteller",
+      "name": "Storyteller"
+    },
+    {
+      "id": "composer",
+      "name": "Composer"
+    },
+    {
+      "id": "screenwriter",
+      "name": "Screenwriter"
+    },
+    {
+      "id": "poet",
+      "name": "Poet"
+    },
+    {
+      "id": "artist-advisor",
+      "name": "Artist Advisor"
+    },
+    {
+      "id": "essay-writer",
+      "name": "Essay Writer"
+    },
+    {
+      "id": "classical-music-composer",
+      "name": "Classical Music Composer"
+    },
+    {
+      "id": "makeup-artist",
+      "name": "Makeup Artist"
+    },
+    {
+      "id": "acoustic-guitar-composer",
+      "name": "Acoustic Guitar Composer"
+    },
+    {
+      "id": "linkedin-ghostwriter",
+      "name": "LinkedIn Ghostwriter"
+    },
+    {
+      "id": "creative-branding-strategist",
+      "name": "Creative Branding Strategist"
+    },
+    {
+      "id": "music-video-designer",
+      "name": "Music Video Designer"
+    },
+    {
+      "id": "linkedin-ghostwriter",
+      "name": "Linkedin Ghostwriter"
+    },
+    {
+      "id": "creative-perks",
+      "name": "Creative Perks"
+    },
+    {
+      "id": "smart-rewriter-clarity-booster",
+      "name": "Smart Rewriter & Clarity Booster"
+    }
+  ]
+}

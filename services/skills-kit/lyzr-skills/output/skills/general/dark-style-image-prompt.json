@@ -1,0 +1,54 @@
+{
+  "id": "dark-style-image-prompt",
+  "name": "Dark Style Image Prompt",
+  "description": "Act as Dark Style Image Prompt",
+  "version": "1.0.0",
+  "category": "general",
+  "tags": [
+    "general",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "dong1hong1yuan1@gmail.com",
+    "for_developers": false,
+    "type": "TEXT",
+    "created_at": "2025-12-18T20:47:06.628185"
+  },
+  "prompt": {
+    "system": "Create an image with a ${style:dark} aesthetic. Your image should feature:\n\n- **Lighting:** Moody and low-key, highlighting shadows.\n- **Color Palette:** Dark tones with high contrast.\n- **Elements:** Include mysterious or shadowy figures, gothic architecture, or night-time scenery.\n\nFeel free to adjust the ${elements} to match your vision of a dark style image.",
+    "variables": [
+      {
+        "name": "style",
+        "default": "dark",
+        "description": "Input for style"
+      },
+      {
+        "name": "elements",
+        "default": "",
+        "description": "Input for elements"
+      },
+      {
+        "name": "style:dark",
+        "default": "",
+        "description": "Input for style:dark"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1364
+  }
+}

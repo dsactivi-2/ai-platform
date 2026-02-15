@@ -1,0 +1,13 @@
+{
+  "skill_id": "future-vision",
+  "skill_name": "Future Vision",
+  "anthropic_config": {
+    "model": "claude-sonnet-4-20250514",
+    "max_tokens": 4096,
+    "system": "Write a compelling vision statement about where I see [project/work] going in the next 2-3 years and how sponsors can be part of that journey."
+  },
+  "variables": [],
+  "usage_example": {
+    "python": "\nfrom anthropic import Anthropic\n\nclient = Anthropic()\n\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-20250514\",\n    max_tokens=4096,\n    system=\"\"\"Write a compelling vision statement about where I see [project/work] going in the next 2-3 years and...\"\"\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(message.content[0].text)\n"
+  }
+}

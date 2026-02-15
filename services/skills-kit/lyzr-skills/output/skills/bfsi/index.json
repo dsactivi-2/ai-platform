@@ -1,0 +1,38 @@
+{
+  "category": "bfsi",
+  "count": 8,
+  "skills": [
+    {
+      "id": "accountant",
+      "name": "Accountant"
+    },
+    {
+      "id": "financial-analyst",
+      "name": "Financial Analyst"
+    },
+    {
+      "id": "investment-manager",
+      "name": "Investment Manager"
+    },
+    {
+      "id": "youtube-video-analyst",
+      "name": "YouTube Video Analyst"
+    },
+    {
+      "id": "root-cause-analyst",
+      "name": "root-cause-analyst"
+    },
+    {
+      "id": "forensic-cinematic-analyst",
+      "name": "forensic-cinematic-analyst"
+    },
+    {
+      "id": "ai-stocks-investment-helper",
+      "name": "AI Stocks Investment Helper"
+    },
+    {
+      "id": "personal-financial-adviosr",
+      "name": "Personal Financial Adviosr"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+# Development Environment Policy Configuration
+# Lighter governance for development environment
+
+policies:
+  # Basic validation only
+  - type: validation
+    name: DevValidation
+    enabled: true
+    phase: pre_execution
+    strict: false  # Warnings only in dev
+    description: "Basic validation with warnings"
+
+  # Relaxed rate limits for development
+  - type: rate_limit
+    name: DevRateLimit
+    enabled: true
+    max_calls: 1000  # Higher limit for dev
+    window_seconds: 60
+    per_user: false  # Global limit in dev
+    description: "Relaxed rate limits for development"
+
+  # Basic audit logging
+  - type: audit
+    name: DevAudit
+    enabled: true
+    phase: both
+    log_inputs: true
+    log_outputs: true
+    sensitive_fields:
+      - password
+      - api_key
+    compliance_tags:
+      - development
+    description: "Basic audit logging for development"
+
+  # No approval required in dev
+  # - type: approval
+  #   enabled: false
+
+version: "1.0"
+environment: development

@@ -1,0 +1,73 @@
+{
+  "skill_id": "detailed-image-generation-prompt-for-fashion-and-portrait-photography",
+  "skill_name": "Detailed Image Generation Prompt for Fashion and Portrait Photography",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "{\n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"demographics\": \"Young woman\",\n      \"hair\": {\n        \"color\": \"Strawberry blonde / Golden blonde\",\n        \"style\": \"Long, voluminous, layered, slightly messy waves\",\n        \"parting\": \"Middle part\"\n      },\n      \"face\": {\n        \"makeup\": \"Winged black eyeliner, mascara, defined eyebrows, highlighter on nose and cheeks, glossy pink lips\",\n        \"expression\": \"Neutral to slight pout, focused on mirror reflection\"\n      },\n      \"physique\": \"Slender, fit, tan skin tone\"\n    },\n    \"apparel\": {\n      \"outerwear\": {\n        \"item\": \"Faux fur jacket\",\n        \"color\": \"Crimson/red mixed tones\",\n        \"texture\": \"Shaggy, plush, voluminous\"\n      },\n      \"top\": {\n        \"item\": \"Corset top\",\n        \"style\": \"Strapless, bustier-style, cropped\",\n        \"material\": \"Crimson satin or slightly shiny fabric\",\n        \"fit\": \"Tight, structured bodice\"\n      },\n      \"bottoms\": {\n        \"item\": \"Jeans\",\n        \"color\": \"Light blue wash\",\n        \"fit\": \"Low-rise, tight fit\",\n        \"details\": \"Visible stitching, front pockets\"\n      }\n    },\n    \"accessories\": {\n      \"jewelry\": [\n        \"Thin gold chain necklace with small pendant\",\n        \"Gold ring on right ring finger\"\n      ],\n      \"belt\": {\n        \"material\": \"Black leather\",\n        \"buckle\": \"Rectangular gold/metallic frame\"\n      },\n      \"tech\": {\n        \"item\": \"Smartphone (iPhone style)\",\n        \"case_color\": \"Black\",\n        \"holding_style\": \"Held vertically in front of face with right hand\"\n      },\n      \"beauty_details\": {\n        \"nails\": \"Short, painted bright red\"\n      }\n    },\n    \"pose_and_framing\": {\n      \"type\": \"Mirror selfie\",\n      \"posture\": \"Standing, slight hip tilt (contrapposto), midriff exposed\",\n      \"framing\": \"Thigh-up shot, portrait orientation\"\n    },\n    \"setting_and_lighting\": {\n      \"location\": \"Indoors (likely a bedroom or hallway)\",\n      \"background_elements\": {\n        \"left\": \"Dark window with blinds, glimpse of bed/furniture with white clutter\",\n        \"right\": \"White door frame/jamb, plain wall\"\n      },\n      \"lighting\": {\n        \"quality\": \"Warm, directional artificial light\",\n        \"source\": \"Coming from the right side\",\n        \"shadows\": \"Casts shadows on the left side of the torso and background\"\n      }\n    }\n  }\n}",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "\"image_generation_prompt\": {\n    \"subject\": {\n      \"demographics\": \"Young woman\",\n      \"hair\": {\n        \"color\": \"Strawberry blonde / Golden blonde\",\n        \"style\": \"Long, voluminous, layered, slightly messy waves\",\n        \"parting\": \"Middle part\"",
+      "default": "",
+      "description": "Input for \n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"demographics\": \"Young woman\",\n      \"hair\": {\n        \"color\": \"Strawberry blonde / Golden blonde\",\n        \"style\": \"Long, voluminous, layered, slightly messy waves\",\n        \"parting\": \"Middle part\"\n      "
+    },
+    {
+      "name": "\"makeup\": \"Winged black eyeliner, mascara, defined eyebrows, highlighter on nose and cheeks, glossy pink lips\",\n        \"expression\": \"Neutral to slight pout, focused on mirror reflection\"",
+      "default": "",
+      "description": "Input for \n        \"makeup\": \"Winged black eyeliner, mascara, defined eyebrows, highlighter on nose and cheeks, glossy pink lips\",\n        \"expression\": \"Neutral to slight pout, focused on mirror reflection\"\n      "
+    },
+    {
+      "name": "\"outerwear\": {\n        \"item\": \"Faux fur jacket\",\n        \"color\": \"Crimson/red mixed tones\",\n        \"texture\": \"Shaggy, plush, voluminous\"",
+      "default": "",
+      "description": "Input for \n      \"outerwear\": {\n        \"item\": \"Faux fur jacket\",\n        \"color\": \"Crimson/red mixed tones\",\n        \"texture\": \"Shaggy, plush, voluminous\"\n      "
+    },
+    {
+      "name": "\"item\": \"Corset top\",\n        \"style\": \"Strapless, bustier-style, cropped\",\n        \"material\": \"Crimson satin or slightly shiny fabric\",\n        \"fit\": \"Tight, structured bodice\"",
+      "default": "",
+      "description": "Input for \n        \"item\": \"Corset top\",\n        \"style\": \"Strapless, bustier-style, cropped\",\n        \"material\": \"Crimson satin or slightly shiny fabric\",\n        \"fit\": \"Tight, structured bodice\"\n      "
+    },
+    {
+      "name": "\"item\": \"Jeans\",\n        \"color\": \"Light blue wash\",\n        \"fit\": \"Low-rise, tight fit\",\n        \"details\": \"Visible stitching, front pockets\"",
+      "default": "",
+      "description": "Input for \n        \"item\": \"Jeans\",\n        \"color\": \"Light blue wash\",\n        \"fit\": \"Low-rise, tight fit\",\n        \"details\": \"Visible stitching, front pockets\"\n      "
+    },
+    {
+      "name": "\"jewelry\": [\n        \"Thin gold chain necklace with small pendant\",\n        \"Gold ring on right ring finger\"\n      ],\n      \"belt\": {\n        \"material\": \"Black leather\",\n        \"buckle\": \"Rectangular gold/metallic frame\"",
+      "default": "",
+      "description": "Input for \n      \"jewelry\": [\n        \"Thin gold chain necklace with small pendant\",\n        \"Gold ring on right ring finger\"\n      ],\n      \"belt\": {\n        \"material\": \"Black leather\",\n        \"buckle\": \"Rectangular gold/metallic frame\"\n      "
+    },
+    {
+      "name": "\"item\": \"Smartphone (iPhone style)\",\n        \"case_color\": \"Black\",\n        \"holding_style\": \"Held vertically in front of face with right hand\"",
+      "default": "",
+      "description": "Input for \n        \"item\": \"Smartphone (iPhone style)\",\n        \"case_color\": \"Black\",\n        \"holding_style\": \"Held vertically in front of face with right hand\"\n      "
+    },
+    {
+      "name": "\"nails\": \"Short, painted bright red\"",
+      "default": "",
+      "description": "Input for \n        \"nails\": \"Short, painted bright red\"\n      "
+    },
+    {
+      "name": "\"type\": \"Mirror selfie\",\n      \"posture\": \"Standing, slight hip tilt (contrapposto), midriff exposed\",\n      \"framing\": \"Thigh-up shot, portrait orientation\"",
+      "default": "",
+      "description": "Input for \n      \"type\": \"Mirror selfie\",\n      \"posture\": \"Standing, slight hip tilt (contrapposto), midriff exposed\",\n      \"framing\": \"Thigh-up shot, portrait orientation\"\n    "
+    },
+    {
+      "name": "\"location\": \"Indoors (likely a bedroom or hallway)\",\n      \"background_elements\": {\n        \"left\": \"Dark window with blinds, glimpse of bed/furniture with white clutter\",\n        \"right\": \"White door frame/jamb, plain wall\"",
+      "default": "",
+      "description": "Input for \n      \"location\": \"Indoors (likely a bedroom or hallway)\",\n      \"background_elements\": {\n        \"left\": \"Dark window with blinds, glimpse of bed/furniture with white clutter\",\n        \"right\": \"White door frame/jamb, plain wall\"\n      "
+    },
+    {
+      "name": "\"quality\": \"Warm, directional artificial light\",\n        \"source\": \"Coming from the right side\",\n        \"shadows\": \"Casts shadows on the left side of the torso and background\"",
+      "default": "",
+      "description": "Input for \n        \"quality\": \"Warm, directional artificial light\",\n        \"source\": \"Coming from the right side\",\n        \"shadows\": \"Casts shadows on the left side of the torso and background\"\n      "
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"{\n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"demographics\": \"Young woman\",\n      \"hair\":...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

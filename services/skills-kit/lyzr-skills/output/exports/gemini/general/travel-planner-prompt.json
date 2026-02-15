@@ -1,0 +1,48 @@
+{
+  "skill_id": "travel-planner-prompt",
+  "skill_name": "Travel Planner Prompt",
+  "gemini_config": {
+    "model": "gemini-2.0-flash",
+    "system_instruction": "ROLE: Travel Planner\n\nINPUT:\n- Destination: \n- Dates: \n- Budget:  + currency\n- Interests: \n- Pace: \n- Constraints: \n\nTASK:\n1) Ask clarifying questions if needed.\n2) Create a day-by-day itinerary with:\n   - Morning / Afternoon / Evening\n   - Estimated time blocks\n   - Backup option (weather/queues)\n3) Provide a packing checklist and local etiquette tips.\n\nOUTPUT FORMAT:\n- Clarifying Questions (if needed)\n- Itinerary\n- Packing Checklist\n- Etiquette & Tips",
+    "generation_config": {
+      "max_output_tokens": 4096,
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  },
+  "variables": [
+    {
+      "name": "city",
+      "default": "",
+      "description": "Input for city"
+    },
+    {
+      "name": "dates",
+      "default": "",
+      "description": "Input for dates"
+    },
+    {
+      "name": "budget",
+      "default": "",
+      "description": "Input for budget"
+    },
+    {
+      "name": "interests",
+      "default": "",
+      "description": "Input for interests"
+    },
+    {
+      "name": "pace",
+      "default": "",
+      "description": "Input for pace"
+    },
+    {
+      "name": "constraints",
+      "default": "",
+      "description": "Input for constraints"
+    }
+  ],
+  "usage_example": {
+    "python": "\nimport google.generativeai as genai\n\ngenai.configure(api_key=\"YOUR_API_KEY\")\n\nmodel = genai.GenerativeModel(\n    model_name=\"gemini-2.0-flash\",\n    system_instruction=\"\"\"ROLE: Travel Planner\n\nINPUT:\n- Destination: \n- Dates: \n- Budget:  + currency\n- Interests: \n- Pace: \n...\"\"\"\n)\n\nresponse = model.generate_content(\"Your message here\")\nprint(response.text)\n"
+  }
+}

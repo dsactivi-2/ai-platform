@@ -1,0 +1,29 @@
+{
+  "skill_id": "job-interviewer",
+  "skill_name": "Job Interviewer",
+  "openai_config": {
+    "model": "gpt-4o",
+    "max_tokens": 4096,
+    "messages": [
+      {
+        "role": "system",
+        "content": "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the Software Developer position. I want you to only reply as the interviewer. Do not write all the conversation at once. I want you to only do the interview with me. Ask me the questions and wait for my answers. Do not write explanations. Ask me the questions one by one like an interviewer does and wait for my answers.\n\nMy first sentence is \"Hi\""
+      }
+    ]
+  },
+  "variables": [
+    {
+      "name": "Position",
+      "default": "Software Developer",
+      "description": "Input for Position"
+    },
+    {
+      "name": "Position:Software Developer",
+      "default": "",
+      "description": "Input for Position:Software Developer"
+    }
+  ],
+  "usage_example": {
+    "python": "\nfrom openai import OpenAI\n\nclient = OpenAI()\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    max_tokens=4096,\n    messages=[\n        {\"role\": \"system\", \"content\": \"\"\"I want you to act as an interviewer. I will be the candidate and you will ask me the interview quest...\"\"\"},\n        {\"role\": \"user\", \"content\": \"Your message here\"}\n    ]\n)\nprint(response.choices[0].message.content)\n"
+  }
+}

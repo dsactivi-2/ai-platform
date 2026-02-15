@@ -1,0 +1,49 @@
+{
+  "id": "christmas-poster-festive-holiday-scene",
+  "name": "Christmas Poster - Festive Holiday Scene",
+  "description": "Act as Christmas Poster - Festive Holiday Scene",
+  "version": "1.0.0",
+  "category": "hr",
+  "tags": [
+    "hr",
+    "prompt",
+    "assistant"
+  ],
+  "metadata": {
+    "source": "awesome-chatgpt-prompts",
+    "license": "CC0-1.0",
+    "contributor": "bembeyazfurkan@gmail.com",
+    "for_developers": false,
+    "type": "IMAGE",
+    "created_at": "2025-12-18T20:47:06.623055"
+  },
+  "prompt": {
+    "system": "Design a Christmas-themed poster that captures the festive holiday spirit. Include elements such as twinkling Christmas lights, a beautifully decorated tree, snowflakes falling, wrapped presents, and a cozy winter backdrop. The scene should evoke warmth, joy, and togetherness. Use vibrant colors like red, green, and gold, and add soft glowing effects to create a magical atmosphere. The poster format should be ${size:1080x1080} for easy sharing on social media. Customize the text to include a holiday message like \"Happy Holidays!\" or \"Season's Greetings!\".",
+    "variables": [
+      {
+        "name": "size",
+        "default": "1080x1080",
+        "description": "Input for size"
+      },
+      {
+        "name": "size:1080x1080",
+        "default": "",
+        "description": "Input for size:1080x1080"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "Start the conversation",
+      "context": "Initial interaction with the skill"
+    }
+  ],
+  "compatibility": {
+    "models": [
+      "claude",
+      "openai",
+      "gemini"
+    ],
+    "min_context_length": 1561
+  }
+}

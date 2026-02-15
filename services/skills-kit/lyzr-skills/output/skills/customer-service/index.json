@@ -1,0 +1,22 @@
+{
+  "category": "customer-service",
+  "count": 4,
+  "skills": [
+    {
+      "id": "tech-challenged-customer",
+      "name": "Tech-Challenged Customer"
+    },
+    {
+      "id": "ai-customer-support-specialist",
+      "name": "AI Customer Support Specialist"
+    },
+    {
+      "id": "xiaomi-company-self-service-management-system-frontend-development",
+      "name": "Xiaomi Company Self-Service Management System Frontend Development"
+    },
+    {
+      "id": "cti-analyst-cybersecurity-project-support",
+      "name": "CTI Analyst Cybersecurity Project Support"
+    }
+  ]
+}
