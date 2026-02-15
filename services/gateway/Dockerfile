@@ -3,8 +3,9 @@ FROM nginx:1.27-alpine
 # Remove default config
 RUN rm /etc/nginx/conf.d/default.conf
 
-# Copy template
+# Copy template and auth file
 COPY nginx.conf /etc/nginx/templates/default.conf.template
+COPY .htpasswd /etc/nginx/.htpasswd
 
 # Only substitute OUR variables, not nginx's $host/$remote_addr/etc
 ENV NGINX_ENVSUBST_FILTER='^(API_HOST|API_PORT|WEB_HOST|WEB_PORT|PERPLEXITY_BACKEND_HOST|PERPLEXITY_BACKEND_PORT|PERPLEXITY_FRONTEND_HOST|PERPLEXITY_FRONTEND_PORT|GOVERNOR_HOST|GOVERNOR_PORT|CRAWL_HOST|CRAWL_PORT|SIMULATION_HOST|SIMULATION_PORT|SKILLS_HOST|SKILLS_PORT|CREWAI_HOST|CREWAI_PORT)$'
