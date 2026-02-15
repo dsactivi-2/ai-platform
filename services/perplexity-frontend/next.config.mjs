@@ -13,6 +13,16 @@ const nextConfig = {
       },
     ],
   },
+  // Proxy /api/* requests to the Python backend service
+  async rewrites() {
+    const backendUrl = process.env.BACKEND_INTERNAL_URL || 'http://perplexity-backend.railway.internal:8000';
+    return [
+      {
+        source: '/api/:path*',
+        destination: `${backendUrl}/:path*`,
+      },
+    ];
+  },
   // Fix for Streamdown's Shiki dependency (ES Module issue)
   // Tell Next.js to transpile streamdown and its dependencies
   // See: https://streamdown.ai/ (FAQ section)
@@ -25,7 +35,7 @@ const nextConfig = {
       include: /node_modules/,
       type: 'javascript/auto',
     });
-    
+
     return config;
   },
 };

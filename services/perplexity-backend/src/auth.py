@@ -112,30 +112,21 @@ async def get_authenticated_user(
     x_user_id: str = Header(None, alias="x-user-id"),
 ) -> AuthenticatedUser:
     """
-    Simple authentication using API key and user ID headers from SDK.
-    No external verification - uses SDK-provided credentials directly.
+    Authentication using API key and user ID headers from SDK.
+    Falls back to gateway defaults when headers are not provided
+    (gateway Basic Auth handles access control in that case).
     """
-    if not x_api_key:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, 
-            detail="x-api-key header is required"
-        )
-    
-    if not x_user_id:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, 
-            detail="x-user-id header is required"
-        )
+    # Use provided headers or fall back to gateway defaults
+    effective_api_key = x_api_key or os.getenv("LYZR_API_KEY", "gateway-default")
+    effective_user_id = x_user_id or "gateway-user"
 
     try:
-        # Return authenticated user with SDK-provided credentials
-        # No external verification needed since credentials come from trusted SDK
         return AuthenticatedUser(
-            email="user@example.com",  # Placeholder - could be retrieved later if needed
-            user_id=x_user_id,
-            api_key=x_api_key,
-            token="",  # No token needed for this flow
-            org_id="",  # Could be retrieved later if needed
+            email="admin@platform.ai",
+            user_id=effective_user_id,
+            api_key=effective_api_key,
+            token="",
+            org_id="default",
         )
 
     except Exception as e:
