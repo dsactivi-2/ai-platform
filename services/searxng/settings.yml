@@ -1,0 +1,20 @@
+use_default_settings: true
+
+server:
+  secret_key: "activi-searxng-secret-2026"
+  limiter: false
+  image_proxy: false
+  method: "GET"
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: "en"
+  formats:
+    - html
+    - json
+
+ui:
+  static_use_hash: true
+  default_theme: simple
+  center_alignment: true
