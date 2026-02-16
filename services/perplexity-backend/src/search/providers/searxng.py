@@ -7,11 +7,18 @@ from search.providers.base import SearchProvider
 
 
 class SearxngSearchProvider(SearchProvider):
+    # Headers required by SearXNG bot detection
+    SEARXNG_HEADERS = {
+        "X-Forwarded-For": "127.0.0.1",
+        "X-Real-IP": "127.0.0.1",
+        "User-Agent": "Lyzr-Search/2.0",
+    }
+
     def __init__(self, host: str):
         self.host = host
 
     async def search(self, query: str, time_range: str = None, num_results: int = 10) -> SearchResponse:
-        async with httpx.AsyncClient(timeout=10.0) as client:
+        async with httpx.AsyncClient(timeout=10.0, headers=self.SEARXNG_HEADERS) as client:
             try:
                 link_results = await self.get_link_results(client, query, num_results=num_results, time_range=time_range)
                 # Skip image results to avoid timeout issues
